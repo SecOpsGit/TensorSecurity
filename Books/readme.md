@@ -11,3 +11,11 @@ Concepts, Tools, and Techniques for Building Intelligent Systems
 
 https://github.com/ageron/handson-ml
 ```
+```
+OpenCV 3 計算機視覺 : Python 語言實現, 2/e 
+Learning OpenCV 3 Computer Vision with Python, 2/e
+OpenCV 3计算机视觉:Python语言实现(原书第2版)
+喬·米尼奇諾 (Joe Minichino), 約瑟夫·豪斯 (Joseph Howse)
+機械工業出版社2016-06-01
+https://github.com/techfort/pycv
+```
