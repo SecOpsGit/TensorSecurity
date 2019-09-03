@@ -24,6 +24,18 @@ https://github.com/ageron/handson-ml2
 ```
 scikit-learn 機器學習, 2/e (Mastering Machine Learning with scikit-learn, 2/e) 
 [美]加文·海克（Gavin Hackeling） 張浩然  人民郵電  2019-06-01
+
+Mastering Machine Learning with scikit-learn - Second Edition
+Gavin Hackeling  July 23, 2017
+
+https://github.com/PacktPublishing/Mastering-Machine-Learning-with-scikit-learn-Second-Edition
+```
+```
+scikit-learn Cookbook - Second Edition
+Trent Hauck, Julian Avila
+November 16, 2017
+374 pages   11 hours 13 minutes
+https://github.com/PacktPublishing/scikit-learn-Cookbook-Second-Edition
 ```
 ```
 打下最紮實的 AI 基礎：從 scikit-learn 一步一腳印 
