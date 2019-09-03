@@ -61,3 +61,9 @@ TensorFlow自然語言處理
 TensorFlow與自然語言處理應用 
 李孟全   清華大學  2019-08-01
 ```
+# TensorFlow與強化學習
+```
+用 Python 實作強化學習｜使用 TensorFlow 與 OpenAI Gym 
+Hands-On Reinforcement Learning with Python
+Sudharsan Ravichandiran  碁峰 2019-05-29
+```
