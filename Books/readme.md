@@ -1,6 +1,13 @@
 
-#
+# Tensorflow
 
+# Tensorflow與機器學習
+```
+TensorFlow機器學習實戰指南
+(美)尼克‧麥克盧爾  機械工業
+https://github.com/nfmcclure/tensorflow_cookbook
+```
+# Scikit-Learn與機器學習
 ```
 機器學習實戰：基於 Scikit-Learn 和 TensorFlow 
 Hands-On Machine Learning with Scikit-Learn and TensorFlow: 
@@ -11,7 +18,14 @@ Concepts, Tools, and Techniques for Building Intelligent Systems
 
 https://github.com/ageron/handson-ml
 ```
+# 
+```
+Neural Network Programming with Tensorflow
+Manpreet Singh Ghotra, Rajdeep Dua
+November 2017
 
+https://github.com/PacktPublishing/Neural-Network-Programming-with-TensorFlow
+```
 ## OpenCV
 ```
 OpenCV 3 計算機視覺 : Python 語言實現, 2/e 
