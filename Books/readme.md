@@ -48,3 +48,16 @@ https://github.com/PacktPublishing/Master-Computer-Vision-OpenCV3-in-Python-and-
 https://github.com/PacktPublishing/Computer-Vision-with-Python-3
 https://github.com/PacktPublishing/Mastering-OpenCV3-Second-Edition
 ```
+# TensorFlow與自然語言處理
+
+```
+TensorFlow自然語言處理
+(澳)圖珊‧加內格達拉
+機械工業  2019.06
+```
+
+
+```
+TensorFlow與自然語言處理應用 
+李孟全   清華大學  2019-08-01
+```
