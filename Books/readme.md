@@ -21,6 +21,21 @@ https://github.com/ageron/handson-ml
 第二版
 https://github.com/ageron/handson-ml2
 ```
+```
+scikit-learn 機器學習, 2/e (Mastering Machine Learning with scikit-learn, 2/e) 
+[美]加文·海克（Gavin Hackeling） 張浩然  人民郵電  2019-06-01
+```
+```
+打下最紮實的 AI 基礎：從 scikit-learn 一步一腳印 
+黄永昌 佳魁資訊 2019-03-18
+
+scikit learn機器學習:常用算法原理及編程實戰 
+scikit learn机器学习:常用算法原理及编程实战
+黃永昌 機械工業出版社  2018-03-01
+```
+```
+
+```
 # 
 ```
 Neural Network Programming with Tensorflow
