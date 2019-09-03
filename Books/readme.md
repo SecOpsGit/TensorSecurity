@@ -17,6 +17,9 @@ Concepts, Tools, and Techniques for Building Intelligent Systems
 機械工業出版社 2018-08-29
 
 https://github.com/ageron/handson-ml
+
+第二版
+https://github.com/ageron/handson-ml2
 ```
 # 
 ```
