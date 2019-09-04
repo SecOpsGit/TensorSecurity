@@ -249,6 +249,15 @@ CNN_lab3:Trnasfer learning實作
 
 #### 學員研讀作業:
 ```
+Malware Classification惡意程式分類
+Microsoft Malware Classification Challenge (BIG 2015)
+Classify malware into families based on file content and characteristics
+http://arxiv.org/abs/1802.10135
+https://www.kaggle.com/c/malware-classification
+
+
+Applying Supervised Learning on Malware Authorship Attribution
+Author: Coen BOOT
 
 ```
 
@@ -300,12 +309,10 @@ http://users.wpi.edu/~kmus/ECE579M_files/ReadingMaterials/LSTM_Domain_Prediction
 ```
 #### 學員研讀作業:
 ```
-Malware Classification惡意程式分類
-Microsoft Malware Classification Challenge (BIG 2015)
-Classify malware into families based on file content and characteristics
-http://arxiv.org/abs/1802.10135
-https://www.kaggle.com/c/malware-classification
-
+An AI-based, Multi-stage detection system of banking botnets
+Li Ling, Zhiqiang Gao, Michael A Silas, Ian Lee, Erwan A Le Doeuff
+(Submitted on 18 Jul 2019 (v1), last revised 25 Jul 2019 (this version, v3))
+https://arxiv.org/abs/1907.08276
 ```
 
 # C3.GAN 生成對抗網路 Generative Adversarial Network
@@ -383,8 +390,53 @@ https://gizmodo.com/artificial-intelligence-may-have-cracked-freaky-600-yea-1822
 ```
 # 學員成果報告
 
+### AI for Industrial Internet of Things (IIoT) 
+
+```
+A Pvalue-guided Anomaly Detection Approach Combining Multiple Heterogeneous Log Parser Algorithms on IIoT Systems
+Xueshuo Xie, Zhi Wang, Xuhang Xiao, Lei Yang, Shenwei Huang, Tao Li
+(Submitted on 5 Jul 2019)
+https://arxiv.org/abs/1907.02765
+```
+
+### blockchain security
+```
+SmartEmbed(2019)
+https://arxiv.org/abs/1908.08615
+SmartEmbed: A Tool for Clone and Bug Detection in Smart Contracts through Structural Code Embedding
+Zhipeng Gao, Vinoj Jayasundara, Lingxiao Jiang, Xin Xia, David Lo, John Grundy
+(Submitted on 22 Aug 2019)
+
+Blockchain based access control systems: State of the art and challenges
+Sara Rouhani, Ralph Deters
+(Submitted on 22 Aug 2019)
+https://arxiv.org/abs/1908.08503
+```
+
+
+### Phishing Web Page Detection 
+```
+HTMLPhish: Enabling Accurate Phishing Web Page Detection by Applying Deep Learning Techniques on HTML Analysis
+Chidimma Opara, Bo Wei, Yingke Chen
+(Submitted on 28 Aug 2019)
+https://arxiv.org/abs/1909.01135
+```
 ### APT偵測與預防
 ```
+Kidemonas: The Silent Guardian
+Rudra Prasad Baksi, Shambhu J. Upadhyaya
+(Submitted on 3 Dec 2017)
+https://arxiv.org/abs/1712.00841
+
+Bidirectional RNN-based Few-shot Training for Detecting Multi-stage Attack
+Di Zhao, Jiqiang Liu, Jialin Wang, Wenjia Niu, Endong Tong, Tong Chen, Gang Li
+(Submitted on 9 May 2019)
+https://arxiv.org/abs/1905.03454
+
+"Feint Attack", as a new type of APT attack, has become the focus of attention. 
+It adopts a multi-stage attacks mode which can be concluded as a combination of virtual attacks and real attacks. 
+
+
 [碩士論文]Detection and Prevention of Advanced Persistent Threats
 http://www2.imm.dtu.dk/pubdb/views/edoc_download.php/7057/pdf/imm7057.pdf
 
@@ -402,4 +454,15 @@ https://tel.archives-ouvertes.fr/tel-01793709/document
 ```
 [碩士論文]Towards a roadmap for development of intelligent data analysis based cyber attack detection systems
 https://pdfs.semanticscholar.org/ba82/76ed46a9a4e44582a1e96cc6bba9bd51b842.pdf
+```
+
+APT attack software Poison Ivy
+
+
+###
+```
+Report on the First Knowledge Graph Reasoning Challenge 2018 -- Toward the eXplainable AI System
+Takahiro Kawamura, Shusaku Egami, Koutarou Tamura, Yasunori Hokazono, Takanori Ugai, Yusuke Koyanagi, Fumihito Nishino, Seiji Okajima, Katsuhiko Murakami, Kunihiko Takamatsu, Aoi Sugiura, Shun Shiramatsu, Shawn Zhang, Kouji Kozaki
+(Submitted on 22 Aug 2019)
+https://arxiv.org/abs/1908.08184
 ```
