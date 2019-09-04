@@ -8,20 +8,27 @@
 完成多少研讀作業?
 參加AI競賽!!!
 ```
-# A.人工智慧
+# A.人工智慧及開發平台
 ### 人工智慧範疇
 ```
 人工智慧
 機器學習
 深度學習與強化學習
 ```
-### 機器學習類型:
+## 機器學習類型:
 ```
 1.監督學習Supervised learning   從有Label的資料學習
 2.無監督學習 Unsupervised learning
 3.半監督學習 semi-Supervised learning
 4.增強學習Reinforcement learning
 ```
+### 監督學習Supervised learning  
+```
+```
+### 無監督學習 Unsupervised learning
+```
+```
+
 ### 人工智慧開發平台
 
 ```
@@ -34,36 +41,35 @@ Apache MXNet
 Comparison of deep-learning software
 https://en.wikipedia.org/wiki/Comparison_of_deep-learning_software
 ```
-# Tensorflow Ecosystem
+## Tensorflow Ecosystem
 ```
 Tensorflow Ecosystem
 Tensor及其運算
 ```
 
-## 簡單應用:回歸問題
+### 簡單應用:回歸問題
 ```
-Basic_Lab1:simple linear regression
-Basic_Lab2:logitic regression
+
 ```
-## 學員作業
+### 學員作業
 ```
 
 ```
 
-# From Numpy to Pandas:A Quick Tour[請參閱上本教材]
+### From Numpy to Pandas:A Quick Tour[請參閱上本教材]
 ```
 Numpy 
 Data Visualization資料視覺化:Matplotlib/seaborn/Plotit
 Pandas@Colab CSV資料讀取技術
 ```
-## 學員作業
+### 學員作業
 ```
 Numpy_ex1
 Matplotlib_ex1:完成五張Data Visualization資料視覺化作業
 Pandas_ex1:Pandas基本運算
 Pandas_ex2:Pandas讀取Mysql資料庫資料實作
 ```
-## 學員研讀作業:Pandas
+### 學員研讀作業:Pandas
 ```
 Python資料分析 第二版 Python for Data Analysis, 2nd Edition
 作者：Wes McKinney  譯者： 張靜雯 歐萊禮出版社 出版日期：2018/10/03
@@ -87,6 +93,21 @@ Pandas官網 https://pandas.pydata.org/
 pandas原始程式碼：https://github.com/pandas-dev/pandas
 ```
 # B. Machine Learning
+
+## Machine Learning:scikit-learn vs Tensorflow
+
+scikit-learn
+
+## B1.回歸與預測
+
+### B1.1:回歸的類型
+
+### B1.2 scikit-learn技術與實作
+
+### B1.3 Tensorflow
+
+### 4.[資安應用]金融詐欺偵測之實作
+
 # 4.Neural Network
 ```
 Neural Network: Form perception to MLP(Multi-layer perception)
