@@ -271,8 +271,13 @@ RNN_lab2:NLP自然語言處理實測
 ```
 
 ```
-## 學員研讀作業:
+#### 學員研讀作業:
 ```
+Malware Classification惡意程式分類
+Microsoft Malware Classification Challenge (BIG 2015)
+Classify malware into families based on file content and characteristics
+http://arxiv.org/abs/1802.10135
+https://www.kaggle.com/c/malware-classification
 
 ```
 
