@@ -96,6 +96,16 @@ pandas原始程式碼：https://github.com/pandas-dev/pandas
 ```
 # B. Machine Learning
 ```
+Survey of Machine Learning Techniques for Malware Analysis
+Daniele Ucci, Leonardo Aniello, Roberto Baldoni
+(Submitted on 23 Oct 2017 (v1), last revised 26 Nov 2018 (this version, v3))
+https://arxiv.org/abs/1710.08189
+https://www.sciencedirect.com/science/article/pii/S0167404818303808
+
+
+A state-of-the-art survey of malware detection approaches using data mining techniques
+Alireza Souri & Rahil Hosseini 
+Human-centric Computing and Information Sciencesvolume 8, Article number: 3 (2018) 
 
 ```
 ## Machine Learning:scikit-learn vs Tensorflow
@@ -144,12 +154,33 @@ TF_2
 ```
 ### B1.4.[資安應用]金融詐欺偵測之實作
 ```
+PwC大中華區首席資料科學家揭露金融業4大AI成熟應用
+AI技術在金融業較成熟的4大應用是對抗詐欺風險、管控經營風險、消除風險和精準行銷。
+https://www.ithome.com.tw/news/117607
+
+中國一家排名前三大的保險公司，將AI技術應用在反詐欺上，根據過去20年數據，將每個核賠案件，依照特徵貼上標籤並分類，透過機器學習技術，
+學習類別的特徵，自動比對分析後，就能快速辨識出可能詐欺的案件，
+另外，還要加入圖像識別的技術，處理文件內容識別，和車禍圖像比對，來辨識圖片資訊，該家保險公司，
+透過多項技術的輔助，每年可以識別出3,000萬件欺詐案，他表示，以前都只能用人工來處理，非常費時。
+
+2019 金融業數位轉型趨勢：使用 ML 技術打擊金融詐騙
+https://buzzorange.com/techorange/2018/11/27/sas-antifraud/
+
+信用卡詐欺（credit card fraud）
+https://report.nat.gov.tw/ReportFront/PageSystem/reportFileDownload/C10601536/001
 ```
 
 ## B2.分類
 
 ### B2.1.分類演算法:從Decision tree、 Random Forest到SVM
 ```
+LogisticRegression (LR)
+K-Nearest Neighbors (K-NN)
+Support Vector Machine (SVM)
+KernelSVM
+NaiveBayes
+DecisionTreeClassification
+Random Forest Classification
 ```
 ### B2.2.分類演算法的實作
 ```
@@ -169,6 +200,7 @@ MLP Neural Network實作
 ```
 spam emial detction
 APT detection
+Fake news detection
 ```
 ### B3.聚類與無監督學習
 
@@ -228,7 +260,10 @@ https://dzone.com/articles/10-interesting-use-cases-for-the-k-means-algorithm
 
 https://perso.telecom-paristech.fr/qleroy/aml/lab5.html
 ```
-
+```
+A Cybersecurity Analysis of the National Vulnerability Database Using k-means Clustering
+https://www.kaggle.com/walterhaydock/cybersecurity-vulnerability-analysis-with-k-means
+```
 ####  Fraud detection using K-Means clustering
 
 ```
@@ -243,9 +278,21 @@ Application of deep learning to cybersecurity: A survey
 Samaneh Mahdavifar Ali A.Ghorbani
 https://www.sciencedirect.com/science/article/pii/S0925231219302954
 
+
+A short review on Applications of Deep learning for Cyber security
+Mohammed Harun Babu R, Vinayakumar R, Soman KP
+(Submitted on 15 Dec 2018 (v1), last revised 30 Jan 2019 (this version, v2))
+https://arxiv.org/abs/1812.06292
+
 Distributed attack detection scheme using deep learning approach for Internet of Things
 Abebe AbeshuDiro  Naveen Chilamkurti
 https://www.sciencedirect.com/science/article/pii/S0167739X17308488
+
+https://ccdcoe.org/uploads/2018/10/Art-19-On-the-Effectiveness-of-Machine-and-Deep-Learning-for-Cyber-Security.pdf
+```
+### Deep Learning and Ransomware Detection
+```
+Deep Learning for Ransomware Detection
 ```
 
 # C1.CNN 卷積神經網絡  Convolutional Neural Network
@@ -280,6 +327,44 @@ Author: Coen BOOT
 ```
 
 # C2.RNN遞歸神經網絡Recurrent Neural Network
+```
+千呼萬喚十多年！中研院終於開源釋出國產自動化中文斷詞工具
+中研院近日正式開源釋出了自行研發多年的中文斷詞程式，提供給在臺灣從事
+中文自然語言領域研究的學術圈或開發者來使用，目前已放上GitHub平臺。
+https://www.ithome.com.tw/news/132838
+
+根據該工具的文件說明，這套CkipTagger中文處理工具，不只提供繁體中文斷詞的功能，
+也加入詞性標注和18類專有名詞的實體辨識（Named entity recognition）等功能，
+甚至當以多達5萬句的ASBC 4.0漢語語料庫測試集，來進行中文斷詞測試時，
+CkipTagger表現遠高於中國的結巴，中研院在中文斷詞準確度可達到97.49%，相較之下，中國的結巴只有90.51%。
+
+新版本也提供幾大特色，包括了加強斷詞表現、可以不自動刪／改字，並且能夠支援不限長度的句子，
+另外，新版也加入使用者自訂功能，提供參考／強制 詞典的自訂功能。
+
+不只開源中文斷詞程式，我們今年初採訪該詞庫小組計畫負責人馬偉雲時，他也提到，接下來，
+將用4年的時間，將中文維基百科上的百萬詞彙，自動建立其知識圖譜，來打造成為一個具有百萬中文詞庫的知識庫。
+他更計畫以現有9萬詞彙所建立的知識圖譜架構，發展相關的自然語言處理工具，可以自動建立其知識圖譜。
+
+Remedying BiLSTM-CNN Deficiency in Modeling Cross-Context for NER
+Peng-Hsuan Li, Tsu-Jui Fu, Wei-Yun Ma
+(Submitted on 29 Aug 2019)
+https://arxiv.org/abs/1908.11046
+ckiplab/ckiptagger
+https://github.com/ckiplab/ckiptagger
+```
+```
+全臺第一個金融聊天機器人！玉山銀搶先用Chatbot提供3大金融業務諮詢(2017)
+申辦貸款、信用卡或是外匯服務，未來將變得超簡單，透過聊天機器人就可以完成。
+玉山銀行搶先在金融業推出Chatbot，預計今年第二季正式上線
+https://www.ithome.com.tw/news/112450
+```
+
+```
+Early Stage Malware Prediction Using Recurrent Neural Networks
+Matilda Rhode, Pete Burnap, Kevin Jones
+(Submitted on 11 Aug 2017 (v1), last revised 18 Jun 2018 (this version, v3))
+https://arxiv.org/abs/1708.03513
+```
 
 ## C2.1_Sequence Data的分析
 ```
@@ -311,6 +396,12 @@ https://arxiv.org/abs/1802.04289
 
 An Analysis of Recurrent Neural Networks for Botnet Detection Behavior
 http://users.wpi.edu/~kmus/ECE579M_files/ReadingMaterials/RNN_Botnet_Detection[2093].pdf
+
+
+Tracking Temporal Evolution of Network Activity for Botnet Detection
+Kapil Sinha, Arun Viswanathan, Julian Bunn
+(Submitted on 9 Aug 2019)
+https://arxiv.org/abs/1908.03443
 ```
 
 ```
@@ -332,7 +423,33 @@ Li Ling, Zhiqiang Gao, Michael A Silas, Ian Lee, Erwan A Le Doeuff
 (Submitted on 18 Jul 2019 (v1), last revised 25 Jul 2019 (this version, v3))
 https://arxiv.org/abs/1907.08276
 ```
+```
+Your Smart Home Can't Keep a Secret: Towards Automated Fingerprinting of IoT Traffic with Neural Networks
+Shuaike Dong, Zhou Li, Di Tang, Jiongyi Chen, Menghan Sun, Kehuan Zhang
+(Submitted on 31 Aug 2019)
+https://arxiv.org/abs/1909.00104
+```
 
+```
+Omni SCADA Intrusion Detection Using Deep Learning Algorithms
+Jun Gao, Luyun Gan, Fabiola Buschendorf, Liao Zhang, Hua Liu, Peixue Li, Xiaodai Dong, Tao Lu
+(Submitted on 6 Aug 2019)
+https://arxiv.org/abs/1908.01974
+```
+
+```
+AppMine: Behavioral Analytics for Web Application Vulnerability Detection
+Indranil Jana, Alina Oprea
+(Submitted on 6 Aug 2019)
+https://arxiv.org/abs/1908.01928
+```
+
+```
+Dynamic Malware Analysis with Feature Engineering and Feature Learning
+Zhaoqi Zhang, Panpan Qi, Wei Wang
+(Submitted on 17 Jul 2019 (v1), last revised 21 Jul 2019 (this version, v2))
+https://arxiv.org/abs/1907.07352
+```
 # C3.GAN 生成對抗網路 Generative Adversarial Network
 
 ### C3.1GAN基本觀念與應用
@@ -340,6 +457,15 @@ https://arxiv.org/abs/1907.08276
 GAN
 image-to-image translation與GAN
 text-to-image與GAN
+```
+```
+運動影象的去模糊化DeblurGAN(2017)
+DeblurGAN: Blind Motion Deblurring Using Conditional Adversarial Networks
+Orest Kupyn, Volodymyr Budzan, Mykola Mykhailych, Dmytro Mishkin, Jiri Matas
+(Submitted on 19 Nov 2017 (v1), last revised 3 Apr 2018 (this version, v4))
+
+https://zhuanlan.zhihu.com/p/32260634
+https://www.itread01.com/content/1544765222.html
 ```
 ### C3.2_Tensorflow的GAN
 ```
