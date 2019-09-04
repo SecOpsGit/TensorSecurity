@@ -265,7 +265,31 @@ RNN_lab2:NLP自然語言處理實測
 ```
 ## C2.4_RNN與資安應用
 ```
-.[資安應用]殭屍網路偵測
+[資安應用]殭屍網路偵測
+
+Tran D., Mac H., Tong V., Tran H.A. and Nguyen L.G., 
+"A LSTM based framework for handling multiclass imbalance in DGA botnet detection." 
+Neurocomputing, vol. 275, pp. 2401-2413, 2018
+https://www.sciencedirect.com/science/article/pii/S0925231217317320
+https://github.com/BKCS-HUST/LSTM-MI
+
+Deep Neural Networks for Bot Detection
+Sneha Kudugunta, Emilio Ferrara
+(Submitted on 12 Feb 2018 (v1), last revised 18 Feb 2018 (this version, v2))
+https://arxiv.org/abs/1802.04289
+
+
+An Analysis of Recurrent Neural Networks for Botnet Detection Behavior
+http://users.wpi.edu/~kmus/ECE579M_files/ReadingMaterials/RNN_Botnet_Detection[2093].pdf
+```
+
+```
+Most sophisticated bots use Domain Generation Algorithms (DGA) to pseudo-randomly 
+generate a large number of domains 
+and select a subset in order to communicate with Command and Control (C&C) server.
+
+Predicting Domain Generation Algorithms with Long Short-Term Memory Networks
+http://users.wpi.edu/~kmus/ECE579M_files/ReadingMaterials/LSTM_Domain_Prediction[2092].pdf
 ```
 ## 學員報告:進階實測
 ```
