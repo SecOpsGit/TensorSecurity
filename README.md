@@ -99,7 +99,9 @@ Pandas官網 https://pandas.pydata.org/
 pandas原始程式碼：https://github.com/pandas-dev/pandas
 ```
 # B. Machine Learning
+```
 
+```
 ## Machine Learning:scikit-learn vs Tensorflow
 
 scikit-learn
@@ -229,6 +231,15 @@ https://perso.telecom-paristech.fr/qleroy/aml/lab5.html
 ```
 
 # C.Deep Leaning
+```
+Application of deep learning to cybersecurity: A survey
+Samaneh Mahdavifar Ali A.Ghorbani
+https://www.sciencedirect.com/science/article/pii/S0925231219302954
+
+Distributed attack detection scheme using deep learning approach for Internet of Things
+Abebe AbeshuDiro  Naveen Chilamkurti
+https://www.sciencedirect.com/science/article/pii/S0167739X17308488
+```
 
 # C1.CNN 卷積神經網絡  Convolutional Neural Network
 
@@ -377,7 +388,11 @@ https://zhuanlan.zhihu.com/p/34063499
 https://www.sciencealert.com/ai-may-have-finally-decoded-the-bizarre-mysterious-voynich-manuscript
 https://gizmodo.com/artificial-intelligence-may-have-cracked-freaky-600-yea-1822519232?utm_campaign=Revue%20newsletter&utm_medium=Newsletter&utm_source=The%20Wild%20Week%20in%20AI
 ```
-
+```
+Zero-day malware detection using transferred generative adversarial networks based on deep autoencoders
+Author links open overlay panelJin-YoungKimSeok-JunBuSung-BaeCho
+https://www.sciencedirect.com/science/article/pii/S0020025518303475
+```
 # D.最新發展:AI2018-2019, AI_Sec2018-2019
 
 ## D1.人工智慧的最新發展AI2018-2019
