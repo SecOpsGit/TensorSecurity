@@ -20,9 +20,59 @@
 ```
 ### 監督學習Supervised learning  
 ```
+
+https://scikit-learn.org/stable/supervised_learning.html#supervised-learning
+1.11. Ensemble methods
+1.17. Neural network models (supervised)  
+   1.17.1. MLP==Multi-layer Perceptron
+      1.17.2. Classification==> Class MLPClassifier類別
+      1.17.3. Regression==> Class MLPRegressor類別
 ```
 ### 無監督學習 Unsupervised learning
 ```
+
+```
+#### scikit-learn支援的 Clustering
+```
+https://scikit-learn.org/stable/modules/clustering.html#clustering
+2.3. Clustering
+2.3.1. Overview of clustering methods
+2.3.2. K-means
+2.3.2.1. Mini Batch K-Means
+2.3.3. Affinity Propagation
+2.3.4. Mean Shift
+2.3.5. Spectral clustering
+2.3.5.1. Different label assignment strategies
+2.3.5.2. Spectral Clustering Graphs
+2.3.6. Hierarchical clustering
+2.3.6.1. Different linkage type: Ward, complete, average, and single linkage
+2.3.6.2. Adding connectivity constraints
+2.3.6.3. Varying the metric
+2.3.7. DBSCAN
+2.3.8. OPTICS
+2.3.9. Birch
+```
+#### scikit-learn支援的 Dimensionality reduction
+```
+https://scikit-learn.org/stable/modules/decomposition.html#decompositions
+2.5. Decomposing signals in components (matrix factorization problems)
+2.5.1. Principal component analysis (PCA)
+   2.5.1.1. Exact PCA and probabilistic interpretation
+   2.5.1.2. Incremental PCA
+   2.5.1.3. PCA using randomized SVD
+   2.5.1.4. Kernel PCA
+   2.5.1.5. Sparse principal components analysis (SparsePCA and MiniBatchSparsePCA)
+2.5.2. Truncated singular value decomposition and latent semantic analysis
+2.5.3. Dictionary Learning
+   2.5.3.1. Sparse coding with a precomputed dictionary
+   2.5.3.2. Generic dictionary learning
+   2.5.3.3. Mini-batch dictionary learning
+2.5.4. Factor Analysis
+2.5.5. Independent component analysis (ICA)
+2.5.6. Non-negative matrix factorization (NMF or NNMF)
+   2.5.6.1. NMF with the Frobenius norm
+   2.5.6.2. NMF with a beta-divergence
+2.5.7. Latent Dirichlet Allocation (LDA)
 ```
 
 ### 人工智慧開發平台
