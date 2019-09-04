@@ -103,87 +103,139 @@ scikit-learn
 ### B1.1:回歸的類型
 
 ### B1.2 scikit-learn技術與實作
-
+```
+sklearn_1_
+sklearn_2_
+```
 ### B1.3 Tensorflow
+```
+TF_1
+TF_2
+```
+### B1.4.[資安應用]金融詐欺偵測之實作
+```
+```
 
-### 4.[資安應用]金融詐欺偵測之實作
+## B2.分類
 
-# 4.Neural Network
+### B2.1.分類演算法:從Decision tree、 Random Forest到SVM
 ```
-Neural Network: Form perception to MLP(Multi-layer perception)
-Learning Techniques
 ```
-## 學員作業
+### B2.2.分類演算法的實作
 ```
-NN_lab1:OR Gate的類神經網路模型
-NN_lab2:NOR Gate的類神經網路模型
-NN_lab3:NAND Gate的類神經網路模型
-NN_lab4:完成Himmelblau's function的極大與極小值實作
-      https://en.wikipedia.org/wiki/Himmelblau%27s_function
+Decision tree實作
+SVM實作
+MLP Neural Network實作
 ```
-## 學員研讀作業:
+### B2.3.[資安應用]惡意網址偵測之實作
 ```
-Deep Learning：用Python進行深度學習的基礎理論實作 ch1~ch6
-作者： 斎藤康毅   譯者： 吳嘉芳  歐萊禮   出版日期：2017/08/17
+
+```
+#### 學員作業
+```
+
+```
+#### 學員研讀作業:
+```
+
+```
+### B3.聚類與無監督學習
+
+#### B3.1.無監督學習
+```
+Clustering 
+dimension Reduction: PCA
+Deep Learning的 GAN
+```
+#### B3.2.K-Means實戰
+```
 ```
 
 # C.Deep Leaning
 
 # C1.CNN 卷積神經網絡  Convolutional Neural Network
 
-## Computer Vision機器視覺與CNN
-## 圖像分類與CNN:從ImageNet與ILSVRC (2010-2017)看CNN進展
-## CNN 實作CNN_lab
+## C1.1.Computer Vision機器視覺與CNN
+
+## C1.2_圖像分類與CNN:從ImageNet與ILSVRC (2010-2017)看CNN進展
+
+## C1.3_CNN 實作CNN_lab
 ```
 CNN_lab1:Image Claiification實作
 CNN_lab2:Resnet實作
 CNN_lab3:Trnasfer learning實作
 ```
-## 學員研讀作業:
+## C1.4_CNN與資安應用
 ```
-Deep Learning：用Python進行深度學習的基礎理論實作 第七章 卷積神經網路 
-作者： 斎藤康毅   譯者： 吳嘉芳  歐萊禮   出版日期：2017/08/17
+圖形驗證碼破解
+```
+
+#### 學員研讀作業:
+```
+
 ```
 
 # C2.RNN遞歸神經網絡Recurrent Neural Network
 
-## Sequence Data的分析
+## C2.1_Sequence Data的分析
 ```
 NLP自然語言處理(Natural Language Processing)與RNN
 時間序列(Time series)分析與RNN
 ```
-## RNN基礎架構
+## C2.2_RNN基礎架構與Tensorflowg技術
 
-## RNN 實作RNN_lab
+## C2.3_RNN 實作RNN_lab
 ```
 RNN_lab1:時間序列(Time serires)預測
 RNN_lab2:NLP自然語言處理實測
 ```
+## C2.4_RNN與資安應用
+```
+.[資安應用]殭屍網路偵測
+```
 ## 學員報告:進階實測
 ```
-pytorch-transformers實測  https://github.com/huggingface/pytorch-transformers
+
 ```
 ## 學員研讀作業:
 ```
 
 ```
-```
-Deep Learning 2｜用Python進行自然語言處理的基礎理論實作  ゼロから作るDeep Learning ❷ ―自然言語処理編
-作者： 斎藤康毅   譯者： 吳嘉芳   歐萊禮   出版日期：2019/03/29
-```
+
 # C3.GAN 生成對抗網路 Generative Adversarial Network
 
-## GAN基本觀念與應用
+### C3.1GAN基本觀念與應用
 ```
 GAN
 image-to-image translation與GAN
 text-to-image與GAN
 ```
-## GAN 實作
+### C3.2_Tensorflow的GAN
+```
+
+TFGAN(2018.11)
+Keras-GAN
+   https://github.com/eriklindernoren/Keras-GAN
+```
+
+## C3.3_GAN 實作
 ```
 GAN_lab1:DCGAN實作
-GAN_lab2:TorchGan實測
+GAN_lab2:TFGan實測
+GAN_lab3:Keras-Gan實測
 ```
+
+### C3.4_GAN與資安應用
+
+```
+PassGAN實作
+```
+#### 學員報告:進階實測
+```
+CipherGAN(2018)
+https://arxiv.org/abs/1801.04883
+```
+
 
 # D.最新發展:AI2018-2019, AI_Sec2018-2019
 
