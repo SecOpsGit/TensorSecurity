@@ -229,13 +229,41 @@ GAN_lab3:Keras-Gan實測
 
 ```
 PassGAN實作
+
+PassGAN: A Deep Learning Approach for Password Guessing
+Briland Hitaj, Paolo Gasti, Giuseppe Ateniese, Fernando Perez-Cruz
+(Submitted on 1 Sep 2017 (v1), last revised 14 Feb 2019 (this version, v3))
+https://arxiv.org/abs/1709.00440
+
+https://github.com/brannondorsey/PassGAN
 ```
 #### 學員報告:進階實測
 ```
 CipherGAN(2018)
 https://arxiv.org/abs/1801.04883
-```
+Unsupervised Cipher Cracking Using Discrete GANs
+Aidan N. Gomez, Sicong Huang, Ivan Zhang, Bryan M. Li, Muhammad Osama, Lukasz Kaiser
+(Submitted on 15 Jan 2018)
+https://github.com/for-ai/CipherGAN
 
+專業評論: https://openreview.net/forum?id=BkeqO7x0-
+
+
+報導
+https://zhuanlan.zhihu.com/p/33672256
+https://www.pixpo.net/others/0IJw4qqN.html
+```
+```
+Decoding Anagrammed Texts Written in an Unknown Language and Script
+Bradley Hauer, Grzegorz Kondrak
+https://transacl.org/ojs/index.php/tacl/article/view/821
+
+報導
+https://zhuanlan.zhihu.com/p/33672256
+https://zhuanlan.zhihu.com/p/34063499
+https://www.sciencealert.com/ai-may-have-finally-decoded-the-bizarre-mysterious-voynich-manuscript
+https://gizmodo.com/artificial-intelligence-may-have-cracked-freaky-600-yea-1822519232?utm_campaign=Revue%20newsletter&utm_medium=Newsletter&utm_source=The%20Wild%20Week%20in%20AI
+```
 
 # D.最新發展:AI2018-2019, AI_Sec2018-2019
 
