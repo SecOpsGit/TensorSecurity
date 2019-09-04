@@ -169,7 +169,8 @@ MLP Neural Network實作
 ```
 #### 學員研讀作業:
 ```
-
+spam emial detction
+APT detection
 ```
 ### B3.聚類與無監督學習
 
@@ -223,6 +224,8 @@ https://scikit-learn.org/stable/modules/decomposition.html#decompositions
 ```
 #### B3.2.K-Means實戰
 ```
+
+https://perso.telecom-paristech.fr/qleroy/aml/lab5.html
 ```
 
 # C.Deep Leaning
@@ -378,5 +381,25 @@ https://gizmodo.com/artificial-intelligence-may-have-cracked-freaky-600-yea-1822
 2.AI強化的防禦技術
 3.攻擊人工智慧系統
 ```
-## 4.學員成果報告
+# 學員成果報告
 
+### APT偵測與預防
+```
+[碩士論文]Detection and Prevention of Advanced Persistent Threats
+http://www2.imm.dtu.dk/pubdb/views/edoc_download.php/7057/pdf/imm7057.pdf
+
+[碩士論文]Detection of APT Malware through External and Internal Network Traffic Correlation
+Author: Terence Slot(2015)
+https://pdfs.semanticscholar.org/0590/c5e44476418dd138fbd495a1cd933f9877c4.pdf
+
+[博士論文]NETWORK-BASED TARGETED ATTACKS DETECTION(2019)IBRAHIM GHAFIR
+https://is.muni.cz/th/iq0qi/Plny_text_prace.pdf
+
+[博士論文]Real-time detection of Advanced Persistent Threats using Information Flow Tracking and Hidden Markov Models
+Guillaume Brogi(2018)
+https://tel.archives-ouvertes.fr/tel-01793709/document
+```
+```
+[碩士論文]Towards a roadmap for development of intelligent data analysis based cyber attack detection systems
+https://pdfs.semanticscholar.org/ba82/76ed46a9a4e44582a1e96cc6bba9bd51b842.pdf
+```
