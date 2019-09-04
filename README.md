@@ -32,48 +32,8 @@ https://scikit-learn.org/stable/supervised_learning.html#supervised-learning
 ```
 
 ```
-#### scikit-learn支援的 Clustering
-```
-https://scikit-learn.org/stable/modules/clustering.html#clustering
-2.3. Clustering
-2.3.1. Overview of clustering methods
-2.3.2. K-means
-2.3.2.1. Mini Batch K-Means
-2.3.3. Affinity Propagation
-2.3.4. Mean Shift
-2.3.5. Spectral clustering
-2.3.5.1. Different label assignment strategies
-2.3.5.2. Spectral Clustering Graphs
-2.3.6. Hierarchical clustering
-2.3.6.1. Different linkage type: Ward, complete, average, and single linkage
-2.3.6.2. Adding connectivity constraints
-2.3.6.3. Varying the metric
-2.3.7. DBSCAN
-2.3.8. OPTICS
-2.3.9. Birch
-```
-#### scikit-learn支援的 Dimensionality reduction
-```
-https://scikit-learn.org/stable/modules/decomposition.html#decompositions
-2.5. Decomposing signals in components (matrix factorization problems)
-2.5.1. Principal component analysis (PCA)
-   2.5.1.1. Exact PCA and probabilistic interpretation
-   2.5.1.2. Incremental PCA
-   2.5.1.3. PCA using randomized SVD
-   2.5.1.4. Kernel PCA
-   2.5.1.5. Sparse principal components analysis (SparsePCA and MiniBatchSparsePCA)
-2.5.2. Truncated singular value decomposition and latent semantic analysis
-2.5.3. Dictionary Learning
-   2.5.3.1. Sparse coding with a precomputed dictionary
-   2.5.3.2. Generic dictionary learning
-   2.5.3.3. Mini-batch dictionary learning
-2.5.4. Factor Analysis
-2.5.5. Independent component analysis (ICA)
-2.5.6. Non-negative matrix factorization (NMF or NNMF)
-   2.5.6.1. NMF with the Frobenius norm
-   2.5.6.2. NMF with a beta-divergence
-2.5.7. Latent Dirichlet Allocation (LDA)
-```
+
+
 
 ### 人工智慧開發平台
 
@@ -149,6 +109,32 @@ scikit-learn
 ### B1.1:回歸的類型
 
 ### B1.2 scikit-learn技術與實作
+
+#### scikit-learn支援的Regression技術
+```
+https://scikit-learn.org/stable/supervised_learning.html#supervised-learning
+1.1. Generalized Linear Models
+1.1.1. Ordinary Least Squares
+1.1.2. Ridge Regression
+1.1.3. Lasso
+1.1.4. Multi-task Lasso
+1.1.5. Elastic-Net
+1.1.6. Multi-task Elastic-Net
+1.1.7. Least Angle Regression
+1.1.8. LARS Lasso
+1.1.9. Orthogonal Matching Pursuit (OMP)
+1.1.10. Bayesian Regression
+1.1.11. Logistic regression
+1.1.12. Stochastic Gradient Descent - SGD
+1.1.13. Perceptron
+1.1.14. Passive Aggressive Algorithms
+
+1.1.15. Robustness regression: outliers and modeling errors
+1.1.15.5. Notes
+
+1.1.16. Polynomial regression: extending linear models with basis functions
+```
+#### scikit-learn的Regression技術應用
 ```
 sklearn_1_
 sklearn_2_
@@ -192,6 +178,48 @@ MLP Neural Network實作
 Clustering 
 dimension Reduction: PCA
 Deep Learning的 GAN
+```
+#### scikit-learn支援的 Clustering
+```
+https://scikit-learn.org/stable/modules/clustering.html#clustering
+2.3. Clustering
+2.3.1. Overview of clustering methods
+2.3.2. K-means
+2.3.2.1. Mini Batch K-Means
+2.3.3. Affinity Propagation
+2.3.4. Mean Shift
+2.3.5. Spectral clustering
+2.3.5.1. Different label assignment strategies
+2.3.5.2. Spectral Clustering Graphs
+2.3.6. Hierarchical clustering
+2.3.6.1. Different linkage type: Ward, complete, average, and single linkage
+2.3.6.2. Adding connectivity constraints
+2.3.6.3. Varying the metric
+2.3.7. DBSCAN
+2.3.8. OPTICS
+2.3.9. Birch
+```
+#### scikit-learn支援的 Dimensionality reduction
+```
+https://scikit-learn.org/stable/modules/decomposition.html#decompositions
+2.5. Decomposing signals in components (matrix factorization problems)
+2.5.1. Principal component analysis (PCA)
+   2.5.1.1. Exact PCA and probabilistic interpretation
+   2.5.1.2. Incremental PCA
+   2.5.1.3. PCA using randomized SVD
+   2.5.1.4. Kernel PCA
+   2.5.1.5. Sparse principal components analysis (SparsePCA and MiniBatchSparsePCA)
+2.5.2. Truncated singular value decomposition and latent semantic analysis
+2.5.3. Dictionary Learning
+   2.5.3.1. Sparse coding with a precomputed dictionary
+   2.5.3.2. Generic dictionary learning
+   2.5.3.3. Mini-batch dictionary learning
+2.5.4. Factor Analysis
+2.5.5. Independent component analysis (ICA)
+2.5.6. Non-negative matrix factorization (NMF or NNMF)
+   2.5.6.1. NMF with the Frobenius norm
+   2.5.6.2. NMF with a beta-divergence
+2.5.7. Latent Dirichlet Allocation (LDA)
 ```
 #### B3.2.K-Means實戰
 ```
