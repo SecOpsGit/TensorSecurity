@@ -53,10 +53,6 @@ Tensorflow Ecosystem
 Tensor及其運算
 ```
 
-### 簡單應用:回歸問題
-```
-
-```
 ### 學員作業
 ```
 
@@ -226,10 +222,21 @@ https://scikit-learn.org/stable/modules/decomposition.html#decompositions
 ```
 #### B3.2.K-Means實戰
 ```
+10 Interesting Use Cases for the K-Means Algorithm
+https://dzone.com/articles/10-interesting-use-cases-for-the-k-means-algorithm
+
 
 https://perso.telecom-paristech.fr/qleroy/aml/lab5.html
 ```
 
+####  Fraud detection using K-Means clustering
+
+```
+https://www.kaggle.com/isaikumar/credit-card-fraud-detection-using-k-means-and-knn
+
+Credit Card Fraud Detection Dataset
+https://www.kaggle.com/isaikumar/creditcardfraud
+```
 # C.Deep Leaning
 ```
 Application of deep learning to cybersecurity: A survey
