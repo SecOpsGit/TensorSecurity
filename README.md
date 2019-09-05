@@ -296,11 +296,19 @@ Deep Learning for Ransomware Detection
 ```
 
 # C1.CNN 卷積神經網絡  Convolutional Neural Network
+```
+CNN Variants
+https://www.youtube.com/watch?v=0g2DGh2JQEY
 
+
+```
 ## C1.1.Computer Vision機器視覺與CNN
 
 ## C1.2_圖像分類與CNN:從ImageNet與ILSVRC (2010-2017)看CNN進展
-
+```
+CNN Case Study
+https://www.youtube.com/watch?v=h9Gt67Gntvc
+```
 ## C1.3_CNN 實作CNN_lab
 ```
 CNN_lab1:Image Claiification實作
