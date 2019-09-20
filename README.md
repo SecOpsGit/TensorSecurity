@@ -1,5 +1,9 @@
 # TensorSecurity
 
+```
+https://scikit-learn.org/stable/modules/classes.html
+```
+
 # Tensorflow 人工智慧與資訊安全應用實務課程
 
 ### 學員自我評量
