@@ -1,9 +1,17 @@
 # gbdt回歸
 ```
+Gradient boosting(GB)
 
+Gradient boosting Decision Tree(GBDT)
 
+GBDT幾乎可用於所有迴歸問題（線性/非線性），
+相對logistic regression僅能用於線性迴歸，
+GBDT的適用面非常廣。亦可用於二分類問題（設定閾值，大於閾值為正例，反之為負例）。
 ```
 
+```
+https://www.itread01.com/content/1545396730.html
+```
 # sklearn的gbdt回歸
 ```
 sklearn中的gbdt實現是GradientBoostingRegressor類別。
