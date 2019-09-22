@@ -32,7 +32,8 @@ Boosting:xgboost
 ```
 
 ```
-
+ChiMerge 演算法: 以鳶尾花資料集為例
+http://www.aiuxian.com/article/p-2235897.html
 
 ```
 
