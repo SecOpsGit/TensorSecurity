@@ -25,6 +25,8 @@ print(bos.describe())
 ```
 https://medium.com/@haydar_ai/learning-data-science-day-9-linear-regression-on-boston-housing-dataset-cd62a80775ef
 https://towardsdatascience.com/machine-learning-project-predicting-boston-house-prices-with-regression-b4e47493633d
+
+https://github.com/7saheelahmed/Boston-Housing-EDA/blob/master/Boston%20Housing.ipynb
 ```
 # Linear Regression
 ```
