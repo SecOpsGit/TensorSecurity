@@ -5,6 +5,8 @@ https://catboost.ai/docs/concepts/about.html
 https://catboost.ai/#benchmark
 
 https://catboost.ai/docs/concepts/tutorials.html
+
+https://github.com/catboost/tutorials
 ```
 
 ```
