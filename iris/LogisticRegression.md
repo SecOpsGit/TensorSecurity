@@ -1,4 +1,14 @@
 #
+```
+numpy.meshgrid
+https://docs.scipy.org/doc/numpy/reference/generated/numpy.meshgrid.html
+
+Meshgrid函数的一些应用场景
+https://www.cnblogs.com/lemonbit/p/7593898.html
+
+Python-Numpy模块Meshgrid函数
+https://zhuanlan.zhihu.com/p/33579211
+```
 
 ```
 import matplotlib.pyplot as plt
