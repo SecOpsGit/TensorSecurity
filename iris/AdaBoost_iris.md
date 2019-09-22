@@ -29,3 +29,15 @@ y_pred = clf.predict(X_test)
 print(classification_report(y_test, y_pred, target_names=['setosa', 'versicolor', 'virginica']))
 
 ```
+```
+              precision    recall  f1-score   support
+
+      setosa       1.00      1.00      1.00        11
+  versicolor       0.83      1.00      0.91         5
+   virginica       1.00      0.93      0.96        14
+
+    accuracy                           0.97        30
+   macro avg       0.94      0.98      0.96        30
+weighted avg       0.97      0.97      0.97        30
+
+```
