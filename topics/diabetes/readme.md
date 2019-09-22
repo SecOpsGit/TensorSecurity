@@ -2,7 +2,29 @@
 
 # Pima印第安人糖尿病資料集
 ```
+https://www.kaggle.com/saurabh00007/diabetescsv
+https://blog.csdn.net/yizheyouye/article/details/79791473
 
+該資料集最初來自國家糖尿病/消化/腎臟疾病研究所。
+
+資料集的目標是基於資料集中包含的某些診斷測量來診斷性的預測 患者是否患有糖尿病。
+
+從較大的資料庫中選擇這些實例有幾個約束條件。
+這裡的所有患者都是Pima印第安至少21歲的女性。
+資料集由多個醫學預測變數和一個目標變數組成Outcome。
+預測變數包括患者的懷孕次數、BMI、胰島素水準、年齡等。
+```
+## 預測變數
+```
+【1】Pregnancies：懷孕次數
+【2】Glucose：葡萄糖
+【3】BloodPressure：血壓 (mm Hg)
+【4】SkinThickness：皮層厚度 (mm)
+【5】Insulin：胰島素 2小時血清胰島素（mu U / ml
+【6】BMI：體重指數 （體重/身高）^2
+【7】DiabetesPedigreeFunction：糖尿病譜系功能
+【8】Age：年齡 （歲）
+【9】Outcome：類標變數 （0或1）
 
 ```
 
