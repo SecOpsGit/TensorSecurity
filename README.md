@@ -6,7 +6,9 @@ TensorFlow Machine Learning Cookbook, Nick McClure(2017)
 https://github.com/nfmcclure/tensorflow_cookbook
 
 ```
-
+```
+http://speech.ee.ntu.edu.tw/~tlkagk/index.html
+```
 # Tensorflow 人工智慧與資訊安全應用實務課程
 
 ### 學員自我評量
