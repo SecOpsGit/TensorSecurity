@@ -1,3 +1,4 @@
+# 二元分類問題binary classification
 
 # Pima印第安人糖尿病資料集
 ```
@@ -21,6 +22,14 @@ https://github.com/Wasim37/machine_learning_code/blob/master/03%20%E5%86%B3%E7%A
 Predict whether the cancer is benign or malignant
 
 https://www.kaggle.com/uciml/breast-cancer-wisconsin-data
+```
+
+
+```
+from sklearn.datasets import load_breast_cancer
+data = load_breast_cancer()
+data.target[[10, 50, 85]]
+list(data.target_names)
 ```
 
 # Lung Cancer Data Set
