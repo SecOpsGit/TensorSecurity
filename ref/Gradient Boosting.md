@@ -11,6 +11,8 @@ https://www.csie.ntu.edu.tw/~htlin/mooc/doc/211_handout.pdf
 
 https://homes.cs.washington.edu/~tqchen/pdf/BoostedTree.pdf
 
+http://www2.stat.duke.edu/~rcs46/lectures_2017/08-trees/08-tree-advanced.pdf
+
 ````
 ```
 
