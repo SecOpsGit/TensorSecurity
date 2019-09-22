@@ -13,15 +13,17 @@ print(boston.DESCR)
 ```
 
 
-# sklearn.datasets.load_diabetes(return_X_y=False)
+# sklearn.datasets.load_diabetes()
 ```
 原始碼分析
 https://github.com/scikit-learn/scikit-learn/blob/1495f6924/sklearn/datasets/base.py
 
+sklearn.datasets.load_diabetes(return_X_y=False)
 L569-L619
 ```
 ### 函數回傳
 ```
+
     return Bunch(data=data, target=target, DESCR=fdescr,
                  feature_names=['age', 'sex', 'bmi', 'bp',
                                 's1', 's2', 's3', 's4', 's5', 's6'],
@@ -37,6 +39,7 @@ https://github.com/scikit-learn/scikit-learn/blob/1495f6924/sklearn/datasets/bas
 L327-L399
 
 ```
+# sklearn.datasets.load_iris()
 ### 函數回傳
 ```
     return Bunch(data=data, target=target,
