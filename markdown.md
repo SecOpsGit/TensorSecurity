@@ -12,3 +12,6 @@
 ------- ------ ---------- -------
 Table: This is a caption
 ```
+* This is a numbered list
+- Where this is list item two
+* And this is list item three
