@@ -1,0 +1,37 @@
+# 完成底下演算法的實測
+
+```
+資料集:
+
+!wget https://raw.githubusercontent.com/MyDearGreatTeacher/AI201909/master/data/pima_data.csv
+```
+
+### LogisticRegression
+```
+from pandas import read_csv
+from sklearn.model_selection import KFold
+from sklearn.model_selection import cross_val_score
+from sklearn.linear_model import LogisticRegression
+# 導入數據
+filename = 'pima_data.csv'
+names = ['preg', 'plas', 'pres', 'skin', 'test', 'mass', 'pedi', 'age', 'class']
+data = read_csv(filename, names=names)
+# 將資料分為輸入資料和輸出結果
+array = data.values
+X = array[:, 0:8]
+Y = array[:, 8]
+
+
+num_folds = 10
+seed = 7
+kfold = KFold(n_splits=num_folds, random_state=seed)
+
+model = LogisticRegression()
+
+result = cross_val_score(model, X, Y, cv=kfold)
+print("演算法評估結果準確度：%.3f%% (%.3f%%)" % (result.mean(), result.std()))
+
+scoring = 'roc_auc'
+result = cross_val_score(model, X, Y, cv=kfold, scoring=scoring)
+print('AUC %.3f (%.3f)' % (result.mean(), result.std()))
+```
