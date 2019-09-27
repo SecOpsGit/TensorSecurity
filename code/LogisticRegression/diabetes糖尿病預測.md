@@ -1,5 +1,9 @@
 #
 ```
+參考資料:End-to-End Data Science Example: Predicting Diabetes with Logistic Regression
+https://towardsdatascience.com/end-to-end-data-science-example-predicting-diabetes-with-logistic-regression-db9bc88b4d16
+```
+```
 # -*- coding: utf-8 -*-
 !wget https://raw.githubusercontent.com/MyDearGreatTeacher/AI201909/master/data/diabetes.csv
 
