@@ -1,5 +1,12 @@
 #
 ```
+參考資料: https://github.com/nsethi31/Kaggle-Data-Credit-Card-Fraud-Detection
+
+資料下載處:
+https://raw.githubusercontent.com/nsethi31/Kaggle-Data-Credit-Card-Fraud-Detection/master/creditcard.csv
+
+```
+```
 # -*- coding: utf-8 -*-
 
 
