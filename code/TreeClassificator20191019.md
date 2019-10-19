@@ -7,6 +7,12 @@
 # 下載資料集
 !wget https://raw.githubusercontent.com/MyDearGreatTeacher/Data/master/iris.data
 ```
+
+### 推薦文章
+```
+史上最詳細的XGBoost實戰
+https://zhuanlan.zhihu.com/p/31182879
+```
 #### xgboost範例程式
 ```
 import xgboost as xgb
@@ -67,13 +73,14 @@ dump_svmlight_file(X_test, y_test, 'dtest.svm', zero_based=True)
 dtrain_svm = xgb.DMatrix('dtrain.svm')
 dtest_svm = xgb.DMatrix('dtest.svm')
 
-# set xgboost params
+# set xgboost params  使用key-values pair
 param = {
     'max_depth': 3,  # the maximum depth of each tree
     'eta': 0.3,  # the training step for each iteration
     'silent': 1,  # logging mode - quiet
     'objective': 'multi:softprob',  # error evaluation for multiclass training
     'num_class': 3}  # the number of classes that exist in this datset
+
 num_round = 20  # the number of training iterations
 
 #------------- numpy array ------------------
@@ -112,12 +119,17 @@ https://lightgbm.readthedocs.io/en/latest/
 https://lightgbm.apachecn.org/#/
 ```
 ```
-Guolin Ke, Qi Meng, Thomas Finley, Taifeng Wang, Wei Chen, Weidong Ma, Qiwei Ye, Tie-Yan Liu. "LightGBM: A Highly Efficient Gradient Boosting Decision Tree". Advances in Neural Information Processing Systems 30 (NIPS 2017), pp. 3149-3157.
+Guolin Ke, Qi Meng, Thomas Finley, Taifeng Wang, Wei Chen, Weidong Ma, Qiwei Ye, Tie-Yan Liu. 
+"LightGBM: A Highly Efficient Gradient Boosting Decision Tree". 
+Advances in Neural Information Processing Systems 30 (NIPS 2017), pp. 3149-3157.
 
-Qi Meng, Guolin Ke, Taifeng Wang, Wei Chen, Qiwei Ye, Zhi-Ming Ma, Tie-Yan Liu. "A Communication-Efficient Parallel Algorithm for Decision Tree". Advances in Neural Information Processing Systems 29 (NIPS 2016), pp. 1279-1287.
+Qi Meng, Guolin Ke, Taifeng Wang, Wei Chen, Qiwei Ye, Zhi-Ming Ma, Tie-Yan Liu. 
+"A Communication-Efficient Parallel Algorithm for Decision Tree". 
+Advances in Neural Information Processing Systems 29 (NIPS 2016), pp. 1279-1287.
 
-Huan Zhang, Si Si and Cho-Jui Hsieh. "GPU Acceleration for Large-scale Tree Boosting". SysML Conference, 2018.
-
+Huan Zhang, Si Si and Cho-Jui Hsieh. 
+"GPU Acceleration for Large-scale Tree Boosting". 
+SysML Conference, 2018.
 ```
 ### LGBMRegressor()
 ```
