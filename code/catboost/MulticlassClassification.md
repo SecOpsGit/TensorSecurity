@@ -19,7 +19,9 @@ from sklearn.metrics import f1_score
 data = load_wine()
 
 print("data info: ")
-print("data contents: ", data.keys()) # dict_keys(['data', 'target', 'target_names', 'DESCR', 'feature_names', 'filename'])
+print("data contents: ", data.keys()) 
+# dict_keys(['data', 'target', 'target_names', 'DESCR', 'feature_names', 'filename'])
+
 print("features: ", data.feature_names)
 print("targets: ", data.target_names)
 print("data shape: ", data.data.shape)
