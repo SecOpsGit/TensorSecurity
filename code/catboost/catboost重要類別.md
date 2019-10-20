@@ -97,3 +97,38 @@ monotone_constraints=None
 )
 
 ```
+
+### Pool
+```
+Pool是catboost中的用於組織資料的一種形式，
+也可以用numpy array和dataframe。但更推薦Pool，其記憶體和速度都更優。
+
+Dataset processing
+The fastest way to pass the features data to the Pool constructor 
+(and other CatBoost, CatBoostClassifier, CatBoostRegressor methods that accept it) 
+if most (or all) of your features are numerical is to pass it using FeaturesData class. 
+
+Another way to get similar performance with datasets that contain numerical features only 
+is to pass features data as numpy.ndarray with numpy.float32 dtype.
+```
+
+```
+class Pool(
+data, 
+label=None,
+cat_features=None,
+column_description=None,
+pairs=None,
+delimiter='\t',
+has_header=False,
+weight=None, 
+group_id=None,
+group_weight=None,
+subgroup_id=None,
+pairs_weight=None
+baseline=None,
+feature_names=None,
+thread_count=-1
+)
+
+```
