@@ -2,6 +2,9 @@
 
 ### CatBoostClassifier
 ```
+catboost.ai/docs/concepts/python-reference_catboostclassifier.html
+```
+```
 class CatBoostClassifier(
 
 iterations=None,
