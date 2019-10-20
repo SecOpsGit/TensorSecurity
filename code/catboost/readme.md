@@ -1,4 +1,4 @@
-# CatBoost (2017) categorical boosting
+# CatBoost (2017)== categorical boosting
 ```
 官方地址：https://tech.yandex.com/CatBoost/
 文檔地址：https://tech.yandex.com/catboost/doc/dg/concepts/about-docpage/
