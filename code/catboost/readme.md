@@ -14,7 +14,7 @@ https://blog.csdn.net/appleyuchi/article/details/85413352
 https://www.biaodianfu.com/catboost.html
 ```
 
-#
+###
 ```
 Gradient Boosting(梯度提升) + Categorical Features(類別型特徵)
 
@@ -33,4 +33,15 @@ Gradient Boosting(梯度提升) + Categorical Features(類別型特徵)
 CatBoost
 第一階段採用梯度步長的無偏估計，
 第二階段使用傳統的GBDT方案執行。
+```
+### catboost @ Google Colab
+```
+!pip install catboost
+
+!pip list | grep catboost
+```
+### 範例程式
+```
+CatBoost tutorials
+https://github.com/catboost/tutorials
 ```
