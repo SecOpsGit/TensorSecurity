@@ -10,6 +10,10 @@ Customization basics: tensors and operations====https://www.tensorflow.org/tutor
 ### Datasets內建資料集==tensorflow_datasets
 ```
 https://www.tensorflow.org/datasets/api_docs/python/tfds
+
+
+Google開源機器學習資料集，可在 TensorFlow 直接調用
+https://www.infoq.cn/article/w7FY0rk5ba-TgzlxyaEY
 ```
 ```
 import tensorflow as tf
@@ -43,9 +47,27 @@ np_datasets = tfds.as_numpy(datasets)
 https://www.tensorflow.org/datasets/catalog/overview
 ```
 ### TensorFlow Hub 
-
 ```
-TensorFlow Hub 是一個針對可重複使用的機器學習模組的庫。
+TensorFlow Hub 是一個針對可重複使用的機器學習模組的類別庫，
+用於發佈、發現和使用機器學習模型中可重複利用的部分。
+模組是一個獨立的 TensorFlow 圖部分，其中包含權重和資源，可以在一個進程中供不同任務重複使用（稱為遷移學習）。
+
+遷移學習可以：
+使用較小的資料集訓練模型，
+改善泛化效果，以及
+加快訓練速度。
+
+Introducing TensorFlow Hub: 
+A Library for Reusable Machine Learning Modules in TensorFlow
+https://medium.com/tensorflow/introducing-tensorflow-hub-a-library-for-reusable-machine-learning-modules-in-tensorflow-cdee41fa18f9
+
+https://www.tensorflow.org/hub/overview
+https://tfhub.dev/
+
+example and tutorials:
+https://github.com/tensorflow/hub/blob/master/examples/README.md
+```
+```
   !pip install "tensorflow_hub==0.4.0"
   !pip install "tf-nightly"
 
@@ -59,12 +81,13 @@ TensorFlow Hub 是一個針對可重複使用的機器學習模組的庫。
   embeddings = embed(["A long sentence.", "single-word",
                       "http://example.com"])
   print(embeddings.shape)  #(3,128)
-
-TensorFlow Hub 是一個庫，用於發佈、發現和使用機器學習模型中可重複利用的部分。模組是一個獨立的 TensorFlow 圖部分，其中包含權重和資源，可以在一個進程中供不同任務重複使用（稱為遷移學習）。遷移學習可以：
-使用較小的資料集訓練模型，
-改善泛化效果，以及
-加快訓練速度。
-
+```
+```
+# Download and use NASNet feature vector module.
+module = hub.Module("https://tfhub.dev/google/imagenet/nasnet_large/feature_vector/1")
+features = module(my_images)
+logits = tf.layers.dense(features, NUM_CLASSES)
+probabilities = tf.nn.softmax(logits)
 ```
 ### TensorFlow tutorials
 ```
