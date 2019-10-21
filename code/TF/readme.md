@@ -103,9 +103,13 @@ https://www.tensorflow.org/tutorials
 用 tf.data 載入圖片  https://www.tensorflow.org/tutorials/load_data/images
 ```
 
-###
+### Transfer learning
 ```
+https://adventuresinmachinelearning.com/transfer-learning-tensorflow-2/
 
+https://lambdalabs.com/blog/tensorflow-2-0-tutorial-02-transfer-learning/
+
+https://github.com/lambdal/TensorFlow2-tutorial
 ```
 # RNN
 ```
