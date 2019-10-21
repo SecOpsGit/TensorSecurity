@@ -7,7 +7,10 @@
 ```
 Customization basics: tensors and operations====https://www.tensorflow.org/tutorials/customization/basics
 ```
-### Datasets內建資料集
+### Datasets內建資料集==tensorflow_datasets
+```
+https://www.tensorflow.org/datasets/api_docs/python/tfds
+```
 ```
 import tensorflow as tf
 import tensorflow_datasets as tfds
@@ -38,6 +41,30 @@ np_datasets = tfds.as_numpy(datasets)
 ```
 ```
 https://www.tensorflow.org/datasets/catalog/overview
+```
+### TensorFlow Hub 
+
+```
+TensorFlow Hub 是一個針對可重複使用的機器學習模組的庫。
+  !pip install "tensorflow_hub==0.4.0"
+  !pip install "tf-nightly"
+
+  import tensorflow as tf
+  import tensorflow_hub as hub
+
+  tf.enable_eager_execution()
+
+  module_url = "https://tfhub.dev/google/tf2-preview/nnlm-en-dim128/1"
+  embed = hub.KerasLayer(module_url)
+  embeddings = embed(["A long sentence.", "single-word",
+                      "http://example.com"])
+  print(embeddings.shape)  #(3,128)
+
+TensorFlow Hub 是一個庫，用於發佈、發現和使用機器學習模型中可重複利用的部分。模組是一個獨立的 TensorFlow 圖部分，其中包含權重和資源，可以在一個進程中供不同任務重複使用（稱為遷移學習）。遷移學習可以：
+使用較小的資料集訓練模型，
+改善泛化效果，以及
+加快訓練速度。
+
 ```
 ### TensorFlow tutorials
 ```
