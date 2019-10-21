@@ -11,6 +11,7 @@ Customization basics: tensors and operations====https://www.tensorflow.org/tutor
 ```
 https://www.tensorflow.org/datasets/api_docs/python/tfds
 
+https://s0www0tensorflow0org.icopy.site/datasets/api_docs/python/tfds
 
 Google開源機器學習資料集，可在 TensorFlow 直接調用
 https://www.infoq.cn/article/w7FY0rk5ba-TgzlxyaEY
