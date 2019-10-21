@@ -45,6 +45,8 @@ np_datasets = tfds.as_numpy(datasets)
 ```
 ```
 https://www.tensorflow.org/datasets/catalog/overview
+
+https://tf.wiki/zh/appendix/tfds.html
 ```
 ### TensorFlow Hub 
 ```
