@@ -3,7 +3,7 @@
 AutoEncoder是深度學習的另外一個重要內容，並且非常有意思，神經網路通過大量資料集，進行end-to-end的訓練，不斷提高其準確率，
 而AutoEncoder通過設計encode和decode過程使輸入和輸出越來越接近，是一種無監督學習過程。
 ```
-# AutoEncoder@ TensorFlow-2
+# AutoEncoder@ TensorFlow-2 | fashion_mnist
 ```
 https://github.com/dragen1860/TensorFlow-2.x-Tutorials/tree/master/11-AE
 
