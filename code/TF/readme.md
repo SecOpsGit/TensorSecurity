@@ -18,6 +18,32 @@ https://github.com/terryum/TensorFlow_Exercises
 ```
 Customization basics: tensors and operations====https://www.tensorflow.org/tutorials/customization/basics
 ```
+### 使用tensorflow 2.x
+```
+開啟新的ipynb
+
+ %tensorflow_version 2.x
+```
+```
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL']='2'
+
+import tensorflow as tf
+
+
+a = tf.constant(1.)
+b = tf.constant(2.)
+print(a+b)
+```
+```
+tf.Tensor(3.0, shape=(), dtype=float32)
+```
+```
+20191023
+原先一開始開啟的ipynb 執行後結果會是 Graph Model
+
+Tensor("add:0", shape=(), dtype=float32)
+```
 ### Datasets內建資料集==tensorflow_datasets
 ```
 https://www.tensorflow.org/datasets/api_docs/python/tfds
@@ -64,7 +90,8 @@ https://tf.wiki/zh/appendix/tfds.html
 ```
 TensorFlow Hub 是一個針對可重複使用的機器學習模組的類別庫，
 用於發佈、發現和使用機器學習模型中可重複利用的部分。
-模組是一個獨立的 TensorFlow 圖部分，其中包含權重和資源，可以在一個進程中供不同任務重複使用（稱為遷移學習）。
+模組是一個獨立的 TensorFlow 圖部分，其中包含權重和資源，
+可以在一個進程中供不同任務重複使用（稱為遷移學習）。
 
 遷移學習可以：
 使用較小的資料集訓練模型，
