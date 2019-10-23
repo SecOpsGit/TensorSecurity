@@ -1,9 +1,9 @@
-#
+# AutoEncoder
 ```
 AutoEncoder是深度學習的另外一個重要內容，並且非常有意思，神經網路通過大量資料集，進行end-to-end的訓練，不斷提高其準確率，
 而AutoEncoder通過設計encode和decode過程使輸入和輸出越來越接近，是一種無監督學習過程。
 ```
-
+# AutoEncoder@ TensorFlow-2
 ```
 https://github.com/dragen1860/TensorFlow-2.x-Tutorials/tree/master/11-AE
 
@@ -91,12 +91,14 @@ class AE(keras.Model):
         return x_hat
 ###################################
 
-
 model = AE()
 model.build(input_shape=(None, 784))
 model.summary()
 
 optimizer = tf.optimizers.Adam(lr=lr)
+
+# 早期版本:optimizer = tf.train.GradientDescentOptimizer(learning_rate)
+
 
 for epoch in range(100):
 
@@ -136,5 +138,26 @@ for epoch in range(100):
 ```
 
 ```
+(60000, 28, 28) (60000,)
+(10000, 28, 28) (10000,)
+Model: "ae_1"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+sequential_2 (Sequential)    multiple                  236436    
+_________________________________________________________________
+sequential_3 (Sequential)    multiple                  237200    
+=================================================================
+Total params: 473,636
+Trainable params: 473,636
+Non-trainable params: 0
+_________________________________________________________________
+0 0 0.6926943063735962
+0 100 0.3214707374572754
+1 0 0.30643314123153687
+1 100 0.3051005005836487
+2 0 0.2951914072036743
+2 100 0.3031919002532959
 
+要跑很久
 ```
