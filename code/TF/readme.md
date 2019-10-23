@@ -1,8 +1,19 @@
-# Tensorflow 系統開發
-
+# Tensorflow 範例程式
 ```
 
+https://github.com/dragen1860/TensorFlow-2.x-Tutorials
+```
+```
+tensorflow2_tutorials_chinese
+tensorflow2中文教程
+https://github.com/czy36mengfei/tensorflow2_tutorials_chinese
+```
+```
+https://github.com/sjchoi86/Tensorflow-101
+https://github.com/aymericdamien/TensorFlow-Examples
+https://github.com/machinelearningmindset/TensorFlow-Course
 
+https://github.com/terryum/TensorFlow_Exercises
 ```
 ```
 Customization basics: tensors and operations====https://www.tensorflow.org/tutorials/customization/basics
