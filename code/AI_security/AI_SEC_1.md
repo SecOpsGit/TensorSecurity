@@ -1,11 +1,57 @@
-#
+# Credit-Card-Fraud-Detection
+```
+Credit Card Fraud Detection | Kaggle
+信用卡客戶違約預測
+預測信用卡客戶下個月是否違約還款
+```
 ```
 參考資料: https://github.com/nsethi31/Kaggle-Data-Credit-Card-Fraud-Detection
 
 資料下載處:
 https://raw.githubusercontent.com/nsethi31/Kaggle-Data-Credit-Card-Fraud-Detection/master/creditcard.csv
-
 ```
+```
+Hands-On Unsupervised Learning Using Python: 
+How to Build Applied Machine Learning Solutions from Unlabeled Data 
+Ankur A. Patel
+https://github.com/aapatel09/handson-unsupervised-learning
+
+[02_end_to_end_machine_learning_project.ipynb
+ 04_anomaly_detection.ipynb]
+```
+```
+A Comparison Study of Credit Card Fraud Detection: Supervised versus Unsupervised
+Xuetong Niu, Li Wang, Xulei Yang
+(Submitted on 24 Apr 2019)
+https://arxiv.org/abs/1904.10604
+
+ 6 supervised classification models, i.e., Logistic Regression (LR), K-Nearest Neighbors (KNN), 
+ Support Vector Machines (SVM), Decision Tree (DT), Random Forest (RF), Extreme Gradient Boosting (XGB), 
+ 
+ as well as 4 unsupervised anomaly detection models, i.e., 
+ One-Class SVM (OCSVM), 
+ Auto-Encoder (AE), 
+ Restricted Boltzmann Machine (RBM), and 
+ Generative Adversarial Networks (GAN), are explored in this study.
+ 
+ We train all these models on a public credit card transaction dataset from Kaggle website, 
+ which contains 492 frauds out of 284,807 transactions. 
+ 
+ The labels of the transactions are used for supervised learning models only. 
+ 
+ The performance of each model is evaluated through 5-fold cross validation 
+ in terms of Area Under the Receiver Operating Curves (AUROC). 
+ 
+ Within supervised approaches, XGB and RF obtain the best performance with AUROC = 0.989 and AUROC = 0.988, respectively. 
+ While for unsupervised approaches, RBM achieves the best performance with AUROC = 0.961, 
+ followed by GAN with AUROC = 0.954. 
+ 
+ The experimental results show that supervised models perform slightly better than unsupervised models in this study. 
+ 
+ Anyway, unsupervised approaches are still promising for credit card fraud transaction detection 
+ due to the insufficient annotation and the data imbalance issue in real-world applications.
+```
+#
 ```
 # -*- coding: utf-8 -*-
 
@@ -47,13 +93,13 @@ sm=SMOTE(random_state=2)
 X_sm,y_sm=sm.fit_sample(X_train,y_train)
 print(X_sm.shape,y_sm.shape)
 print(len(y_sm[y_sm==1]),len(y_sm[y_sm==0]))
-
-from sklearn.linear_model import LogisticRegression
-import matplotlib.pyplot as plt
-from sklearn import metrics
 ```
 # Logistic Regression
 ```
+from sklearn.linear_model import LogisticRegression
+import matplotlib.pyplot as plt
+from sklearn import metrics
+
 logreg=LogisticRegression()
 logreg.fit(X_sm,y_sm)
 y_logreg=logreg.predict(X_test)
