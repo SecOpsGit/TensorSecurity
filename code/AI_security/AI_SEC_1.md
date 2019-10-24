@@ -20,6 +20,13 @@ https://github.com/aapatel09/handson-unsupervised-learning
  04_anomaly_detection.ipynb]
 ```
 ```
+Credit Card Fraud Detection Techniques
+August 14, 2019
+The Top 10 Credit Card Fraud Detection Techniques for eCommerce Sellers
+
+https://chargebacks911.com/credit-card-fraud-detection-techniques/
+```
+```
 A Comparison Study of Credit Card Fraud Detection: Supervised versus Unsupervised
 Xuetong Niu, Li Wang, Xulei Yang
 (Submitted on 24 Apr 2019)
