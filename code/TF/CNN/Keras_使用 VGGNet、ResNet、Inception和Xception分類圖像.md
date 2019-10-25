@@ -1,23 +1,7 @@
-#
-```
-TensorFlow深度學習實戰
-　叢書名稱：	智能系統與技術叢書
-　作　　者：	(波蘭)安東尼奧‧古利
-　出版單位：	機械工業
-　ＩＳＢＮ：	9787111615750
- 
-TensorFlow 1.x Deep Learning Cookbook
-Antonio Gulli, Amita Kapoor
-December 12, 2017
-536 pages
-
-https://github.com/PacktPublishing/TensorFlow-1x-Deep-Learning-Cookbook
-
-5.4　使用 VGGNet、ResNet、Inception和Xception分類圖像 
-```
-
 # keras.applications模組
 ```
+https://keras.io/zh/applications/
+
 Keras 的應用模組（keras.applications）提供了帶有預訓練權值的深度學習模型，
 這些模型可以用來進行預測、特徵提取和微調（fine-tuning）。
 
@@ -67,6 +51,45 @@ print('Predicted:', decode_predictions(preds, top=3)[0])
 # Predicted: [(u'n02504013', u'Indian_elephant', 0.82658225), 
 # (u'n01871265', u'tusker', 0.1122357), (u'n02504458', u'African_elephant', 0.061040461)]
 
+```
+## 從VGG19 的任意中間層中抽取特徵
+```
+
+from keras.applications.vgg19 import VGG19
+from keras.preprocessing import image
+from keras.applications.vgg19 import preprocess_input
+from keras.models import Model
+import numpy as np
+
+base_model = VGG19(weights='imagenet')
+
+model = Model(inputs=base_model.input, outputs=base_model.get_layer('block4_pool').output)
+# 從VGG19 的任意中間層中抽取特徵==get_layer('block4_pool')
+
+img_path = 'elephant.jpg'
+img = image.load_img(img_path, target_size=(224, 224))
+x = image.img_to_array(img)
+x = np.expand_dims(x, axis=0)
+x = preprocess_input(x)
+
+block4_pool_features = model.predict(x)
+```
+#
+```
+TensorFlow深度學習實戰
+　叢書名稱：	智能系統與技術叢書
+　作　　者：	(波蘭)安東尼奧‧古利
+　出版單位：	機械工業
+　ＩＳＢＮ：	9787111615750
+ 
+TensorFlow 1.x Deep Learning Cookbook
+Antonio Gulli, Amita Kapoor
+December 12, 2017
+536 pages
+
+https://github.com/PacktPublishing/TensorFlow-1x-Deep-Learning-Cookbook
+
+5.4　使用 VGGNet、ResNet、Inception和Xception分類圖像 
 ```
 
 # 使用 VGGNet、ResNet、Inception和Xception分類圖像
