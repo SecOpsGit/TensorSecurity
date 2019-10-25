@@ -1,6 +1,8 @@
 #
 ```
+https://zhuanlan.zhihu.com/p/59506238
 
+https://zhuanlan.zhihu.com/p/59507137
 ```
 ```
 %tensorflow_version 2.x
