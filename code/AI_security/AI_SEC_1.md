@@ -90,7 +90,8 @@ len(y[y==1])
 len(y[y==0])
 
 #splitting the data set into train and test (75:25)
-from sklearn.cross_validation import train_test_split
+#from sklearn.cross_validation import train_test_split
+from sklearn.model_selection  import train_test_split
 X_train,X_test,y_train,y_test=train_test_split(X,y,test_size=0.25,random_state=1)
 print(X_train.shape,X_test.shape,y_train.shape,y_test.shape)
 
