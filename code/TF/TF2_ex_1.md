@@ -7,9 +7,8 @@
 Hands-On Neural Networks with TensorFlow 2.0
 Paolo Galeone
 September 18, 2019
-CH4
 ```
-###
+### CH4
 ```
 import tensorflow as tf
 
