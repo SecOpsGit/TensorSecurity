@@ -188,6 +188,51 @@ for epoch in range(num_epochs):
 ```
 
 ```
+Downloading and preparing dataset tf_flowers (218.21 MiB) to /root/tensorflow_datasets/tf_flowers/1.0.0...
+Dl Completed...
+1/|/100% 1/1 [00:06<00:00, 3.29s/ url]
+Dl Size...
+218/|/100% 218/218 [00:05<00:00, 36.43 MiB/s]
+Extraction completed...
+1/|/100% 1/1 [00:05<00:00, 5.93s/ file]
 
+
+
+
+WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/tensorflow_datasets/core/file_format_adapter.py:209: tf_record_iterator (from tensorflow.python.lib.io.tf_record) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use eager execution and: 
+`tf.data.TFRecordDataset(path)`
+WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/tensorflow_datasets/core/file_format_adapter.py:209: tf_record_iterator (from tensorflow.python.lib.io.tf_record) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use eager execution and: 
+`tf.data.TFRecordDataset(path)`
+Dataset tf_flowers downloaded and prepared to /root/tensorflow_datasets/tf_flowers/1.0.0. Subsequent calls will reuse this data.
+tfds.core.DatasetInfo(
+    name='tf_flowers',
+    version=1.0.0,
+    description='A large set of images of flowers',
+    urls=['http://download.tensorflow.org/example_images/flower_photos.tgz'],
+    features=FeaturesDict({
+        'image': Image(shape=(None, None, 3), dtype=tf.uint8),
+        'label': ClassLabel(shape=(), dtype=tf.int64, num_classes=5),
+    }),
+    total_num_examples=3670,
+    splits={
+        'train': 3670,
+    },
+    supervised_keys=('image', 'label'),
+    citation="""@ONLINE {tfflowers,
+    author = "The TensorFlow Team",
+    title = "Flowers",
+    month = "jan",
+    year = "2019",
+    url = "http://download.tensorflow.org/example_images/flower_photos.tgz" }""",
+    redistribution_info=,
+)
+
+train set size:  1835
+validation set size:  918
+test set size:  917
 
 ```
