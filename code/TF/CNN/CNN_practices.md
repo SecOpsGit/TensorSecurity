@@ -470,6 +470,11 @@ for epoch in range(100):
     print(epoch, 'evaluation acc:', acc_meter.result().numpy())
 ```
 ### ResNet-18 on Fashion-MNIST
+```
+https://github.com/dragen1860/TensorFlow-2.x-Tutorials/
+深度学习与TensorFlow入门实战-源码和PPT目錄底下
+lesson43-ResNet
+```
 
 ```
 import  os
