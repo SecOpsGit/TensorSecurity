@@ -105,6 +105,15 @@ tf.executing_eagerly()
 True
 ```
 
+### 可在 Tensorflow 2.0disable
+```
+It is still possible to run 1.X code, unmodified (except for contrib), in TensorFlow 2.0
+```
+```
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
+```
+
 ### 無須再使用 tf.Session
 ```
 # Define constant tensors
