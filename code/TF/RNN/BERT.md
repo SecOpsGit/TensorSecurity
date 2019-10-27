@@ -1,6 +1,9 @@
 #
 
 ```
+Transfer Learning
+Re-use knowledge from pre-trained model
+
 Transfer Learning in NLP
 Word2Vec(2014)
 Glove(2014)
