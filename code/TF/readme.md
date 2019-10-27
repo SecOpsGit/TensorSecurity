@@ -1,5 +1,10 @@
 #
 ```
+%tensorflow_version 2.x
+```
+
+# TensorFlow in Practice 專項課程
+```
 deeplearning.ai TensorFlow in Practice 專項課程
 
 此專項課程包含 4 門課程
