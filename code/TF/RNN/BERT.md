@@ -1,6 +1,12 @@
 #
 
 ```
+Transfer Learning in NLP
+Word2Vec(2014)
+Glove(2014)
+ULMFit(2018)
+ELMo(2018)
+
 BERT 原理與模型架構
 https://www.youtube.com/watch?v=gciHGREJdJ4
 
