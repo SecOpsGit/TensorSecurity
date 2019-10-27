@@ -1,6 +1,8 @@
 #
 
 ```
+BERT 原理與模型架構
+https://www.youtube.com/watch?v=gciHGREJdJ4
 
 
 ```
