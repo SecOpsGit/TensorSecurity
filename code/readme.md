@@ -1,6 +1,11 @@
 
 #
 ```
+https://github.com/fastai/fastai
+The fastai deep learning library, plus lessons and tutorials http://docs.fast.ai
+```
+
+```
 Deep Learning Book Series · 2.2 Multiplying Matrices and Vectors
 https://hadrienj.github.io/posts/Deep-Learning-Book-Series-2.2-Multiplying-Matrices-and-Vectors/
 ```
