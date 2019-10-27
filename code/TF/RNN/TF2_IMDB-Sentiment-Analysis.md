@@ -1,10 +1,49 @@
-#
+# 情緒分析sentiment analysis
+```
+Sentiment analysis (opinion mining or emotion AI) 
+https://en.wikipedia.org/wiki/Sentiment_analysis
+
+
+很多線上社群網站會蒐集使用者的資料，並且分析使用者行為，像是知名的Facebook在前幾年開始做「情緒分析(sentiment analysis)」，
+它是以文字分析、自然語言處理NLP的方法，找出使用者的評價、情緒，進而預測出使用者行為來進行商業決策，
+像這樣一連串利用情緒分析帶來的商業價值是相當可觀的。
 ```
 
+```
+陳宜欣/大數據下的情緒分析
+https://www.slideshare.net/tw_dsconf/ss-64076883
+```
+```
+基於文件為基礎的情緒分類(Document-based sentiment classification)
+以主觀的概念做情緒分析(Subjectivity and sentiment classification)
+以外觀(屬性)為基礎的情緒分析(Aspect‐based sentiment analysis)
+建立情緒字彙的情緒分析(Lexicon‐based sentiment analysis)
+```
+```
+wiki:https://zh.wikipedia.org/wiki/%E6%96%87%E6%9C%AC%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90
+
+2008 Survey Article - Opinion mining and sentiment analysis (Pang & Lee)
+     http://www.cs.cornell.edu/home/llee/omsa/omsa.pdf
+2011 Survey Article - Comprehensive Review Of Opinion Summarization (Kim et al)
+2013 Survey Article - New Avenues in Opinion Mining and Sentiment Analysis (Cambria et al)
+https://web.archive.org/web/20141213014514/http://kavita-ganesan.com/sites/default/files/survey_opinionSummarization.pdf
+
+```
+```
+[2015]網路美食評論情緒分析之研究.  Online Gastronomy Review Based on Sentiment Analysis
+https://ndltd.ncl.edu.tw/cgi-bin/gs32/gsweb.cgi/login?o=dnclcdr&s=id=%22103NKHC0255011%22.&searchmode=basic
+
+[2014]使用情緒分析於圖書館使用者滿意度評估之研究
+A Study on Library Users’ Satisfaction Evaluation Using Sentimental Analysis
+http://lac3.glis.ntnu.edu.tw/vj-attachment/2014/03/attach146.pdf
+
+[繁體中文/NLP] 從word2vec到 情感分析
+https://studentcodebank.wordpress.com/2019/02/22/%E7%B9%81%E9%AB%94%E4%B8%AD%E6%96%87-nlp-%E5%BE%9Eword2vec%E5%88%B0-%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90/
+https://chunshan-theta.github.io/NLPLab/
 ```
 ### IMDb-Movie-Review
 ```
-
+IMDb網路電影影評資料集
 ```
 ### Sentiment Analysis on IMDb
 ```
@@ -129,5 +168,8 @@ Epoch 4/20
 25000/25000 [==============================] - 120s 5ms/sample - loss: 0.1317 - accuracy: 0.9477 - val_loss: 0.4900 - val_accuracy: 0.8291
 Epoch 5/20
 
+
+```
+```
 
 ```
