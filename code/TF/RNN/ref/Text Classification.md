@@ -21,7 +21,7 @@ Bag of Tricks for Efficient Text Classification
 ```
 https://paperswithcode.com/task/sentence-classification
 ```
-### CNN@句子分类[2014]
+### CNN@句子分类[2014] 
 ```
 Convolutional Neural Networks for Sentence Classification (EMNLP 2014)
 Yoon Kim
@@ -46,8 +46,19 @@ which include sentiment analysis and question classification.
 用CNN做句子分类：CNN Sentence Classification (with Theano code)
 https://zhuanlan.zhihu.com/p/24758451
 
+TextCnn原理及实践
+https://blog.csdn.net/John_xyz/article/details/79210088
+
+深入TextCNN（一）详述CNN及TextCNN原理
+https://zhuanlan.zhihu.com/p/77634533
+
+自然语言中的CNN--TextCNN（基础篇）
+https://zhuanlan.zhihu.com/p/40276005
+
 讀論文《Convolutional Neural Networks for Sentence Classification》
 https://codertw.com/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80/582186/
+
+https://kknews.cc/tech/x5lzepr.html
 ```
 
 # Text Classification文本分類
