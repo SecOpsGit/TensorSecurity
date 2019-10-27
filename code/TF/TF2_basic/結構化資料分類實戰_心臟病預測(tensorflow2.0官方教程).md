@@ -1,6 +1,10 @@
 # 結構化資料分類實戰：心臟病預測(tensorflow2.0官方教程)
 ```
 
+https://www.mashangxue123.com/tensorflow/tf2-tutorials-keras-feature_columns.html
+```
+
+```
 本教程演示了如何對結構化資料進行分類（例如CSV格式的表格資料）。
 我們將使用Keras定義模型，並使用特徵列作為橋樑，將CSV中的列映射到用於訓練模型的特性。
 本教程包含完整的代碼：
