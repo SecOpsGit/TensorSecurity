@@ -5,6 +5,12 @@ https://colab.research.google.com/github/czy36mengfei/tensorflow2_tutorials_chin
 ```
 ```
 https://zhuanlan.zhihu.com/p/61280722
+
+https://github.com/skywall34/BabyGan
+
+Developing a DCGAN Model in Tensorflow 2.0
+https://towardsdatascience.com/developing-a-dcgan-model-in-tensorflow-2-0-396bc1a101b2
+
 ```
 ```
 %tensorflow_version 2.x
