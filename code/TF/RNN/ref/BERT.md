@@ -12,8 +12,12 @@ ELMo(2018)
 
 BERT 原理與模型架構
 https://www.youtube.com/watch?v=gciHGREJdJ4
+```
+```
+Bert: NLP 中文意圖分類
+https://studentcodebank.wordpress.com/2019/08/18/bert-nlp-%e4%b8%ad%e6%96%87%e6%84%8f%e5%9c%96%e5%88%86%e9%a1%9e/
 
-
+https://github.com/Chunshan-Theta/bert-classify-chinese
 ```
 
 ```
