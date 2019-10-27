@@ -1,6 +1,17 @@
+# NLP==Natural Language Processing==自然語言處理
 
+## NLP using NLTK
+```
+Python 和 NLTK 自然語言處理 (Natural Language Processing: Python and NLTK)
+[印度] 尼天·哈登尼亞（Nitin Hardeniya）雅各布·帕金斯（Jacob Perkins） 迪蒂·喬普拉（Deepti Chopra） 尼什·斯喬希
+人民郵電 出版日期:2019-06-01
 
-## 
+Natural Language Processing: Python and NLTK
+Jacob Perkins, Nitin Hardeniya, Et al
+November 22, 2016
+https://github.com/PacktPublishing/Natural-Language-Processing-Python-and-NLTK
+```
+## NLP using PyTorch 
 ```
 new fast.ai course: A Code-First Introduction to Natural Language Processing
 Written: 08 Jul 2019 by Rachel Thomas
@@ -75,4 +86,15 @@ https://blog.csdn.net/qq_39422642/article/details/78658309
 
 ```
 
+## NLP using TensorFlow 1.x
+```
+Natural Language Processing with TensorFlow
+Thushan Ganegedara
+May 30, 2018
 
+TensorFlow 自然語言處理
+善用 Python 深度學習函式庫，教機器學會自然語言 (Natural Language Processing with TensorFlow)
+Thushan Ganegedara 著 藍子軒 譯 碁峰資訊 出版日期:2019-09-09
+
+https://github.com/PacktPublishing/Natural-Language-Processing-with-TensorFlow
+```
