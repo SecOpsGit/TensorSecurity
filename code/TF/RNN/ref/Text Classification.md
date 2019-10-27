@@ -56,6 +56,26 @@ https://paperswithcode.com/task/text-classification
 ```
 ### XLNET(2019)
 
+### Char-CNN[2015]
+```
+Character-level Convolutional Networks for Text Classification
+NeurIPS 2015 • Xiang Zhang • Junbo Zhao • Yann LeCun
+(Submitted on 4 Sep 2015 (v1), last revised 4 Apr 2016 (this version, v3))
+
+https://paperswithcode.com/paper/character-level-convolutional-networks-for
+
+This article offers an empirical exploration on the use of character-level convolutional networks (ConvNets) for text classification. 
+
+We constructed several large-scale datasets to show that character-level convolutional networks 
+could achieve state-of-the-art or competitive results. 
+
+Comparisons are offered against traditional models such as bag of words, n-grams and their TFIDF variants, 
+and deep learning models such as word-based ConvNets and recurrent neural networks.
+```
+```
+
+```
+
 ### Very Deep Convolutional Networks for Text Classification[2016]
 ```
 https://arxiv.org/abs/1606.01781
@@ -72,4 +92,16 @@ using up to 29 convolutional layers,
 we report improvements over the state-of-the-art on several public text classification tasks. 
 
 To the best of our knowledge, this is the first time that very deep convolutional nets have been applied to text processing.
+```
+
+# Document Classification
+```
+https://paperswithcode.com/task/document-classification
+```
+```
+
+```
+# Text Categorization
+```
+https://paperswithcode.com/task/text-classification
 ```
