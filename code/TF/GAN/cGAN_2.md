@@ -5,6 +5,14 @@ TensorFlow实现CGAN
 
 https://blog.csdn.net/MOU_IT/article/details/80719465
 ```
+```
+#你寫錯了 那個feed字典裡面傳入的y應該是一個隨機的假label，而不是真實資料集的batch大小的
+#那這裡也要加一個假的條件y
+y_fake = np.zeros(shape=[batch_size, y_size])
+y_fake[:, 5] = 1  # 生成的假的標籤
+#在下面batch的上面 
+feed_dict={x_data: x_value, y:y_fake,z_prior: z_value, keep_prob: np.sum(0.7).astype(np.float32)} 
+```
 
 ```
 #coding=utf-8
