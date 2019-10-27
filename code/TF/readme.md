@@ -1,3 +1,23 @@
+#
+```
+deeplearning.ai TensorFlow in Practice 專項課程
+
+此專項課程包含 4 門課程
+
+課程 1
+Introduction to TensorFlow for Artificial Intelligence, Machine Learning, and Deep Learning
+
+課程 2
+Convolutional Neural Networks in TensorFlow
+
+課程 3
+Natural Language Processing in TensorFlow
+
+課程 4
+Sequences, Time Series and Prediction
+```
+
+
 # Tensorflow 範例程式
 ```
 
