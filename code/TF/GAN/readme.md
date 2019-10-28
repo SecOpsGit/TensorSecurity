@@ -67,6 +67,16 @@ StyleGAN(2018) https://thispersondoesnotexist.com/
 
 https://towardsdatascience.com/must-read-papers-on-gans-b665bbae3317
 ```
+
+### Awesome GAN
+```
+https://github.com/nightrome/really-awesome-gan
+https://github.com/nashory/gans-awesome-applications
+https://github.com/Faldict/awesome-GAN
+https://github.com/dongb5/GAN-Timeline
+
+https://github.com/hindupuravinash/the-gan-zoo
+```
 ```
 论文地址：https://arxiv.org/abs/1906.00446
 更多样本地址：https://drive.google.com/file/d/1H2nr_Cu7OK18tRemsWn_6o5DGMNYentM/view
