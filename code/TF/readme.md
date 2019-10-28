@@ -2,7 +2,24 @@
 ```
 %tensorflow_version 2.x
 ```
+#
+```
+ %tensorflow_version 2.x
 
+!git clone https://github.com/dragen1860/TensorFlow-2.x-Tutorials.git
+
+!ls
+
+# Commented out IPython magic to ensure Python compatibility.
+# %cd TensorFlow-2.x-Tutorials
+!ls
+
+# Commented out IPython magic to ensure Python compatibility.
+# %cd 15-CycleGAN
+!ls
+
+!python main.py
+```
 # TensorFlow in Practice 專項課程
 ```
 deeplearning.ai TensorFlow in Practice 專項課程
