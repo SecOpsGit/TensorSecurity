@@ -19,6 +19,11 @@
       https://arxiv.org/abs/1312.6114
       
       Tutorial on Variational Autoencoders  https://arxiv.org/abs/1606.05908
+      近三年來，變分自編碼（VAE）作為一種無監督學習複雜分佈的方法受到人們關注，
+      VAE因其基於標準函數近似（神經網路）而吸引人，並且可以通過隨機梯度下降進行訓練。
+      VAE已經在許多生成複雜資料包括手寫字體[1,2]、人臉圖像[1,3,4]、住宅編碼[5,6]、CIFAR圖像[6]、物理模型場景[4]、分割[7]
+      以及預測靜態圖像[8]上顯現優勢。本教程介紹VAE背後的靈感和數學解釋，以及一些實證。沒有變分貝葉斯方法假設的先驗知識。
+      
       
       An Introduction to Variational Autoencoders
       Diederik P. Kingma, Max Welling
