@@ -1,9 +1,39 @@
 
 # Generative Model生成式模型  unsupervised Deep Learning
 ```
-Auto-Encoders 與Varitional Auto-Encoders
-Generative Adversarial Network (GAN) 
-Flow-Based(2014/2018)
+[A]Generative Adversarial Network (GAN) 
+
+[B]Likelihood-based methods
+  have three main categories: 
+  [B1]Autoregressive models 
+      Durk P Kingma, Tim Salimans, Rafal Jozefowicz, Xi Chen, Ilya Sutskever, and Max Welling.
+      Improved variational inference with inverse autoregressive flow. 
+      In D. D. Lee, M. Sugiyama,U. V. Luxburg, I. Guyon, and R. Garnett, editors, 
+      Advances in Neural Information Processing Systems 29, pages 4743–4751. Curran Associates, Inc., 2016.
+      https://arxiv.org/abs/1606.04934
+      
+  [B2]Variational autoencoders (VAEs) Auto-Encoders 與Varitional Auto-Encoders
+      Diederik P. Kingma and Max Welling. Auto-encoding variational bayes. 
+      In 2nd International Conference on Learning Representations, 
+      ICLR 2014, Banff, AB, Canada, April 14-16, 2014, Conference Track Proceedings, 2014.
+      https://arxiv.org/abs/1312.6114
+      
+      Tutorial on Variational Autoencoders  https://arxiv.org/abs/1606.05908
+      
+      An Introduction to Variational Autoencoders
+      Diederik P. Kingma, Max Welling
+      (Submitted on 6 Jun 2019 (v1), last revised 24 Jul 2019 (this version, v2))
+      https://arxiv.org/abs/1906.02691
+      
+      VAE(Variational Autoencoder)的原理
+      https://www.cnblogs.com/huangshiyu13/p/6209016.html
+      論文的理論推導見：https://zhuanlan.zhihu.com/p/25401928
+      https://github.com/kvfrans/variational-autoencoder 
+      和一个整理好的版本： https://jmetzen.github.io/2015-11-27/vae.html
+      
+  [B3]Flow-based models (2014/2018:GLOW)  
+    The flow-based generative model is constructed using a sequence of invertible and tractable transformations, 
+    the model explicitly learns the data distribution and therefore the loss function is simply a negative log-likelihood
 ```
 ```
 史丹佛大學著名課程 http://cs231n.stanford.edu/
@@ -28,12 +58,14 @@ CycleGAN(2017)
 BigGAN(2018)[史上最强 GAN 图像生成器]====BigGAN_Deep(2019)[更嚇人]
 StyleGAN(2018) https://thispersondoesnotexist.com/
 [最强非 GAN 生成器]Vector Quantized Variational AutoEncoder (VQ-VAE) models(2019)
+
+
+https://towardsdatascience.com/must-read-papers-on-gans-b665bbae3317
 ```
 ```
 论文地址：https://arxiv.org/abs/1906.00446
 更多样本地址：https://drive.google.com/file/d/1H2nr_Cu7OK18tRemsWn_6o5DGMNYentM/view
 
-https://towardsdatascience.com/must-read-papers-on-gans-b665bbae3317
 
 
 改进 GAN 训练的技术 —— Salimans et al. (2016)
@@ -44,11 +76,6 @@ https://towardsdatascience.com/must-read-papers-on-gans-b665bbae3317
 Improved Techniques for Training GANs
 Tim Salimans, Ian Goodfellow, Wojciech Zaremba, Vicki Cheung, Alec Radford, Xi Chen
 https://arxiv.org/abs/1606.03498
-
-
-
-
-
 
 
 Progressively Growing GANs— Karras et al. (2017)
@@ -72,23 +99,6 @@ https://arxiv.org/abs/1710.10196
 迄今最真实的 GAN：英伟达渐进增大方式训练 GAN，生成前所未有高清图像
 
 
-
-
-
-StyleGAN — Karras et al. (2019)
-
-StyleGAN 模型可以说是最先进的，特别是利用了潜在空间控制。
-该模型借鉴了神经风格迁移中一种称为自适应实例标准化 (AdaIN) 的机制来控制潜在空间向量 z。
-映射网络和 AdaIN 条件在整个生成器模型中的分布的结合使得很难自己实现一个 StyleGAN，
-但它仍是一篇很好的论文，包含了许多有趣的想法。
-
-论文：
-A Style-Based Generator Architecture for Generative Adversarial Networks
-Tero Karras, Samuli Laine, Timo Aila
-https://arxiv.org/abs/1812.04948
-
-
-
 CycleGAN — Zhu et al. (2017)
 
 CycleGAN 的论文不同于前面列举的 6 篇论文，因为它讨论的是 image-to-image 的转换问题，而不是随机向量的图像合成问题。
@@ -103,29 +113,11 @@ Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks
 Jun-Yan Zhu, Taesung Park, Phillip Isola, Alexei A. Efros
 https://arxiv.org/abs/1703.10593
 
-
-
-Pix2Pix — Isola et al. (2016)
-Pix2Pix 是另一种图像到图像转换的 GAN 模型。
-该框架使用成对的训练样本，并在GAN 模型中使用多种不同的配置。
-读这篇论文时，我觉得最有趣部分是关于 PatchGAN的讨论。
-PatchGAN 通过观察图像的 70×70 的区域来判断它们是真的还是假的，而不是查看整个图像。
-该模型还展示了一个有趣的 U-Net 风格的生成器架构，以及在生成器模型中使用 ResNet 风格的 skip connections。
-Pix2Pix 有很多很酷的应用，比如将草图转换成逼真的照片。
-
-
-论文：
-Image-to-Image Translation with Conditional Adversarial Networks
-Phillip Isola, Jun-Yan Zhu, Tinghui Zhou, Alexei A. Efros
-https://arxiv.org/abs/1611.07004
-
 ```
 # HOT
 ### BigGAN(2018)====BigGAN_Deep(2019)
 ```
 BigGAN(2018)[史上最強 GAN 圖像生成器]====BigGAN_Deep(2019)[更嚇人]
-
-BigGAN — Brock et al. (2019)
 
 BigGAN 模型是基於 ImageNet 生成圖像品質最高的模型之一。
 該模型很難在本地機器上實現，而且 BigGAN 有許多元件，如 Self-Attention、 Spectral Normalization 
@@ -142,11 +134,56 @@ BigGAN TF Hub demo 地址：https://tfhub.dev/s?q=biggan
 
 https://colab.research.google.com/github/tensorflow/hub/blob/master/examples/colab/biggan_generation_with_tf_hub.ipynb#scrollTo=Cd1dhL4Ykbm7
 ```
+```
+[BigGAN-PyTorch]https://github.com/ajbrock/BigGAN-PyTorch
+```
 
-### StyleGAN(2018) 
+### StyleGAN(2018)
 ```
+https://github.com/paubric/thisrepositorydoesnotexist
+
+http://botpoet.com/vote/o-little-root-dream/
+
 https://thispersondoesnotexist.com/
+https://thiscatdoesnotexist.com/
+thesecatsdonotexist.com
+https://www.thiswaifudoesnotexist.net/
+https://www.obormot.net/demos/these-waifus-do-not-exist
+https://thisairbnbdoesnotexist.com/
 ```
+```
+A Style-Based Generator Architecture for Generative Adversarial Networks
+Tero Karras, Samuli Laine, Timo Aila
+
+https://arxiv.org/abs/1812.04948
+https://github.com/NVlabs/stylegan
+FFHQ 資料集：https://github.com/NVlabs/ffhq-dataset
+
+We propose an alternative generator architecture for generative adversarial networks, 
+borrowing from style transfer literature. 
+
+The new architecture leads to an automatically learned, unsupervised separation of high-level attributes 
+(e.g., pose and identity when trained on human faces) 
+and stochastic variation in the generated images (e.g., freckles, hair), 
+and it enables intuitive, scale-specific control of the synthesis. 
+
+The new generator improves the state-of-the-art in terms of traditional distribution quality metrics, 
+leads to demonstrably better interpolation properties, 
+and also better disentangles the latent factors of variation. 
+
+To quantify interpolation quality and disentanglement, 
+we propose two new, automated methods that are applicable to any generator architecture. 
+Finally, we introduce a new, highly varied and high-quality dataset of human faces.
+```
+
+```
+https://www.ifanr.com/1173717
+
+StyleGAN 模型可以說是最先進的，特別是利用了潛在空間控制。
+該模型借鑒了神經風格遷移中一種稱為自我調整實例標準化 (AdaIN) 的機制來控制潛在空間向量 z。
+映射網路和 AdaIN 條件在整個生成器模型中的分佈的結合使得很難自己實現一個 StyleGAN，
+```
+
 ### VQ-VAE-2(2019)
 ```
 [最强非 GAN 生成器]Vector Quantized Variational AutoEncoder (VQ-VAE) models(2019)
@@ -158,7 +195,136 @@ Ali Razavi, Aaron van den Oord, Oriol Vinyals
 (Submitted on 2 Jun 2019)
 https://arxiv.org/abs/1906.00446
 ```
+### openai/GLOW(2018)
+```
+https://blog.openai.com/glow/
 
+
+Glow: Generative Flow with Invertible 1x1 Convolutions
+Diederik P. Kingma, Prafulla Dhariwal
+(Submitted on 9 Jul 2018 (v1), last revised 10 Jul 2018 (this version, v2))
+In Advances in Neural Information Processing Systems (pp. 10215-10224).
+https://arxiv.org/abs/1807.03039
+
+[Tensorflow 1.8]https://github.com/openai/glow
+https://kknews.cc/tech/j4ra2ey.html
+
+Flow-based generative models (Dinh et al., 2014) are conceptually attractive 
+due to tractability of the exact log-likelihood, tractability of exact latent-variable inference, 
+and parallelizability of both training and synthesis. 
+
+In this paper we propose Glow, a simple type of generative flow using an invertible 1x1 convolution. 
+
+Using our method we demonstrate a significant improvement in log-likelihood on standard benchmarks.
+Perhaps most strikingly, we demonstrate that a generative model optimized 
+towards the plain log-likelihood objective 
+is capable of efficient realistic-looking synthesis and manipulation of large images. 
+```
+#### 後續發展
+```
+WaveGlow: A Flow-based Generative Network for Speech Synthesis
+Ryan Prenger, Rafael Valle, Bryan Catanzaro
+(Submitted on 31 Oct 2018)
+
+https://github.com/NVIDIA/waveglow
+
+
+In this paper we propose WaveGlow: a flow-based network capable of 
+generating high quality speech from mel-spectrograms[https://zh.wikipedia.org/wiki/梅爾倒頻譜]. 
+
+# mel-frequency cepstrum (MFC) 
+# https://github.com/astorfi/speechpy
+# SpeechPy - A Library for Speech Processing and Recognition: http://speechpy.readthedocs.io/en/latest/
+
+WaveGlow combines insights from Glow and WaveNet 
+in order to provide fast, efficient and high-quality audio synthesis, 
+without the need for auto-regression. 
+
+WaveGlow is implemented using only a single network, trained using only a single cost function: 
+maximizing the likelihood of the training data, 
+which makes the training procedure simple and stable. 
+
+Our PyTorch implementation produces audio samples at a rate of more than 500 kHz on an NVIDIA V100 GPU. 
+Mean Opinion Scores show that it delivers audio quality as good as the best publicly available WaveNet implementation. 
+All code will be made publicly available online.
+```
+```
+Generative Model with Dynamic Linear Flow
+Huadong Liao, Jiawei He, Kunxian Shu
+(Submitted on 8 May 2019)
+https://arxiv.org/abs/1905.03239
+[Tensorflow 1.12]https://github.com/naturomics/DLF
+
+
+結合flow-based methods 及autoregressive methods的優點
+In this paper, we propose Dynamic Linear Flow (DLF), 
+a new family of invertible transformations with partially autoregressive structure. 
+
+Our method benefits from the efficient computation of flow-based methods 
+and high density estimation performance of autoregressive methods. 
+
+We demonstrate that the proposed DLF yields state-of-theart performance 
+on ImageNet 32x32 and 64x64 out of all flow-based methods, 
+and is competitive with the best autoregressive model. 
+
+Additionally, our model converges 10 times faster than Glow
+```
+```
+Generative Flow via Invertible nxn Convolution
+Thanh-Dat Truong, Khoa Luu, Chi Nhan Duong, Ngan Le, Minh-Triet Tran
+(Submitted on 24 May 2019)
+https://arxiv.org/abs/1905.10170
+
+In this paper, we propose a novel invertible nxn convolution approach 
+that overcomes the limitations of the invertible 1x1 convolution. 
+
+In addition, our proposed network is not only tractable and invertible 
+but also uses fewer parameters than standard convolutions. 
+
+The experiments on CIFAR-10, ImageNet, and Celeb-HQ datasets, 
+have showed that our invertible nxn convolution helps to improve the performance of generative models significantly.
+```
+```
+Label-Conditioned Next-Frame Video Generation with Neural Flows
+David Donahue
+(Submitted on 16 Oct 2019)
+https://arxiv.org/abs/1910.11106
+
+影像產生
+```
+```
+高清變臉更快更真！比GAN更厲害的可逆生成模型來了｜論文+代碼
+https://kknews.cc/tech/j4ra2ey.html
+```
+
+#### Flow-based generative models[since 2014]
+```
+NICE: Non-linear Independent Components Estimation
+Laurent Dinh, David Krueger, Yoshua Bengio
+(Submitted on 30 Oct 2014 (v1), last revised 10 Apr 2015 (this version, v6))
+https://arxiv.org/abs/1410.8516
+
+Yoshua Bengio and Yann LeCun, editors. 
+3rd International Conference on Learning Representations, 
+ICLR 2015, San Diego, CA, USA, May 7-9, 2015, Workshop Track Proceedings,
+2015.
+
+Dinh, L., Sohl-Dickstein, J., and Bengio, S. (2016). 
+Density estimation using Real NVP. 
+https://arxiv.org/abs/1605.08803
+
+Grover, A., Dhar, M., and Ermon, S. (2018). 
+Flow-gan: Combining maximum likelihood and adversarial learning in generative models. 
+In AAAI Conference on Artificial Intelligence.
+https://arxiv.org/abs/1705.08868
+```
+
+
+```
+Li, Y., Gan, Z., Shen, Y., Liu, J., Cheng, Y., Wu, Y., ... & Gao, J. (2018).
+StoryGAN: A Sequential Conditional GAN for Story Visualization.
+arXiv preprint arXiv:1812.02784.
+```
 # Classic GAN
 ### 2014年 Generative Adversarial Networks
 ```
@@ -420,6 +586,23 @@ https://github.com/junyanz/iGAN
 
 https://www.youtube.com/watch?v=9c4z6YsBGQ0
 ```
+### Pix2Pix(2016)
+```
+Image-to-Image Translation with Conditional Adversarial Networks
+Phillip Isola, Jun-Yan Zhu, Tinghui Zhou, Alexei A. Efros
+https://arxiv.org/abs/1611.07004
+
+https://www.tensorflow.org/tutorials/generative/pix2pix
+```
+```
+Pix2Pix 是另一種圖像到圖像轉換的 GAN 模型。
+該框架使用成對的訓練樣本，並在GAN 模型中使用多種不同的配置。
+
+讀這篇論文時，我覺得最有趣部分是關於 PatchGAN的討論。
+PatchGAN 通過觀察圖像的 70×70 的區域來判斷它們是真的還是假的，而不是查看整個圖像。
+該模型還展示了一個有趣的 U-Net 風格的生成器架構，以及在生成器模型中使用 ResNet 風格的 skip connections。
+Pix2Pix 有很多很酷的應用，比如將草圖轉換成逼真的照片。
+```
 
 
 ## StackGAN(2016)==StackGAN++(2017)
@@ -443,6 +626,10 @@ StackGAN++: Realistic Image Synthesis with Stacked Generative Adversarial Networ
 Han Zhang, Tao Xu, Hongsheng Li, Shaoting Zhang, Xiaogang Wang, Xiaolei Huang, Dimitris Metaxas
 (Submitted on 19 Oct 2017 (v1), last revised 28 Jun 2018 (this version, v3))
 https://arxiv.org/abs/1710.10916
+```
+```
+
+https://kknews.cc/zh-tw/tech/ngeqmq5.html
 ```
 ### 
 
