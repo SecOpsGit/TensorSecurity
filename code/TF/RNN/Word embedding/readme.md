@@ -32,6 +32,33 @@ BERT
 ```
 ELMo最好用词向量Deep Contextualized Word Representations
 
+Deep Contextualized Word Representations
+
+Semi-supervised sequence tagging with bidirectional language models
+```
+```
+一個預訓練的詞表示應該能夠包含豐富的句法和語義資訊，並且能夠對多義詞進行建模。
+
+傳統的詞向量（例如 word2vec）是上下文無關的。
+
+例如下面"apple"的例子，這兩個"apple"根據上下文意思是不同的，但是在 word2vec 中，只有 apple 一個詞向量，無法對一詞多義進行建模。
+
+他們利用語言模型來獲得一個上下文相關的預訓練表示，稱為 ELMo，並在 6 個 NLP 任務上獲得了提升。
+
+使用的是一個雙向的 LSTM 語言模型，由一個前向和一個後向語言模型構成，
+目標函數就是取這兩個方向語言模型的最大似然。
+```
+### OpenAI GPT | GPT2 
+```
+Improving Language Understanding by Generative Pre-Training 
+
+這是 OpenAI 團隊前一段時間放出來的預印版論文。他們的目標是學習一個通用的表示，能夠在大量任務上進行應用。
+
+
+利用Transformer網路代替了LSTM作為語言模型來更好的捕獲長距離語言結構。
+然後在進行具體任務有監督微調時使用了語言模型作為附屬任務訓練目標。
+在 12 個 NLP 任務上進行了實驗，9 個任務獲得了 SOTA。
+
 ```
 ### BERT
 ```
