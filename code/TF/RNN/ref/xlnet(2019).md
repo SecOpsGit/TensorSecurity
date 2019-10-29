@@ -21,7 +21,6 @@ Jul 8 · 14 min read
 https://kknews.cc/zh-tw/tech/vr4xxz2.html
 https://easyai.tech/blog/nlp-xlnet-bert/
 
-
 https://zhuanlan.zhihu.com/p/70257427
 
 ```
@@ -33,5 +32,35 @@ https://www.youtube.com/watch?v=H5vpBCLo74U
 自然语言理解模型XLNet 杨植麟 01  https://www.youtube.com/watch?v=u275uPAAxN8
 
 自然语言理解模型XLNet 杨植麟 03  https://www.youtube.com/watch?v=zKRkTo9sIgQ
+
+```
+### 殘念20191030
+```
+https://colab.research.google.com/github/graykode/xlnet-Pytorch/blob/master/XLNet.ipynb#scrollTo=BkV6fPyArNbN
+```
+```
+!git clone https://github.com/graykode/xlnet-Pytorch
+
+%cd xlnet-Pytorch
+
+!pip install pytorch_pretrained_bert
+
+!python main.py
+```
+```
+!python main.py --data ./data.txt --tokenizer bert-base-uncased \
+   --seq_len 512 --reuse_len 256 --perm_size 256 \
+   --bi_data True --mask_alpha 6 --mask_beta 1 \
+   --num_predict 85 --mem_len 384 --num_epoch 100
+```
+```
+Traceback (most recent call last):
+  File "main.py", line 89, in <module>
+    num_predict=args.num_predict)
+  File "/content/xlnet-Pytorch/data_utils.py", line 345, in make_permute
+    reuse_len)
+  File "/content/xlnet-Pytorch/data_utils.py", line 292, in _local_perm
+    non_mask_tokens = (~is_masked) & non_func_tokens
+RuntimeError: Expected object of scalar type Byte but got scalar type Bool for argument #2 'other' in call to _th_and
 
 ```
