@@ -1,6 +1,9 @@
 #
 ```
 %tensorflow_version 2.x
+
+
+%tensorflow_version 1.x
 ```
 #
 ```
