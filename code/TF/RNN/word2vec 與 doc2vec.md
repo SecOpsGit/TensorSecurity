@@ -1,8 +1,63 @@
-#
+# doc2vec(2014)
+```
+Distributed Representations of Sentences and Documents
+Quoc V. Le, Tomas Mikolov
+(Submitted on 16 May 2014 (v1), last revised 22 May 2014 (this version, v2))
+https://arxiv.org/abs/1405.4053
+https://cs.stanford.edu/~quocle/paragraph_vector.pdf
+```
+# Word2vec(2013)
+```
+Efficient Estimation of Word Representations in Vector Space
+Tomas Mikolov, Kai Chen, Greg Corrado, Jeffrey Dean
+(Submitted on 16 Jan 2013 (v1), last revised 7 Sep 2013 (this version, v3))
+https://arxiv.org/abs/1301.3781
+
+We propose two novel model architectures for computing continuous vector representations of words from very large data sets. 
+The quality of these representations is measured in a word similarity task, 
+and the results are compared to the previously best performing techniques based on different types of neural networks. 
+
+We observe large improvements in accuracy at much lower computational cost, 
+i.e. it takes less than a day to learn high quality word vectors from a 1.6 billion words data set. 
+
+Furthermore, we show that these vectors provide state-of-the-art performance on our test set for 
+measuring syntactic and semantic word similarities.
+
+https://en.wikipedia.org/wiki/Word2vec
+```
+```
+word2vec Explained: deriving Mikolov et al.'s negative-sampling word-embedding method
+Yoav Goldberg, Omer Levy
+(Submitted on 15 Feb 2014)
+https://arxiv.org/abs/1402.3722
+
+The word2vec software of Tomas Mikolov and colleagues (this https URL ) has gained a lot of traction lately, 
+and provides state-of-the-art word embeddings. 
+
+The learning models behind the software are described in two research papers. 
+
+We found the description of the models in these papers to be somewhat cryptic and hard to follow. 
+
+While the motivations and presentation may be obvious to the neural-networks language-modeling crowd, 
+we had to struggle quite a bit to figure out the rationale behind the equations.
+This note is an attempt to explain equation (4) (negative sampling) 
+in "Distributed Representations of Words and Phrases and their Compositionality" 
+by Tomas Mikolov, Ilya Sutskever, Kai Chen, Greg Corrado and Jeffrey Dean.
 ```
 
 ```
+Multi-Class Text Classification with Doc2Vec & Logistic Regression
+https://towardsdatascience.com/multi-class-text-classification-with-doc2vec-logistic-regression-9da9947b43f4
 
+```
+
+```
+https://github.com/Alex-CHUN-YU/Word2vec
+Word2vec 是基於非監督式學習，訓練集建議越大越好，語料涵蓋的越全面，訓練出來的結果相對比較好，
+當然也有可能 garbage input 進而得到 garbage output ，
+由於檔案所使用的資料集較大，所以每個過程中都請耐心等候。
+(ps: word2vec 如果把每種字當成一個維度，假設總共有 4000 個總字，那麼向量就會有 4000 維度。故可透過它來降低維度)
+```
 ```
 讀paper之心得：word2vec 與 doc2vec
 Eating
