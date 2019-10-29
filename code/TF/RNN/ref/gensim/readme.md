@@ -10,6 +10,20 @@ Gensim是一款開源的協力廠商Python工具包，
 ```
 https://radimrehurek.com/gensim/corpora/wikicorpus.html
 ```
+
+```
+gensim-doc2vec实战
+http://www.shuang0420.com/2016/06/01/gensim-doc2vec%E5%AE%9E%E6%88%98/
+
+使用 gensim 中的 word2vec 訓練中文詞向量
+https://github.com/ohya1004/gensim-word2vec
+
+
+CKIP Lab 中文詞知識庫小組
+https://ckip.iis.sinica.edu.tw
+```
+
+
 ### 基本概念
 ```
 •	語料（Corpus）：一組原始文本的集合，用於無監督地訓練文本主題的隱層結構。
