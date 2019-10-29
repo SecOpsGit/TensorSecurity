@@ -1,6 +1,29 @@
-#
+# GPT-2
+```
+
+https://github.com/openai/gpt-2
+```
+```
+逆天的GPT-2居然還能寫代碼（但OpenAI卻被無情吐槽）
+原創： 關注前沿科技 量子位 2月16日
+https://mp.weixin.qq.com/s?__biz=MzIzNjc1NzUzMw==&mid=2247514504&idx=2&sn=736c42eb98712fa918371b59a3e55db1&chksm=e8d00efadfa787ece0622ef8f6abec918f1d91c64c8e056d9c0d0542cb136c1fddd85298f922&mpshare=1&scene=23&srcid=%23rd
+
+給定一個文本中前面的所有單詞word，預測下一個單詞word。
+
+MIT Tech Review的作者will knight試用GPT-2寫了一個故事。
+他在開頭給了一句話：貓和企鵝起了爭執（The cat and the penguin had an argument），
+然後剩下的故事就是AI自己編寫完成，包括它們因為一片麵包起爭執，還打起來云云。
+
+GPT-2編的有模有樣。
+
+```
+
+# GPT-2測試
 ```
 Train a GPT-2 Text-Generating Model w/ GPU For Free
+https://colab.research.google.com/drive/1VLG8e7YSEwypxU-noRNhsv5dW4NfTGce
+
+https://github.com/minimaxir/gpt-2-simple
 
 ```
 
@@ -257,6 +280,59 @@ force-kill the Colaboratory virtual machine and restart it with the command belo
 
 !kill -9 -1
 
+```
 
 
+
+
+```
+
+```
+
+### OpenAI 公布自動寫作 AI 模型 GPT2 新版本
+```
+文筆越來越好，OpenAI 公布自動寫作 AI 模型 GPT2 新版本
+作者 Nana Ho | 發布日期 2019 年 08 月 22 日 21:23 | 分類 AI 人工智慧 , 尖端科技follow us in feedly
+https://technews.tw/2019/08/22/openai-gpt2-774m/
+
+還記得因為文筆太好被 OpenAI 宣布暫緩公開的自動寫作 AI 模型 GPT2 嗎？
+近日 OpenAI 釋出了一個更強大的新版本，表示將密切關注人們的使用情況。
+
+
+2019年 2 月初，馬斯克（Elon Musk）創立的非營利研究機構 OpenAI 宣布旗下正在研究一款自動寫作 AI 模型 GPT2，
+但因為 GPT2 寫作的文筆實在太好，將延後公開研究，花更多時間討論可能產生的效應以避免潛在濫用。
+
+由於延後的選擇相當罕見，此舉也引發外界許多討論；一些人支持 OpenAI 的謹慎決定，一些人則認為宣傳有多危險單純只是在炒新聞。
+
+無論如何，OpenAI 近期釋出了 GPT-2 新版本的內容。在 AI 工程師 Adam King 的協助建置下，你現在可以前往網站親身體會它的作用。
+
+https://talktotransformer.com/
+# 打幾個自進去就會產生不同的結果
+# 輸入 Hello
+# 結果如下:天啊!這是假新聞氾濫的年代! 20191030
+###################
+Hello, there is a file in the 'test' directory.' '> /tmp/temp_test > bs_test.py > '> /root/$(find . -name '*.py') > /tmp/Temp/test.py > '> /tmp/temp_test.png > ./bs_test_0 >> .test_data.txt > /root/$(find . -name '*.py') >> /tmp/temp_test_0 >> .test_data.txt
+
+I did have some other tests so I went to those as well. After all my tests were done, the executable I ran could generate:
+
+$ ./bs_test_0 -t /tmp/test_data.txt
+
+So, I did some testing and came back with something like this.
+
+Now for some code. In this file we're calling the function callbacks for the test and output. The TestFile.pl file contains the functions we are calling and the code to do so. I found the appropriate name for the file, called TestFile.pl or TestFile.py :
+
+from os import * from bs
+####################################################
+▲ 粗體字為人工提供給 AI 的部分。（Souce：Talk to Transformer）
+
+據了解，OpenAI 一共為 GPT-2 模型開發了 4 種大小版本，
+2 月初首次公布的是 GPT-2 的小型模型（124M），
+5 月公布的則是中型模型（355M），
+此次公布的則是進階模型（774M）。
+
+儘管仍不完美，但與先前公布的中小模型相比，774M 的寫作明顯更為流暢，也更難看出是由機器所編寫，
+這也不禁讓人好奇有 15.58 億個參數、使用 800 萬個網站訓練的大型模型，所寫出來的文章究竟會是什麼樣子？
+
+OpenAI 目前正和 4 家領先的研究機構合作，針對模型造成假新聞、遭極端主義濫用的可能進行分析，
+除此之外他們也將觀察人們使用 774M 模型的方式，來決定是否要按照原定計畫，在未來數個月內發布 1558M 的完整模型。
 ```
