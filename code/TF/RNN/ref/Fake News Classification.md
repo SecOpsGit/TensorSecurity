@@ -1,4 +1,4 @@
-# 
+# Kaggle Fake News Classification
 ```
 We invite researchers and students in the community to take part in the following task:
 https://www.kaggle.com/c/fake-news-pair-classification-challenge/data
