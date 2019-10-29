@@ -1,5 +1,9 @@
 #
 ```
+
+https://radimrehurek.com/gensim/auto_examples/
+
+
 Gensim是一款開源的協力廠商Python工具包，
 用於從原始的非結構化的文本中，無監督地學習到文本隱層的主題向量表達。
 它支持包括TF-IDF，LSA，LDA，和word2vec在內的多種主題模型演算法，
