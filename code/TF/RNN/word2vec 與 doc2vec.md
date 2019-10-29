@@ -1,3 +1,24 @@
+```
+用 Doc2Vec 得到文档／段落／句子的向量表达
+
+https://www.jianshu.com/p/854a59b93e09
+
+https://github.com/RaRe-Technologies/gensim/blob/ba1ce894a5192fc493a865c535202695bb3c0424/docs/notebooks/Word2Vec_FastText_Comparison.ipynb
+
+https://radimrehurek.com/gensim/auto_examples/
+
+Multi-Class Text Classification with Doc2Vec & Logistic Regression
+https://towardsdatascience.com/multi-class-text-classification-with-doc2vec-logistic-regression-9da9947b43f4
+
+https://github.com/AliceDudu/Sentiment-Analysis
+
+怎样做情感分析
+https://www.jianshu.com/p/1909031bb1f2
+
+https://github.com/AliceDudu/Machine-Learning-Learning-Path/blob/master/Deep-Learning-for-NLP-CS224d/skipgram.ipynb
+
+https://www.jianshu.com/p/86134284fa14
+```
 # doc2vec(2014)
 ```
 Distributed Representations of Sentences and Documents
