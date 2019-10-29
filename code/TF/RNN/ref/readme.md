@@ -1,5 +1,16 @@
 #
 ```
+Transfer Learning
+Re-use knowledge from pre-trained model
+
+Transfer Learning in NLP
+Word2Vec(2014)
+Glove(2014)
+ULMFit(2018)
+ELMo(2018)
+
+```
+```
 免費資源列表：想學自然語言處理的打包帶走！
 2018-09-2
 原文網址：https://kknews.cc/code/rb3pv3r.html
