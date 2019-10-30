@@ -67,7 +67,7 @@ http://www.6aiq.com/article/1560265487336?p=1&m=0
 ```
 pip install allennlp 
 ```
-### OpenAI GPT
+### OpenAI GPT(Generative Pre-Training)| GPT2
 ```
 Improving Language Understanding by Generative Pre-Training
 
@@ -107,6 +107,7 @@ We open-source our pretrained models and code.
 ```
 https://www.jianshu.com/p/5b680f4fb2f2
 https://www.itread01.com/content/1546624746.html
+https://zhuanlan.zhihu.com/p/61590026
 ```
 ```
 貢獻如下:
