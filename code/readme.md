@@ -1,4 +1,24 @@
+# Google colab
+```
+from google.colab import drive
+drive.mount('/content/drive/')
 
+!pip install unidecode
+
+import unidecode
+import string
+import random
+import re
+
+!ls '/content/drive/My Drive/Text Generator'
+#ls '/content/drive/My Drive'
+
+all_characters = string.printable
+n_characters = len(all_characters)
+
+file = unidecode.unidecode(open('/content/drive/My Drive/Text Generator/Oliver.txt').read())
+file_len = len(file)
+```
 #
 ```
 https://github.com/fastai/fastai
