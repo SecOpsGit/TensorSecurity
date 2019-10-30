@@ -86,6 +86,9 @@ https://zhuanlan.zhihu.com/p/32965521
 
 fastText 源码分析
 https://heleifz.github.io/14732610572844.html
+
+從Facebook AI Research開源fastText談文本分類：詞向量模性、深度表征等
+原文網址：https://kknews.cc/tech/e8gn22q.html
 ```
 
 # Pre-train Language Model
