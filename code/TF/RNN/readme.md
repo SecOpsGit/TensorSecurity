@@ -1,5 +1,17 @@
 # NLP==Natural Language Processing==自然語言處理
 
+```
+Seq2seq
+
+Attention model==Transformer
+
+self attention
+
+
+XLNet(2019) https://paperswithcode.com/paper/xlnet-generalized-autoregressive-pretraining
+```
+
+
 ## NLP using NLTK
 ```
 Python 和 NLTK 自然語言處理 (Natural Language Processing: Python and NLTK)
