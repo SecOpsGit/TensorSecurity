@@ -46,6 +46,12 @@ https://www.youtube.com/watch?v=ERibwqs9p38
 
 ELMO, BERT, GPT
 https://www.youtube.com/watch?v=UYPa347-DdE
+
+Language Model Overview: From word2vec to BERT
+https://www.youtube.com/watch?v=ycXWAtm22-w
+```
+```
+http://www.6aiq.com/article/1560265487336?p=1&m=0
 ```
 ### ELMO(2017) ELMO詞向量模型
 ```
@@ -58,7 +64,7 @@ pip install allennlp
 # NLP since 2018
 ```
 Seq2Seq(2014)
-Attention Model注意力機制
+Attention Model注意力機制(2014)
 Google The transformer(2017) Self Attention 變形金剛
 
 BERT(2018)
@@ -138,7 +144,38 @@ which made the optimization problem easier.
 
 ```
 
-###
+### Attention Model注意力機制(2014)
+```
+Neural Machine Translation by Jointly Learning to Align and Translate
+Dzmitry Bahdanau, Kyunghyun Cho, Yoshua Bengio
+(Submitted on 1 Sep 2014 (v1), last revised 19 May 2016 (this version, v7))
+https://arxiv.org/abs/1409.0473
+
+
+```
+
+```
+https://mp.weixin.qq.com/s?__biz=MzIwMTc4ODE0Mw==&mid=2247485853&idx=1&sn=7e1dae6b690d718d17bebd8c37d2689b&chksm=96e9d61da19e5f0bafe59a848feccd340ce4fe1ff98cc5dfe24ea08ade644e176b45b8da64a7&scene=21#wechat_redirect
+
+
+```
+
+
+### Google The transformer(2017) Self Attention 變形金剛
+```
+
+
+
+
+
+```
+
+```
+
+
+```
+
+### BERT(2018)
 ```
 
 
@@ -149,39 +186,6 @@ which made the optimization problem easier.
 
 ```
 
-
-###
-```
-
-
-```
-
-```
-
-
-```
-
-###
-```
-
-
-```
-
-```
-
-
-```
-
-###
-```
-
-
-```
-
-```
-
-
-```
 
 ### GPT-2
 
