@@ -4,6 +4,18 @@ RNN Model
 Word Embedding
 NLP since 2018
 ```
+### 實戰主題
+```
+[1]IMDb-Movie-Review IMDb網路電影影評資料集 Sentiment Analysis on IMDb
+[2]TextGeneration文本生成===作詞機器人
+
+[3]TimeSeriesPrediction時間序列預測
+使用 LSTM RNN預測Bitcoins價格
+```
+##### 以後
+```
+聊天機器人
+```
 
 # RNN Model
 ```
@@ -14,7 +26,9 @@ BiRNN
 ```
 
 ```
-
+http://colah.github.io/posts/2015-08-Understanding-LSTMs/
+http://karpathy.github.io/2015/05/21/rnn-effectiveness/
+http://colah.github.io/posts/2014-07-NLP-RNNs-Representations/
 ```
 
 # Word Embedding
@@ -29,6 +43,9 @@ ELMO(2017) ELMO詞向量模型
 ```
 Lecture 2 | Word Vector Representations: word2vec
 https://www.youtube.com/watch?v=ERibwqs9p38
+
+ELMO, BERT, GPT
+https://www.youtube.com/watch?v=UYPa347-DdE
 ```
 ### ELMO(2017) ELMO詞向量模型
 ```
@@ -211,7 +228,12 @@ identifying recurring patterns, and linking neurons to model behavior.
 ```
 ### XLNET(2019)
 ```
+XLNet: Generalized Autoregressive Pretraining for Language Understanding
+Zhilin Yang, Zihang Dai, Yiming Yang, Jaime Carbonell, Ruslan Salakhutdinov, Quoc V. Le
+(Submitted on 19 Jun 2019)
+https://arxiv.org/abs/1906.08237
 
+https://github.com/zihangdai/xlnet
 
 ```
 
