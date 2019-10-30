@@ -33,6 +33,10 @@ http://colah.github.io/posts/2014-07-NLP-RNNs-Representations/
 
 # Word Embedding
 ```
+NNLM神經網路語言模型(2003)
+
+Word2Vec(2013)
+Glove(2013)
 
 ELMO(2017) ELMO詞向量模型
 
@@ -63,6 +67,7 @@ pip install allennlp
 
 # NLP since 2018
 ```
+
 Seq2Seq(2014)
 Attention Model注意力機制(2014)
 Google The transformer(2017) Self Attention 變形金剛
@@ -74,6 +79,9 @@ XLNET(2019)
 
 ```
 ```
+自然語言處理中的語言模型預訓練方法
+https://www.jiqizhixin.com/articles/2018-10-22-3
+
 Seq2seq pay Attention to Self Attention
 https://medium.com/@bgg/seq2seq-pay-attention-to-self-attention-part-1-d332e85e9aad
 https://medium.com/%40bgg/seq2seq-pay-attention-to-self-attention-part-2-%E4%B8%AD%E6%96%87%E7%89%88-ef2ddf8597a4
