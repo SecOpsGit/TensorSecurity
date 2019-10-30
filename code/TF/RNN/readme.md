@@ -7,6 +7,9 @@ NLP since 2018
 ### 實戰主題
 ```
 [1]IMDb-Movie-Review IMDb網路電影影評資料集 Sentiment Analysis on IMDb
+    用TensorFlow Estimator實現文本分類 https://kknews.cc/code/mqx9mj6.html
+
+原文網址：https://kknews.cc/code/mqx9mj6.html
 [2]TextGeneration文本生成===作詞機器人
 
 [3]TimeSeriesPrediction時間序列預測
@@ -15,6 +18,7 @@ NLP since 2018
 ##### 以後
 ```
 聊天機器人
+Char RNN可以用来生成文章，诗歌，甚至是代码
 ```
 
 # RNN Model
@@ -38,6 +42,9 @@ NNLM神經網路語言模型(2003)
 Word2Vec(2013)
 Glove(2013)
 
+FastText
+
+自然語言處理中的語言模型預訓練方法（ELMo、GPT和BERT）
 pretrain language representation
 
 GPT(2017)
@@ -46,7 +53,46 @@ ULMFiT(2018)
 
 
 ```
+### FastText
+```
+https://paperswithcode.com/paper/bag-of-tricks-for-efficient-text
 
+fastText
+fastText is a library for efficient learning of word representations and sentence classification.
+
+該工具的理論基礎是以下兩篇論文：
+
+Enriching Word Vectors with Subword Information
+
+這篇論文提出了用 word n-gram 的向量之和來代替簡單的詞向量的方法，以解決簡單 word2vec 無法處理同一詞的不同形態的問題。
+fastText 中提供了 maxn 這個參數來確定 word n-gram 的 n 的大小。
+
+Bag of Tricks for Efficient Text Classification
+
+這篇論文提出了 fastText 演算法，該演算法實際上是將目前用來算 word2vec 的網路架構做了個小修改，
+原先使用一個詞的上下文的所有詞向量之和來預測詞本身（CBOW 模型），
+現在改為用一段短文本的詞向量之和來對文本進行分類。
+
+在我看來，fastText 的價值是提供了一個 更具可讀性，模組化程度較好 的 word2vec 的實現
+
+https://radimrehurek.com/gensim/models/fasttext.html
+```
+```
+當前最好的詞句嵌入技術概覽：從無監督學習轉向監督、多任務學習
+https://kknews.cc/tech/avnjarv.html
+
+fastText原理及实践
+https://zhuanlan.zhihu.com/p/32965521
+
+fastText 源码分析
+https://heleifz.github.io/14732610572844.html
+```
+
+# Pre-train Language Model
+```
+自然語言處理中的語言模型預訓練方法（ELMo、GPT和BERT）
+https://www.cnblogs.com/robert-dlut/p/9824346.html
+```
 ```
 Lecture 2 | Word Vector Representations: word2vec
 https://www.youtube.com/watch?v=ERibwqs9p38
@@ -80,7 +126,37 @@ https://blog.csdn.net/manmanxiaowugun/article/details/83794454
 論文的亮點===>利用了Transformer網路代替了LSTM作為語言模型來更好的捕獲長距離語言結構。
 然後在進行具體任務有監督微調時使用了語言模型作為附屬任務訓練目標。
 最後在 12 個 NLP 任務上進行了實驗，9 個任務獲得了 SOTA。
+```
+```
+GPT模型：Improving Language Understanding by Generative Pre-Training
+https://blog.csdn.net/ACM_hades/article/details/88899307
 
+第一步: 在大預料庫訓練高容量的語言模型；
+第二步: 要特殊任務的有標籤的資料集上微調預訓練的語言模型
+
+
+https://www.cs.ubc.ca/~amuham01/LING530/papers/radford2018improving.pdf
+https://github.com/openai/finetune-transformer-lm
+```
+```
+The Illustrated GPT-2 (Visualizing Transformer Language Models)
+http://jalammar.github.io/illustrated-gpt2/
+```
+```
+Train a GPT-2 Text-Generating Model w/ GPU For Free
+by Max Woolf
+
+Last updated: August 28th, 2019
+Retrain an advanced text generating neural network on any text dataset for free on a GPU using Collaboratory using gpt-2-simple!
+
+https://github.com/minimaxir/gpt-2-simple
+
+https://colab.research.google.com/drive/1VLG8e7YSEwypxU-noRNhsv5dW4NfTGce#scrollTo=H7LoMj4GA4n_&forceEdit=true&sandboxMode=true
+
+!pip install -q gpt-2-simple
+import gpt_2_simple as gpt2
+from datetime import datetime
+from google.colab import files
 ```
 ### ULMFiT(2018)
 ```
@@ -102,9 +178,6 @@ reducing the error by 18-24% on the majority of datasets.
 Furthermore, with only 100 labeled examples, it matches the performance of training from scratch on 100x more data. 
 
 We open-source our pretrained models and code.
-
-
-
 ```
 ```
 https://www.jianshu.com/p/5b680f4fb2f2
@@ -118,6 +191,34 @@ https://zhuanlan.zhihu.com/p/61590026
 3）我們六個代表性文字分類的達到了最好的效果，並在大多數資料集上減少了18-24％的誤差。 
 4）我們的方法能夠實現極其樣本有效的遷移學習並進行廣泛的消融分析。 
 5）我們製作了預訓練模型，我們的程式碼將可以被更廣泛的採用。
+```
+### Unified pre-trained Language Model (UniLM)[2019]
+```
+Unified Language Model Pre-training for Natural Language Understanding and Generation
+Li Dong, Nan Yang, Wenhui Wang, Furu Wei, Xiaodong Liu, Yu Wang, Jianfeng Gao, Ming Zhou, Hsiao-Wuen Hon
+(Submitted on 8 May 2019 (v1), last revised 15 Oct 2019 (this version, v3))
+
+This paper presents a new Unified pre-trained Language Model (UniLM) 
+that can be fine-tuned for both natural language understanding and generation tasks. 
+
+The model is pre-trained using three types of language modeling tasks: 
+unidirectional, bidirectional, and sequence-to-sequence prediction. 
+
+The unified modeling is achieved by employing a shared Transformer network 
+and utilizing specific self-attention masks to control what context the prediction conditions on. 
+
+UniLM compares favorably with BERT on the GLUE benchmark, and the SQuAD 2.0 and CoQA question answering tasks. 
+
+Moreover, UniLM achieves new state-of-the-art results on five natural language generation datasets, 
+including improving the CNN/DailyMail abstractive summarization ROUGE-L to 40.51 (2.04 absolute improvement), 
+the Gigaword abstractive summarization ROUGE-L to 35.75 (0.86 absolute improvement), 
+the CoQA generative question answering F1 score to 82.5 (37.1 absolute improvement), 
+the SQuAD question generation BLEU-4 to 22.12 (3.75 absolute improvement), 
+and the DSTC7 document-grounded dialog response generation NIST-4 to 2.67 (human performance is 2.65). 
+The code and pre-trained models are available at this https URL.
+
+https://github.com/microsoft/unilm
+
 ```
 # NLP since 2018
 ```
@@ -240,14 +341,16 @@ Neural Machine Translation by Jointly Learning to Align and Translate
 Dzmitry Bahdanau, Kyunghyun Cho, Yoshua Bengio
 (Submitted on 1 Sep 2014 (v1), last revised 19 May 2016 (this version, v7))
 https://arxiv.org/abs/1409.0473
-
-
 ```
 
 ```
 https://mp.weixin.qq.com/s?__biz=MzIwMTc4ODE0Mw==&mid=2247485853&idx=1&sn=7e1dae6b690d718d17bebd8c37d2689b&chksm=96e9d61da19e5f0bafe59a848feccd340ce4fe1ff98cc5dfe24ea08ade644e176b45b8da64a7&scene=21#wechat_redirect
 
+完全图解RNN、RNN变体、Seq2Seq、Attention机制
+https://www.leiphone.com/news/201709/8tDpwklrKubaecTa.html
 
+從seq2seq到記憶力模型Attention的演進
+https://kknews.cc/zh-tw/news/zarprxp.html
 ```
 
 
@@ -261,10 +364,36 @@ https://mp.weixin.qq.com/s?__biz=MzIwMTc4ODE0Mw==&mid=2247485853&idx=1&sn=7e1dae
 ```
 
 ```
+深度学习中的注意力机制
+https://cloud.tencent.com/developer/article/1143127
 
+深度学习中的注意力机制(2017版)
+2017-12-10 21:57:17 张俊林博客
+https://zhuanlan.zhihu.com/p/37601161
 
+The Illustrated Transformer
+https://jalammar.github.io/illustrated-transformer/
+
+一文讀懂「Attention is All You Need」| 附程式碼實現
+https://kkptt.com/2533235/2624438.html
+
+基於Attention之NLP paper - Attention Is All You Need
+https://xiaosean.github.io/deep%20learning/nlp/2018-07-13-Attention-is-all-u-need/
+
+Seq2seq pay Attention to Self Attention: Part 2
+https://medium.com/@bgg/seq2seq-pay-attention-to-self-attention-part-2-cf81bf32c73d
 ```
 
+### SAGAN(2018)
+```
+Han Zhang, Ian Goodfellow, Dimitris Metaxas, Augustus Odena, 
+“Self-Attention Generative Adversarial Networks”
+https://arxiv.org/abs/1805.08318
+```
+```
+SA-GAN 介紹 — Self-Attention Generative Adversarial Networks
+https://medium.com/@xiaosean5408/sa-gan-%E4%BB%8B%E7%B4%B9-self-attention-generative-adversarial-networks-d3994bc6e0c
+```
 ### BERT(2018)
 ```
 
@@ -320,6 +449,17 @@ and we demonstrate the tool on the BERT model and the OpenAI GPT-2 model.
 We also present three use cases for analyzing GPT-2: detecting model bias, 
 identifying recurring patterns, and linking neurons to model behavior.
 ```
+# NLP 2019
+```
+2019 最新的 Transformer 模型：XLNET，ERNIE 2.0和ROBERTA
+https://easyai.tech/blog/ai-nlp-research-big-language-models/
+https://www.topbots.com/ai-nlp-research-big-language-models/?utm_source=ActiveCampaign&utm_medium=email&utm_content=The+most+important+NLP+research+papers+of+2019+%28so+far%29&utm_campaign=Weekly+Newsletter+09+11+2019+Issue+158
+
+
+XLNet: Generalized Autoregressive Pretraining for Language Understanding
+ERNIE 2.0: A Continual Pre-training Framework for Language Understanding
+RoBERTa: A Robustly Optimized BERT Pretraining Approach
+```
 ### XLNET(2019)
 ```
 XLNet: Generalized Autoregressive Pretraining for Language Understanding
@@ -328,12 +468,70 @@ Zhilin Yang, Zihang Dai, Yiming Yang, Jaime Carbonell, Ruslan Salakhutdinov, Quo
 https://arxiv.org/abs/1906.08237
 
 https://github.com/zihangdai/xlnet
+```
+```
+https://blog.csdn.net/ljp1919/article/details/94200457
 
 ```
+### RoBERTa[2019]
+```
+RoBERTa: A Robustly Optimized BERT Pretraining Approach
+Yinhan Liu, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen, 
+Omer Levy, Mike Lewis, Luke Zettlemoyer, Veselin Stoyanov
+(Submitted on 26 Jul 2019)
+https://arxiv.org/abs/1907.11692
+
+
+Language model pretraining has led to significant performance gains 
+but careful comparison between different approaches is challenging. 
+
+Training is computationally expensive, often done on private datasets of different sizes, 
+and, as we will show, hyperparameter choices have significant impact on the final results. 
+
+We present a replication study of BERT pretraining (Devlin et al., 2019) 
+that carefully measures the impact of many key hyperparameters and training data size. 
+
+We find that BERT was significantly undertrained, and can match or exceed the performance of every model published after it. 
+
+Our best model achieves state-of-the-art results on GLUE, RACE and SQuAD. 
+
+These results highlight the importance of previously overlooked design choices, 
+and raise questions about the source of recently reported improvements. We release our models and code.
+
 
 ```
+### 百度 ERNIE 2.0[2019]
+```
+ERNIE 2.0: A Continual Pre-training Framework for Language Understanding
+Yu Sun, Shuohuan Wang, Yukun Li, Shikun Feng, Hao Tian, Hua Wu, Haifeng Wang
+(Submitted on 29 Jul 2019)
+https://arxiv.org/abs/1907.12412
 
+Recently, pre-trained models have achieved state-of-the-art results in various language understanding tasks, 
+which indicates that pre-training on large-scale corpora may play a crucial role in natural language processing. 
 
+Current pre-training procedures usually focus on training the model with several simple tasks 
+to grasp the co-occurrence of words or sentences. 
+
+However, besides co-occurring, there exists other valuable lexical, syntactic and semantic information in training corpora, 
+such as named entity, semantic closeness and discourse relations. 
+
+In order to extract to the fullest extent, the lexical, syntactic and semantic information from training corpora, 
+we propose a continual pre-training framework named ERNIE 2.0 
+which builds and learns incrementally pre-training tasks through constant multi-task learning. 
+
+Experimental results demonstrate that ERNIE 2.0 outperforms BERT and XLNet on 16 tasks 
+including English tasks on GLUE benchmarks and several common tasks in Chinese. 
+
+The source codes and pre-trained models have been released at this https URL.
+https://github.com/PaddlePaddle/ERNIE
+```
+
+#
+```
+pytorch/fairseq
+Facebook AI Research Sequence-to-Sequence Toolkit written in Python.
+https://github.com/pytorch/fairseq
 ```
 
 
