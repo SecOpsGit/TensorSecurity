@@ -39,6 +39,8 @@
   [B3]Flow-based models (2014/2018:GLOW)  
     The flow-based generative model is constructed using a sequence of invertible and tractable transformations, 
     the model explicitly learns the data distribution and therefore the loss function is simply a negative log-likelihood
+    [延伸學習]
+    Flow-based Generative Model: https://www.youtube.com/watch?v=uXY18nzdSsM
 ```
 ```
 史丹佛大學著名課程 http://cs231n.stanford.edu/
