@@ -38,8 +38,11 @@ NNLM神經網路語言模型(2003)
 Word2Vec(2013)
 Glove(2013)
 
-ELMO(2017) ELMO詞向量模型
+pretrain language representation
 
+GPT(2017)
+ELMO(2017) ELMO詞向量模型
+ULMFiT(2018)
 
 
 ```
@@ -64,7 +67,55 @@ http://www.6aiq.com/article/1560265487336?p=1&m=0
 ```
 pip install allennlp 
 ```
+### OpenAI GPT
+```
+Improving Language Understanding by Generative Pre-Training
 
+https://blog.csdn.net/manmanxiaowugun/article/details/83794454
+
+目標===>學習一個通用的表示，能夠在大量任務上進行應用。
+
+論文的亮點===>利用了Transformer網路代替了LSTM作為語言模型來更好的捕獲長距離語言結構。
+然後在進行具體任務有監督微調時使用了語言模型作為附屬任務訓練目標。
+最後在 12 個 NLP 任務上進行了實驗，9 個任務獲得了 SOTA。
+
+```
+### ULMFiT(2018)
+```
+Universal Language Model Fine-tuning for Text Classification
+Jeremy Howard, Sebastian Ruder
+(Submitted on 18 Jan 2018 (v1), last revised 23 May 2018 (this version, v5))
+https://arxiv.org/abs/1801.06146
+
+Inductive transfer learning has greatly impacted computer vision, 
+but existing approaches in NLP still require task-specific modifications and training from scratch. 
+
+We propose Universal Language Model Fine-tuning (ULMFiT), 
+an effective transfer learning method that can be applied to any task in NLP, 
+and introduce techniques that are key for fine-tuning a language model. 
+
+Our method significantly outperforms the state-of-the-art on six text classification tasks, 
+reducing the error by 18-24% on the majority of datasets. 
+
+Furthermore, with only 100 labeled examples, it matches the performance of training from scratch on 100x more data. 
+
+We open-source our pretrained models and code.
+
+
+
+```
+```
+https://www.jianshu.com/p/5b680f4fb2f2
+https://www.itread01.com/content/1546624746.html
+```
+```
+貢獻如下:
+1）我們提出通用語言模型微調（ULMFiT），一種可以在任何自然語言處理任務上實現類似CV的轉移學習的方法。 
+2）我們提出動態微調，傾斜三角學習率，漸進式解凍，等新的技術來保持過往知識和避免微調中的災難性遺忘。 
+3）我們六個代表性文字分類的達到了最好的效果，並在大多數資料集上減少了18-24％的誤差。 
+4）我們的方法能夠實現極其樣本有效的遷移學習並進行廣泛的消融分析。 
+5）我們製作了預訓練模型，我們的程式碼將可以被更廣泛的採用。
+```
 # NLP since 2018
 ```
 
