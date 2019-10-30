@@ -367,6 +367,11 @@ https://kknews.cc/zh-tw/news/zarprxp.html
 深度学习中的注意力机制
 https://cloud.tencent.com/developer/article/1143127
 
+自然语言处理中的自注意力机制（Self-Attention Mechanism）
+罗凌 PaperWeekly 2018-03-28
+作者丨罗凌
+学校丨大连理工大学信息检索研究室
+
 深度学习中的注意力机制(2017版)
 2017-12-10 21:57:17 张俊林博客
 https://zhuanlan.zhihu.com/p/37601161
