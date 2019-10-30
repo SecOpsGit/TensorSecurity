@@ -7,6 +7,7 @@ Attention model==Transformer
 
 self attention
 
+BERT
 
 XLNet(2019) https://paperswithcode.com/paper/xlnet-generalized-autoregressive-pretraining
 ```
