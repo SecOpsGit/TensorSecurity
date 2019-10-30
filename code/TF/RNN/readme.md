@@ -58,6 +58,8 @@ Language Model Overview: From word2vec to BERT
 https://www.youtube.com/watch?v=ycXWAtm22-w
 ```
 ```
+从Seq2seq到Attention模型到Self Attention（一）
+https://zhuanlan.zhihu.com/p/46250529
 http://www.6aiq.com/article/1560265487336?p=1&m=0
 ```
 ### ELMO(2017) ELMO詞向量模型
@@ -146,6 +148,30 @@ https://blog.csdn.net/qq_41664845/article/details/84787969
 ```
 ### Seq2Seq(2014)
 ```
+seq2seq
+根據一個輸入序列x，來生成另一個輸出序列y。
+
+seq2seq很多應用:例如翻譯，文件摘取，問答系統等等。
+在翻譯中，輸入序列是待翻譯的文字，輸出序列是翻譯後的文字；
+在問答系統中，輸入序列是提出的問題，而輸出序列是答案。
+
+ncoder-Decoder模型
+為了解決seq2seq問題，有人提出了encoder-decoder模型，也就是編碼-解碼模型。所謂編碼，就是將輸入序列轉化成一個固定長度的向量；解碼，就是將之前生成的固定向量再轉化成輸出序列。
+
+最基礎的Seq2Seq模型包含了三個部分:Encoder、Decoder以及連線兩者的中間狀態向量State Vector，
+Encoder通過學習輸入，將其編碼成一個固定大小的狀態向量S，
+繼而將S傳給Decoder，
+Decoder再通過對狀態向量S的學習來進行輸出。
+
+編碼器和解碼器可以使用相同的權重，或者，更常見的是，編碼器和解碼器分別使用不同的引數。
+多層神經網路已經成功地用於序列序列模型之中了。
+
+具體實現的時候，編碼器和解碼器都不是固定的，可選的有CNN/RNN/BiRNN/GRU/LSTM等等，你可以自由組合。
+比如說，你在編碼時使用BiRNN,解碼時使用RNN，
+或者在編碼時使用RNN,解碼時使用LSTM等等。
+每個矩形都表示著RNN的一個核，通常是GRU（Gated recurrent units）或者長短期記憶（LSTM）核。
+```
+```
 Learning Phrase Representations using RNN Encoder-Decoder for Statistical Machine Translation
 Kyunghyun Cho, Bart van Merrienboer, Caglar Gulcehre, Dzmitry Bahdanau, Fethi Bougares, Holger Schwenk, Yoshua Bengio
 (Submitted on 3 Jun 2014 (v1), last revised 3 Sep 2014 (this version, v3))
@@ -202,6 +228,10 @@ improved the LSTM's performance markedly,
 because doing so introduced many short term dependencies between the source and the target sentence 
 which made the optimization problem easier.
 
+```
+```
+深度學習：Seq2seq模型
+https://www.itread01.com/content/1548323656.html
 ```
 
 ### Attention Model注意力機制(2014)
