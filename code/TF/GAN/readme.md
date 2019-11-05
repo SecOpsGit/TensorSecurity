@@ -8,7 +8,8 @@
 
 # cGAN
 
-# keras-GAN
+# 進階研讀
+## keras-GAN
 ```
 Keras implementations of Generative Adversarial Networks.
 https://github.com/eriklindernoren/Keras-GAN
@@ -30,12 +31,12 @@ https://github.com/eriklindernoren/Keras-GAN
 !python3 acgan.py
 ```
 
-# PyTorch-GAN
+## PyTorch-GAN
 ```
 https://github.com/eriklindernoren/PyTorch-GAN
 ```
 
-# TF-GAN
+## TF-GAN
 ```
 https://github.com/tensorflow/gan
 ```
@@ -73,4 +74,14 @@ Ting Chen, Xiaohua Zhai, Marvin Ritter, Mario Lucic, Neil Houlsby [CVPR 2019]
 
 High-Fidelity Image Generation With Fewer Labels [Code] [Blog Post] [Colab]
 Mario Lucic*, Michael Tschannen*, Marvin Ritter*, Xiaohua Zhai, Olivier Bachem, Sylvain Gelly [ICML 2019]
+```
+```
+https://github.com/matthewberger/tfgan
+```
+```
+Deep Diving into GANs: from theory to production
+https://github.com/zurutech/gans-from-theory-to-production
+
+EuroSciPy 2019 - GANs: Theory and Applications
+https://www.slideshare.net/EmanueleGhelfi/euroscipy-2019-gans-theory-and-applications
 ```
