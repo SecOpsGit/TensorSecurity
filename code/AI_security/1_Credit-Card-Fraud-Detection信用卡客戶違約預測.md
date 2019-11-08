@@ -4,12 +4,15 @@ Credit Card Fraud Detection | Kaggle
 信用卡客戶違約預測
 預測信用卡客戶下個月是否違約還款
 ```
+
+### dataset[資料集]
 ```
 參考資料: https://github.com/nsethi31/Kaggle-Data-Credit-Card-Fraud-Detection
 
 資料下載處:
 https://raw.githubusercontent.com/nsethi31/Kaggle-Data-Credit-Card-Fraud-Detection/master/creditcard.csv
 ```
+### 參考資料
 ```
 Hands-On Unsupervised Learning Using Python: 
 How to Build Applied Machine Learning Solutions from Unlabeled Data 
@@ -58,12 +61,15 @@ https://arxiv.org/abs/1904.10604
  Anyway, unsupervised approaches are still promising for credit card fraud transaction detection 
  due to the insufficient annotation and the data imbalance issue in real-world applications.
 ```
-#
+### 程式
+
+#### 資料集
+```
+!wget https://raw.githubusercontent.com/nsethi31/Kaggle-Data-Credit-Card-Fraud-Detection/master/creditcard.csv
+```
+#### 
 ```
 # -*- coding: utf-8 -*-
-
-
-!wget https://raw.githubusercontent.com/nsethi31/Kaggle-Data-Credit-Card-Fraud-Detection/master/creditcard.csv
 
 import pandas as pd
 import numpy as np
@@ -102,7 +108,7 @@ X_sm,y_sm=sm.fit_sample(X_train,y_train)
 print(X_sm.shape,y_sm.shape)
 print(len(y_sm[y_sm==1]),len(y_sm[y_sm==0]))
 ```
-# Logistic Regression
+### Logistic Regression
 ```
 from sklearn.linear_model import LogisticRegression
 import matplotlib.pyplot as plt
@@ -133,7 +139,7 @@ plt.ylabel('True Positive Rate')
 plt.xlabel('False Positive Rate')
 plt.show()
 ```
-# K Nearest Neighbors
+### K Nearest Neighbors
 ```
 from sklearn.neighbors import KNeighborsClassifier
 
@@ -157,7 +163,7 @@ plt.ylim([0.0,1.0])
 plt.show()
 ```
 
-# Random Forest
+### Random Forest
 ```
 from sklearn.ensemble import RandomForestClassifier
 
@@ -186,7 +192,7 @@ plt.ylabel('True Positive Rate')
 plt.xlabel('False Positive Rate')
 plt.show()
 ```
-# Random Forest
+### Random Forest
 ```
 from sklearn.ensemble import RandomForestClassifier
 
