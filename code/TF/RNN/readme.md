@@ -17,6 +17,8 @@ NLP since 2018[seq2seq....]
 
 [3]TimeSeriesPrediction時間序列預測
    使用 LSTM RNN預測Bitcoins價格
+   
+[4]資安專題:
 ```
 ##### TO DO Lists
 ```
