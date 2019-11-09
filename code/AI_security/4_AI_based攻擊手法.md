@@ -54,6 +54,19 @@ and discuss the characteristics of these methods as well as evaluation metrics
 and provide some possible future research directions in image steganography.
 ```
 ```
+a stego-security classification is proposed based on the four levels of steganalysis attacks:
+a) Stego-Cover Only Attack (SCOA): the steganalysis attacker can only access a set of stego-covers.
+b) Known Cover Attack (KCA): being able to perform SCOA, the attacker can also obtain
+some original cover carriers and their corresponding stego carriers. Within polynomial complexity, the
+number of pairs is limited.
+c) Chosen Cover Attack (CCA): an attacker can use the steganographic algorithm to
+perform multiple message embedding and extraction operations with a priori knowledge under KCA.
+Within polynomial complexity, the number of invocation operations is limited.
+
+d) Adaptive Chosen Cover Attack (ACCA): The ACCA mode means that when the CCA mode
+challenge fails, another CCA attacks can be performed until the attack is successful.
+```
+```
 EncryptGAN: Image Steganography with Domain Transform
 Ziqiang Zheng, Hongzhi Liu, Zhibin Yu, Haiyong Zheng, Yang Wu, Yang Yang, Jianbo Shi
 (Submitted on 28 May 2019 (v1), last revised 29 May 2019 (this version, v2))
