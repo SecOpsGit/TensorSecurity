@@ -1,24 +1,27 @@
 # 三大主題
 ```
-RNN Model
 Word Embedding
-NLP since 2018
+
+RNN: Models and applications
+
+NLP since 2018[seq2seq....]
 ```
 ### 實戰主題
 ```
-[1]IMDb-Movie-Review IMDb網路電影影評資料集 Sentiment Analysis on IMDb
+[1]TextClassification文本分類
+   IMDb-Movie-Review IMDb網路電影影評資料集 Sentiment Analysis on IMDb
     用TensorFlow Estimator實現文本分類 https://kknews.cc/code/mqx9mj6.html
 
-原文網址：https://kknews.cc/code/mqx9mj6.html
-[2]TextGeneration文本生成===作詞機器人
+[2]TextGeneration文本生成
+   作詞機器人
 
 [3]TimeSeriesPrediction時間序列預測
-使用 LSTM RNN預測Bitcoins價格
+   使用 LSTM RNN預測Bitcoins價格
 ```
-##### 以後
+##### TO DO Lists
 ```
 聊天機器人
-Char RNN可以用来生成文章，诗歌，甚至是代码
+假新聞分類
 ```
 #### 學習資源
 ```
