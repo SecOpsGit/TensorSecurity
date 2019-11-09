@@ -25,8 +25,45 @@ posterior inference can be made especially efficient by fitting an approximate i
 
 Theoretical advantages are reflected in experimental results.
 ```
+```
+VAE(Variational Autoencoder)的原理
+https://www.cnblogs.com/huangshiyu13/p/6209016.html
 
+變分自編碼器（VAEs）
+https://zhuanlan.zhihu.com/p/25401928
+```
+### Youtube影片
+```
+Variational Auto-encoders (VAE)
+https://www.youtube.com/watch?v=2m9E-aSXtl8
+
+[Variational Autoencoder] Auto-Encoding Variational Bayes | AISC Foundational
+https://www.youtube.com/watch?v=Tc-XfiDPLf4
+
+
+Deep Learning 19: (1) Variational AutoEncoder : Introduction and Probability Refresher
+https://www.youtube.com/watch?v=w8F7_rQZxXk
+
+Deep Learning 20: (2) Variational AutoEncoder : Explaining KL (Kullback-Leibler) Divergence
+https://www.youtube.com/watch?v=wdKYveLIxgU
+
+```
 ### review
+
+```
+Variational Inference
+David M. Blei
+https://www.cs.princeton.edu/courses/archive/fall11/cos597C/lectures/variational-inference-i.pdf
+```
+```
+Tutorial on Variational Autoencoders
+CARL DOERSCH
+Carnegie Mellon / UC Berkeley
+August 16, 2016
+
+https://arxiv.org/pdf/1606.05908.pdf
+```
+
 ```
 An Introduction to Variational Autoencoders
 Diederik P. Kingma, Max Welling
@@ -37,20 +74,12 @@ and corresponding inference models.
 
 In this work, we provide an introduction to variational autoencoders and some important extensions.
 ```
-```
-Tutorial on Variational Autoencoders
-CARL DOERSCH
-Carnegie Mellon / UC Berkeley
-August 16, 2016
-
-https://arxiv.org/pdf/1606.05908.pdf
-```
 # Tensorflow官方示範程式
 ```
 Convolutional Variational Autoencoder
 https://www.tensorflow.org/tutorials/generative/cvae
 ```
-#
+# 發展
 ```
 A Hybrid Convolutional Variational Autoencoder for Text Generation
 Stanislau Semeniuta, Aliaksei Severyn, Erhardt Barth
