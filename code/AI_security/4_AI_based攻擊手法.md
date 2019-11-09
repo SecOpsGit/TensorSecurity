@@ -73,7 +73,12 @@ Ziqiang Zheng, Hongzhi Liu, Zhibin Yu, Haiyong Zheng, Yang Wu, Yang Yang, Jianbo
 https://arxiv.org/abs/1905.11582
 
 ```
-
+```
+https://arxiv.org/abs/1804.07939
+Spatial Image Steganography Based on Generative Adversarial Network
+Jianhua Yang, Kai Liu, Xiangui Kang, Edward K.Wong, Yun-Qing Shi
+(Submitted on 21 Apr 2018)
+```
 ### SynGAN(2019)
 ```
 SynGAN: Towards Generating Synthetic Network Attacks using GANs
