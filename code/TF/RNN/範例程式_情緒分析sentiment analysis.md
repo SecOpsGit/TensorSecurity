@@ -4,15 +4,34 @@ Sentiment analysis (opinion mining or emotion AI)
 https://en.wikipedia.org/wiki/Sentiment_analysis
 
 
-很多線上社群網站會蒐集使用者的資料，並且分析使用者行為，像是知名的Facebook在前幾年開始做「情緒分析(sentiment analysis)」，
-它是以文字分析、自然語言處理NLP的方法，找出使用者的評價、情緒，進而預測出使用者行為來進行商業決策，
+很多線上社群網站會蒐集使用者的資料，並且分析使用者行為，
+像是知名的Facebook在前幾年開始做「情緒分析(sentiment analysis)」，
+它是以文字分析、自然語言處理NLP的方法，找出使用者的評價、情緒，
+進而預測出使用者行為來進行商業決策，
 像這樣一連串利用情緒分析帶來的商業價值是相當可觀的。
 ```
+### 許多應用
 
 ```
 陳宜欣/大數據下的情緒分析
 https://www.slideshare.net/tw_dsconf/ss-64076883
 ```
+
+```
+[2015]網路美食評論情緒分析之研究.  
+Online Gastronomy Review Based on Sentiment Analysis
+https://ndltd.ncl.edu.tw/cgi-bin/gs32/gsweb.cgi/login?o=dnclcdr&s=id=%22103NKHC0255011%22.&searchmode=basic
+
+[2014]使用情緒分析於圖書館使用者滿意度評估之研究
+A Study on Library Users’ Satisfaction Evaluation Using Sentimental Analysis
+http://lac3.glis.ntnu.edu.tw/vj-attachment/2014/03/attach146.pdf
+
+[繁體中文/NLP] 從word2vec到 情感分析
+https://studentcodebank.wordpress.com/2019/02/22/%E7%B9%81%E9%AB%94%E4%B8%AD%E6%96%87-nlp-%E5%BE%9Eword2vec%E5%88%B0-%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90/
+
+https://chunshan-theta.github.io/NLPLab/
+```
+### 參考資料
 ```
 基於文件為基礎的情緒分類(Document-based sentiment classification)
 以主觀的概念做情緒分析(Subjectivity and sentiment classification)
@@ -27,21 +46,9 @@ wiki:https://zh.wikipedia.org/wiki/%E6%96%87%E6%9C%AC%E6%83%85%E6%84%9F%E5%88%86
 2011 Survey Article - Comprehensive Review Of Opinion Summarization (Kim et al)
 2013 Survey Article - New Avenues in Opinion Mining and Sentiment Analysis (Cambria et al)
 https://web.archive.org/web/20141213014514/http://kavita-ganesan.com/sites/default/files/survey_opinionSummarization.pdf
-
 ```
-```
-[2015]網路美食評論情緒分析之研究.  Online Gastronomy Review Based on Sentiment Analysis
-https://ndltd.ncl.edu.tw/cgi-bin/gs32/gsweb.cgi/login?o=dnclcdr&s=id=%22103NKHC0255011%22.&searchmode=basic
 
-[2014]使用情緒分析於圖書館使用者滿意度評估之研究
-A Study on Library Users’ Satisfaction Evaluation Using Sentimental Analysis
-http://lac3.glis.ntnu.edu.tw/vj-attachment/2014/03/attach146.pdf
-
-[繁體中文/NLP] 從word2vec到 情感分析
-https://studentcodebank.wordpress.com/2019/02/22/%E7%B9%81%E9%AB%94%E4%B8%AD%E6%96%87-nlp-%E5%BE%9Eword2vec%E5%88%B0-%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90/
-https://chunshan-theta.github.io/NLPLab/
-```
-### IMDb-Movie-Review
+# IMDb-Movie-Review
 ```
 IMDb網路電影影評資料集
 ```
@@ -50,7 +57,7 @@ IMDb網路電影影評資料集
 https://paperswithcode.com/sota/sentiment-analysis-on-imdb
 ```
 
-###
+### RNN
 ```
 %tensorflow_version 2.x 
 ```
@@ -69,17 +76,26 @@ assert tf.__version__.startswith('2.')
 
 # fix random seed for reproducibility
 np.random.seed(7)
+
 # load the dataset but only keep the top n words, zero the rest
 top_words = 10000
+
 # truncate and pad input sequences
 max_review_length = 80
-(X_train, y_train), (X_test, y_test) = keras.datasets.imdb.load_data(num_words=top_words)
+
+(X_train, y_train), (X_test, y_test) =
+keras.datasets.imdb.load_data(num_words=top_words)
+
 # X_train = tf.convert_to_tensor(X_train)
 # y_train = tf.one_hot(y_train, depth=2)
+
 print('Pad sequences (samples x time)')
 
-x_train = keras.preprocessing.sequence.pad_sequences(X_train, maxlen=max_review_length)
+x_train = keras.preprocessing.sequence.pad_sequences(X_train,
+maxlen=max_review_length)
+
 x_test = keras.preprocessing.sequence.pad_sequences(X_test, maxlen=max_review_length)
+
 print('x_train shape:', x_train.shape)
 print('x_test shape:', x_test.shape)
 
@@ -171,7 +187,7 @@ Epoch 5/20
 
 ```
 
-#
+# 使用XLNet(2019)
 ```
 XLNet: Generalized Autoregressive Pretraining for Language Understanding
 Zhilin Yang, Zihang Dai, Yiming Yang, Jaime Carbonell, Ruslan Salakhutdinov, Quoc V. Le
@@ -180,14 +196,31 @@ https://arxiv.org/abs/1906.08237
 
 https://github.com/zihangdai/xlnet
 ```
-### 
 ```
+2019-NLP最強模型: XLNet
 
-```
-```
+2019年6月中旬Google提出一個NLP模型XLNet，
+在眾多NLP任務包括RACE, GLUE Benchmark以及許多Text-classification上輾壓眾生，
+尤其是在號稱最困難的大型閱讀理解QA任務RACE足足超越BERT 6~9個百分點，
+其中XLNet模型改善了ELMo, GPT, BERT的缺點，
+有ELMo, GPT的AR性質，又有跟BERT一樣，使用AE性質能夠捕捉bidirectional context的訊息，
+最後再把Transformer-XL能夠訓練大型文本的架構拿來用
 
+
+目前NLP的發展趨勢越來越靠近Pre-train model+Downstream(transfer learning)，
+即先訓練一個夠generalize的模型，接著依照下游任務的需求去更改結構並Finetune模型，
+
+真正重要的其實是Pre-train model token之間依賴關係，即word embedding，
+有良好的word embedding基本上效果也會不錯，
+
+目前在Pre-train word embedding的方式都是預測Sequence本身的單詞，
+即依賴上下文來預測單詞，著名的模型如ELMo, GPT, BERT, ERNIE。
+```
+## 範例程式
+```
 ! pip install sentencepiece
-
+```
+```
 """Download the pretrained XLNet model and unzip"""
 
 # only needs to be done once
@@ -219,9 +252,9 @@ CHECKPOINT_DIR = 'exp/imdb' #@param {type:"string"}
 ```
 ```
 """## Run Model
-This will set off the fine tuning of XLNet. There are a few things to note here:
+This will set off the fine tuning of XLNet. 
 
-
+There are a few things to note here:
 1.   This script will train and evaluate the model
 2.   This will store the results locally on colab and will be lost when you are disconnected from the runtime
 3.   This uses the large version of the model (base not released presently)
@@ -275,7 +308,7 @@ These are the results that I got from running this experiment
 """
 
 ```
-
+## 範例程式關鍵解說
 ```
 
 ```
