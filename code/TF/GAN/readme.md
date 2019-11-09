@@ -1,13 +1,12 @@
-# Generative Model生成式模型
-
-# GAN架構
-
-# DCGAN 實作
-
-# GAN 發展
-
-# cGAN
-
+# 課程主題
+```
+Generative Model生成式模型
+GAN架構
+DCGAN 實作
+GAN 發展
+[*]cGAN實作
+GAN與資安應用
+```
 # 進階研讀
 ## keras-GAN
 ```
@@ -15,8 +14,6 @@ Keras implementations of Generative Adversarial Networks.
 https://github.com/eriklindernoren/Keras-GAN
 ```
 ```
-
-
 !git clone https://github.com/eriklindernoren/Keras-GAN
 
 !ls
