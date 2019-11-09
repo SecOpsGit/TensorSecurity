@@ -4,7 +4,8 @@
 ```
 ### Bot-Evading-Machine-Learning-Malware-Detection
 ```
-https://www.blackhat.com/docs/us-17/thursday/us-17-Anderson-Bot-Vs-Bot-Evading-Machine-Learning-Malware-Detection-wp.pdf
+https://www.blackhat.com/docs/us-17/thursday/
+us-17-Anderson-Bot-Vs-Bot-Evading-Machine-Learning-Malware-Detection-wp.pdf
 ```
 ### PassGAN(2017)
 ```
