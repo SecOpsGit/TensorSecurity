@@ -20,7 +20,11 @@ NLP since 2018
 聊天機器人
 Char RNN可以用来生成文章，诗歌，甚至是代码
 ```
-
+#### 學習資源
+```
+nlp-tutorial
+https://github.com/graykode/nlp-tutorial
+```
 # RNN Model
 ```
 RNN
