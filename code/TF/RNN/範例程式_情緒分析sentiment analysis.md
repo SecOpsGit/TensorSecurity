@@ -326,6 +326,23 @@ These are the results that I got from running this experiment
 
 *   The trained model checkpoints can be found in 'exp/imdb'
 """
+```
+```
+.................
+INFO:tensorflow:Finished evaluation at 2019-11-09-11:32:43
+I1109 11:32:43.085186 140605255649152 evaluation.py:275] Finished evaluation at 2019-11-09-11:32:43
+INFO:tensorflow:Saving dict for global step 4000: eval_accuracy = 0.92328, eval_loss = 0.32805777, global_step = 4000, loss = 0.32805777
+I1109 11:32:43.085558 140605255649152 estimator.py:2049] Saving dict for global step 4000: eval_accuracy = 0.92328, eval_loss = 0.32805777, global_step = 4000, loss = 0.32805777
+INFO:tensorflow:Saving 'checkpoint_path' summary for global step 4000: exp/imdb/model.ckpt-4000
+I1109 11:32:43.087548 140605255649152 estimator.py:2109] Saving 'checkpoint_path' summary for global step 4000: exp/imdb/model.ckpt-4000
+INFO:tensorflow:================================================================================
+I1109 11:32:43.088168 140605255649152 run_classifier.py:786] ================================================================================
+INFO:tensorflow:Eval result | eval_accuracy 0.9232800006866455 | eval_loss 0.32805776596069336 | global_step 4000 | loss 0.32805776596069336 | path exp/imdb/model.ckpt-4000 | step 4000 | 
+I1109 11:32:43.088358 140605255649152 run_classifier.py:790] Eval result | eval_accuracy 0.9232800006866455 | eval_loss 0.32805776596069336 | global_step 4000 | loss 0.32805776596069336 | path exp/imdb/model.ckpt-4000 | step 4000 | 
+INFO:tensorflow:================================================================================
+I1109 11:32:43.088484 140605255649152 run_classifier.py:795] ================================================================================
+INFO:tensorflow:Best result | eval_accuracy 0.9232800006866455 | eval_loss 0.32805776596069336 | global_step 4000 | loss 0.32805776596069336 | path exp/imdb/model.ckpt-4000 | step 4000 | 
+I1109 11:32:43.088574 140605255649152 run_classifier.py:799] Best result | eval_accuracy 0.9232800006866455 | eval_loss 0.32805776596069336 | global_step 4000 | loss 0.32805776596069336 | path exp/imdb/model.ckpt-4000 | step 4000 | 
 
 ```
 ## 範例程式關鍵解說
