@@ -327,7 +327,7 @@ Dataset支援一類特殊的操作：Transformation。
 通常我們可以通過Transformation完成資料變換，打亂，組成batch，生成epoch等一系列操作。
 
 常用的Transformation有：
-[1]map
+[1]map ===對映，可設一數學操作對映到所有資料集裡的樣本，如全部加
 [2]batch  ===將多個元素組合成batch
 [3]shuffle  === 打亂dataset中的元素，
         有一個參數buffersize，表示打亂時使用的buffer的大小：
@@ -336,6 +336,9 @@ Dataset支援一類特殊的操作：Transformation。
      dataset = dataset.repeat(5)
      如果直接調用repeat()的話，生成的序列就會無限重複下去，
      沒有結束，因此也不會拋出tf.errors.OutOfRangeError異常
+
+For More, Please see 
+    https://laoweizz.blogspot.com/2019/01/tensorflow-dataset.html
 ```
 ## 建置模型
 ```
