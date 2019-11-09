@@ -197,6 +197,13 @@ https://arxiv.org/abs/1906.08237
 https://github.com/zihangdai/xlnet
 ```
 ```
+What is XLNet and why it outperforms BERT
+https://towardsdatascience.com/what-is-xlnet-and-why-it-outperforms-bert-8d8fce710335
+
+XLNet:运行机制及和Bert的异同比较
+https://zhuanlan.zhihu.com/p/70257427
+```
+```
 2019-NLP最強模型: XLNet
 
 2019年6月中旬Google提出一個NLP模型XLNet，
@@ -217,6 +224,10 @@ https://github.com/zihangdai/xlnet
 即依賴上下文來預測單詞，著名的模型如ELMo, GPT, BERT, ERNIE。
 ```
 ## 範例程式
+```
+資料來源
+https://colab.research.google.com/github/zihangdai/xlnet/blob/master/notebooks/colab_imdb_gpu.ipynb
+```
 ```
 ! pip install sentencepiece
 ```
