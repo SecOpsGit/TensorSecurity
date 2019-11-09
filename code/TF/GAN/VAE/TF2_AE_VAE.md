@@ -6,7 +6,8 @@
 ```
 # AutoEncoder
 ```
-AutoEncoder是深度學習的另外一個重要內容，並且非常有意思，神經網路通過大量資料集，進行end-to-end的訓練，不斷提高其準確率，
+AutoEncoder是深度學習的另外一個重要內容，並且非常有意思，神經網路通過大量資料集，
+進行end-to-end的訓練，不斷提高其準確率，
 而AutoEncoder通過設計encode和decode過程使輸入和輸出越來越接近，是一種無監督學習過程。
 ```
 # AutoEncoder@ TensorFlow-2 | fashion_mnist
@@ -29,8 +30,6 @@ from    tensorflow import keras
 from    tensorflow.keras import Sequential, layers
 from    PIL import Image
 from    matplotlib import pyplot as plt
-
-
 
 tf.random.set_seed(22)
 np.random.seed(22) 
@@ -354,5 +353,4 @@ for epoch in range(num_epochs):
     plt.imshow(np.asarray(new_im))
     plt.show()
     print('New images saved !')
-
 ```
