@@ -7,6 +7,35 @@ GAN 發展
 [*]cGAN實作
 GAN與資安應用
 ```
+### Generative Adversarial Network (GAN)發展史
+```
+Generative Adversarial Networks(2014)
+Conditional GANs(2014)
+
+DCGANs(2015)
+
+Improved Techniques for Training GANs(2016)
+Progressively Growing GANs(2017)
+
+Pix2Pix(2016)
+StackGAN(2016)
+CycleGAN(2017)
+
+BigGAN(2018)[史上最强 GAN 图像生成器]====BigGAN_Deep(2019)[更嚇人]
+StyleGAN(2018) https://thispersondoesnotexist.com/
+
+[最强非 GAN 生成器]Vector Quantized Variational AutoEncoder (VQ-VAE) models(2019)
+
+https://towardsdatascience.com/must-read-papers-on-gans-b665bbae3317
+```
+### Awesome GAN
+```
+https://github.com/nightrome/really-awesome-gan
+https://github.com/nashory/gans-awesome-applications
+https://github.com/Faldict/awesome-GAN
+https://github.com/dongb5/GAN-Timeline
+https://github.com/hindupuravinash/the-gan-zoo
+```
 # 進階研讀
 ## keras-GAN
 ```
