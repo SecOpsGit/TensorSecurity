@@ -1,12 +1,17 @@
-# 使用TensorFlow Hub實現遷移學習(tensorflow2.0官方教程翻譯)
+#
 ```
-最新版本：https://www.mashangxue123.com/tensorflow/tf2-tutorials-images-hub_with_keras.html
-英文版本：https://tensorflow.google.cn/beta/tutorials/images/hub_with_keras
-翻譯建議PR：https://github.com/mashangxue/tensorflow2-zh/edit/master/r2/tutorials/images/hub_with_keras.md
-```
+TensorFlow Hub is a library for the publication, discovery, and consumption of 
+reusable parts of machine learning models. 
 
-```
-基於Keras使用TensorFlow Hub實現遷移學習(tensorflow2.0官方教程翻譯)
+A module is a self-contained piece of a TensorFlow graph, 
+along with its weights and assets, that can be reused across different tasks 
+in a process known as transfer learning. 
+
+Transfer learning can:
+Train a model with a smaller dataset,
+Improve generalization, and
+Speed up training.
+
 TensorFlow Hub是一種共用預訓練模型元件的方法。
 
 TensorFlow Hub是一個用於促進機器學習模型的可重用部分的發佈，探索和使用的庫。
@@ -15,17 +20,30 @@ TensorFlow Hub是一個用於促進機器學習模型的可重用部分的發佈
 
 GitHub 地址：https://github.com/tensorflow/hub
 
-有關預先訓練模型的可搜索清單，請參閱TensorFlow模組中心TensorFlow Module Hub。
+有關預先訓練模型的可搜索清單，請參閱TensorFlow模組中心TensorFlow Module Hub
+```
+
+# 使用TensorFlow Hub實現遷移學習(TF2.0官方教程)
+```
+最新版本：https://www.mashangxue123.com/tensorflow/tf2-tutorials-images-hub_with_keras.html
+英文版本：https://tensorflow.google.cn/beta/tutorials/images/hub_with_keras
+翻譯建議PR：https://github.com/mashangxue/tensorflow2-zh/edit/master/r2/tutorials/images/hub_with_keras.md
+
+基於Keras使用TensorFlow Hub實現遷移學習(tensorflow2.0官方教程翻譯)
+https://zhuanlan.zhihu.com/p/68061929
 
 本教程示範：
 如何在tf.keras中使用TensorFlow Hub。
 如何使用TensorFlow Hub進行圖像分類。
 如何做簡單的遷移學習。
 ```
-```
-1. 安裝和導入包
-安裝命令：pip install -U tensorflow_hub
 
+## 安裝tensorflow_hub
+```
+安裝命令：pip install -U tensorflow_hub
+```
+### 導入模組與套件
+```
 from __future__ import absolute_import, division, print_function, unicode_literals
 
 import matplotlib.pylab as plt
@@ -35,14 +53,16 @@ import tensorflow as tf
 import tensorflow_hub as hub
 
 from tensorflow.keras import layers
+``` 
+
+### 2.使用根據ImageNet資料集所建置的mobilenet分類器
 ```
-### 2.ImageNet分類器mobilenet
-```
-2.1. 下載分類器
+# 下載分類器
 使用hub.module載入mobilenet，並使用tf.keras.layers.Lambda將其包裝為keras層。
 來自tfhub.dev的任何相容tf2的圖像分類器URL都可以在這裡工作。
 
-classifier_url ="https://tfhub.dev/google/tf2-preview/mobilenet_v2/classification/2" #@param {type:"string"}
+classifier_url ="https://tfhub.dev/google/tf2-preview/mobilenet_v2/classification/2"  
+#@param {type:"string"}
 
 IMAGE_SHAPE = (224, 224)
 
@@ -87,7 +107,6 @@ plt.imshow(grace_hopper)
 plt.axis('off')
 predicted_class_name = imagenet_labels[predicted_class]
 _ = plt.title("Prediction: " + predicted_class_name.title())
-
 ```
 
 ### 3.簡單的遷移學習
@@ -160,6 +179,7 @@ feature_extractor_layer = hub.KerasLayer(feature_extractor_url,
 它為每個圖像返回一個1280長度的向量：
 
 feature_batch = feature_extractor_layer(image_batch)
+
 print(feature_batch.shape)
 
 凍結特徵提取器層中的變數，以便訓練僅修改新的分類器層。
@@ -193,6 +213,7 @@ model.summary()
 
 
 predictions = model(image_batch)
+
 predictions.shape
 
 
@@ -298,5 +319,4 @@ abs(reloaded_result_batch - result_batch).max()
 
 
 這個保存的模型可以在以後載入推理，或轉換為TFLite 和 TFjs。
-
 ```
