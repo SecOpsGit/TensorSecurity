@@ -224,7 +224,6 @@ flow_from_directory(
 [5]get_random_transform(img_shape,seed=None)
 [6]random_transform(x,seed=None)
 [7]standardize(x)
-[8]
 
 類別建搆子:
 __init__(
@@ -233,24 +232,42 @@ __init__(
     featurewise_std_normalization=False, #布林值，將輸入除以資料集的標準差以完成標準化, 按feature執行
     samplewise_std_normalization=False, # 布林值，將輸入的每個樣本除以其自身的標準差
     
-    zca_whitening=False,
-    zca_epsilon=1e-06,
-    rotation_range=0,
-    width_shift_range=0.0,
-    height_shift_range=0.0,
-    brightness_range=None,
-    shear_range=0.0,
-    zoom_range=0.0,
-    channel_shift_range=0.0,
-    fill_mode='nearest',
-    cval=0.0,
-    horizontal_flip=False,
-    vertical_flip=False,
+    zca_whitening=False, #布林值，對輸入資料施加ZCA白化
+    zca_epsilon=1e-06, #ZCA使用的eposilon，默認1e-6
+    
+    #資料提升(data argumment)時常用參數
+    rotation_range=0, #整數Int，圖片隨機轉動的角度  
+    width_shift_range=0.0, #浮點數，圖片寬度的某個比例，圖片水準偏移的幅度
+    height_shift_range=0.0, #浮點數，圖片高度的某個比例，資料提升時圖片豎直偏移的幅度
+    
+    brightness_range=None, #Tuple or list of two floats. 
+                           #Range for picking a brightness shift value from.
+    shear_range=0.0,  #浮點數，剪切強度（逆時針方向的剪切變換角度
+    zoom_range=0.0, #浮點數或形如[lower,upper]的清單，隨機縮放的幅度
+                    #若為浮點數，則相當於[lower,upper] = [1 - zoom_range, 1+zoom_range]
+    channel_shift_range=0.0, #浮點數，隨機通道偏移的幅度
+    
+    fill_mode='nearest', #當進行變換時超出邊界的點將根據本參數給定的方法進行處理                   
+                         #有四種選項: ‘constant’，‘nearest’，‘reflect’或‘wrap’
+    cval=0.0, #浮點數或整數，當fill_mode=constant時，指定要向超出邊界的點填充的值
+
+    horizontal_flip=False, #布林值，進行隨機水準翻轉
+    vertical_flip=False,   #布林值，進行隨機垂直翻轉
+    
     rescale=None, #所有TensorFlow Hub的圖像模組都期望浮點輸入在“[0,1]”範圍內。
                   #使用ImageDataGenerator的rescale參數來實現這一目的。
-    preprocessing_function=None,
-    data_format=None,
-    validation_split=0.0,
+                  #放縮因數,預設為None. 如果為None或0則不進行放縮,否則會將該數值乘到資料上
+                  
+    preprocessing_function=None, #將被應用於每個輸入的函數。該函數將在圖片縮放和資料提升之後運行。
+                                 #該函數接受一個參數，為一張圖片（秩為3的numpy array），
+                                 #並且輸出一個具有相同shape的numpy array
+                                 
+    data_format=None, # 代表圖像的通道維的位置。 字串，“channel_first” 或 “channel_last”
+                      # "channels_last" : (samples, height, width, channels), 
+                      # "channels_first" : (samples, channels, height, width). 
+    
+    validation_split=0.0, #Float. Fraction of images reserved for validation 
+                          #(strictly between 0 and 1).
     dtype=None
 )
 ```
