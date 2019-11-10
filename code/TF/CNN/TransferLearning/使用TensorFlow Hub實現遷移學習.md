@@ -45,13 +45,9 @@ https://zhuanlan.zhihu.com/p/68061929
 ### 導入模組與套件
 ```
 from __future__ import absolute_import, division, print_function, unicode_literals
-
 import matplotlib.pylab as plt
-
 import tensorflow as tf
-
 import tensorflow_hub as hub
-
 from tensorflow.keras import layers
 ``` 
 
@@ -142,7 +138,6 @@ tf.keras.utils.get_file(
 )
 
 返回值:下載後的文件地址
-
 ```
 ### 3.簡單的遷移學習
 ```
@@ -154,34 +149,116 @@ data_root = tf.keras.utils.get_file(
   'flower_photos','https://storage.googleapis.com/download.tensorflow.org/example_images/flower_photos.tgz', untar=True)
 
 ```
-### tf.keras.utils.get_file()
+### tf.keras.preprocessing預處理模組
+
 ```
-https://www.tensorflow.org/api_docs/python/tf/keras/utils/get_file
+https://www.tensorflow.org/api_docs/python/tf/keras/preprocessing/sequence
+image module: Set of tools for real-time data augmentation on image data.
+sequence module: Utilities for preprocessing sequence data.
+text module: Utilities for text input preprocessing.
 
+tf.keras.preprocessing.sequence 序列型資料預處理模組
+tf.keras.preprocessing.image 圖片預處理模組
+```
+### 圖片預處理===tf.keras.preprocessing.image模組
+```
+將此資料載入到我們的模型中的最簡單方法是使用 
+tf.keras.preprocessing.image.ImageDataGenerator類別
+此類別有許多方法:
+[1]apply_transform(x,transform_parameters)
+   x是一個3D tensor, single image.
+   transform_parameters是一大推字典資料型態定義轉換參數
+     Dictionary with string - parameter pairs describing the transformation.
+   Returns:A transformed version of the input (same shape)
+   
+[2]fit( x,augment=False, rounds=1,seed=None)  
+     Fits the data generator to some sample data.   
+     計算依賴於資料的變換所需要的統計資訊(均值方差等)
+     只有使用featurewise_center，featurewise_std_normalization或zca_whitening時需要此函數
+     
+[3]flow(.....)
+     接收numpy陣列和標籤為參數,生成經過資料提升或標準化後的batch資料,
+     並在一個無限迴圈中不斷的返回batch資料
 
-tf.keras.utils.get_file(
-    fname,
-    origin,
-    untar=False,
-    md5_hash=None,
-    file_hash=None,
-    cache_subdir='datasets',
-    hash_algorithm='auto',
-    extract=False,
-    archive_format='auto',
-    cache_dir=None
+[4]flow_from_dataframe(.....)
+     Takes the dataframe and the path to a directory 
+     generates batches of augmented/normalized data.
+     更多參數說明,請參閱官方網址
+[5]flow_from_directory()
+    以資料夾路徑為參數,產生經過資料處理過(提升/歸一化/...)後的資料
+    在一個無限迴圈中無限產生batch資料 generates batches of augmented data
+
+flow_from_directory(
+    directory,  #目的檔案夾路徑
+                #對於每一個類,該資料夾都要包含一個子資料夾
+                #子資料夾中任何JPG、PNG、BNP、PPM的圖片都會被生成器使用
+    target_size=(256, 256), #整數tuple,預設為(256, 256). `(height, width)` 圖像將被resize成該尺寸
+    color_mode='rgb',  # 顏色模式,有三種選項:"grayscale", "rgb", "rgba"   預設為"rgb"
+                       # 代表這些圖片是否會被轉換為單通道或三通道的圖片 
+    classes=None,
+    class_mode='categorical',# 有五種選項:"categorical", "binary", "sparse","input", or None.
+                             # 預設為為"categorical. 
+                             # 此參數決定了返回的標籤陣列的形式
+                             #"categorical"會返回2D的one-hot編碼標籤,
+                             #"binary"返回1D的二值標籤.
+                             #"sparse"返回1D的整數標籤,
+                             #"input" will be images identical to input images 
+                                       (mainly used to work with autoencoders).
+                             # None則不返回任何標籤, 生成器將僅僅生成batch資料
+    batch_size=32, # batch資料的大小,預設32
+    shuffle=True, # 是否打亂資料,預設為True
+    seed=None, # 可選參數,打亂資料和進行變換時的亂數種子
+    
+    save_to_dir=None, # None或字串，該參數能讓你將提升後的圖片保存起來，用以視覺化
+    save_prefix='',  # 字串: 保存提升後圖片時使用的首碼, 只有當設置了save_to_dir時才會生效
+    save_format='png',# 圖片存檔的格式:有倆個選項:"png"或"jpeg",預設"jpeg"
+    
+    follow_links=False, #是否訪問子資料夾中的軟連結
+    subset=None, # Subset of data (`"training"` or `"validation"`) 
+                 # if `validation_split` is set in `ImageDataGenerator`.
+    interpolation='nearest' #Interpolation method used to resample the image if the
+                              target size is different from that of the loaded image.
+                            #Supported methods are `"nearest"`, `"bilinear"`,and `"bicubic"`.
+)
+
+[5]get_random_transform(img_shape,seed=None)
+[6]random_transform(x,seed=None)
+[7]standardize(x)
+[8]
+
+類別建搆子:
+__init__(
+    featurewise_center=False,  #布林值，使輸入資料集去中心化（均值為0）, 按feature執行
+    samplewise_center=False,  #布林值，使輸入資料的每個樣本均值為0
+    featurewise_std_normalization=False, #布林值，將輸入除以資料集的標準差以完成標準化, 按feature執行
+    samplewise_std_normalization=False, # 布林值，將輸入的每個樣本除以其自身的標準差
+    
+    zca_whitening=False,
+    zca_epsilon=1e-06,
+    rotation_range=0,
+    width_shift_range=0.0,
+    height_shift_range=0.0,
+    brightness_range=None,
+    shear_range=0.0,
+    zoom_range=0.0,
+    channel_shift_range=0.0,
+    fill_mode='nearest',
+    cval=0.0,
+    horizontal_flip=False,
+    vertical_flip=False,
+    rescale=None, #所有TensorFlow Hub的圖像模組都期望浮點輸入在“[0,1]”範圍內。
+                  #使用ImageDataGenerator的rescale參數來實現這一目的。
+    preprocessing_function=None,
+    data_format=None,
+    validation_split=0.0,
+    dtype=None
 )
 ```
 ```
-將此資料載入到我們的模型中的最簡單方法是使用 tf.keras.preprocessing.image.ImageDataGenerator,
-
-所有TensorFlow Hub的圖像模組都期望浮點輸入在“[0,1]”範圍內。
-使用ImageDataGenerator的rescale參數來實現這一目的。圖像大小將在稍後處理。
-
 image_generator = tf.keras.preprocessing.image.ImageDataGenerator(rescale=1/255)
 
 image_data = image_generator.flow_from_directory(str(data_root), target_size=IMAGE_SHAPE)
-
+```
 結果物件是一個返回image_batch，label_batch對的反覆運算器。
 
 for image_batch, label_batch in image_data:
