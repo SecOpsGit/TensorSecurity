@@ -162,6 +162,10 @@ Constraints from pretrained models：使用預訓練網路，新資料集使用�
 Learning rates：微調 ConvNet權重（ConvNet weights are relatively good）時的學習率要比新的線性分類器
                （權重是隨機初始化的）的學習率要小；
 ```
+```
+7种常见的迁移学习
+https://blog.csdn.net/sinat_22510827/article/details/86765479
+```
 ### 範例學習
 ```
 Transfer learning with TensorFlow Hub
