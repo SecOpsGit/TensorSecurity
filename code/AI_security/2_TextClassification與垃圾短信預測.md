@@ -2,9 +2,8 @@
 ```
 二元分類: binary classification
 spam detection[email, SMS]
-
 ```
-#
+##
 ```
 MS Spam Collection Dataset
 Collection of SMS messages tagged as spam or legitimate
@@ -52,6 +51,13 @@ ham	Ahhh. Work. I vaguely remember that! What does it feel like? Lol
 ham	Wait that's still not all that clear, were you not sure about me being sarcastic or that that's why x doesn't want to live with us
 ham	Yeah he got in at 2 and was v apologetic. n had fallen out and she was actin like spoilt child and he got caught up in that. Till 2! But we won't go there! Not doing too badly cheers. You? 
 ```
+```
+2009年博士論文
+A CORPUS LINGUISTICS STUDY OF SMS TEXT MESSAGING
+CAROLINE TAGG 
+https://etheses.bham.ac.uk/id/eprint/253/1/Tagg09PhD.pdf
+```
+
 # TensorFlow_RNN for 垃圾短信預測
 
 ```
