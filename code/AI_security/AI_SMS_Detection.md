@@ -1,8 +1,26 @@
 #
 ```
+Machine Learning for E-mail Spam Filtering: Review,Techniques and Trends
+Alexy Bhowmick, Shyamanta M. Hazarika
+(Submitted on 3 Jun 2016)
+
+https://arxiv.org/abs/1606.01042
+
+We present a comprehensive review of the most effective content-based e-mail spam filtering techniques. 
+
+We focus primarily on Machine Learning-based spam filters and their variants, 
+and report on a broad review ranging from surveying the relevant ideas, efforts, effectiveness, and the current progress. 
+
+The initial exposition of the background examines the basics of e-mail spam filtering, the evolving nature of spam, spammers playing cat-and-mouse with e-mail service providers (ESPs), and the Machine Learning front in fighting spam. 
+
+We conclude by measuring the impact of Machine Learning-based filters and explore the promising offshoots of latest developments.
+```
+
+```
 A Comparative Study of Spam SMS Detection using Machine Learning Classifiers
 
-https://www.researchgate.net/publication/328907962_A_Comparative_Study_of_Spam_SMS_Detection_Using_Machine_Learning_Classifiers
+https://www.researchgate.net/publication/
+328907962_A_Comparative_Study_of_Spam_SMS_Detection_Using_Machine_Learning_Classifiers
 
 ```
 ```
