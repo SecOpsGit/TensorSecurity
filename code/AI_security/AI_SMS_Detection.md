@@ -1,5 +1,12 @@
 #
 ```
+Support Vector Machine Based Spam SMS Detection
+Araştırma Makalesi / Adem TEKEREK*
+Information Technology Department, Gazi University, Turkey
+
+https://dergipark.org.tr/tr/download/article-file/535480
+```
+```
 Machine Learning for E-mail Spam Filtering: Review,Techniques and Trends
 Alexy Bhowmick, Shyamanta M. Hazarika
 (Submitted on 3 Jun 2016)
