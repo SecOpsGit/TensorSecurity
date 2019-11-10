@@ -35,6 +35,8 @@ https://blog.csdn.net/xzy_thu/article/details/71921263
 A Survey on Transfer Learning
 Sinno Jialin Pan and Qiang Yang    Fellow, IEEE
 http://www.cse.ust.hk/faculty/qyang/Docs/2009/tkde_transfer_learning.pdf
+
+https://blog.csdn.net/csdn_47/article/details/83107201
 ```
 目標資料和原始資料都有標籤:Fine-tune
 ```
@@ -113,9 +115,16 @@ https://www.itread01.com/content/1541847496.html
 ```
 http://cs231n.github.io/transfer-learning/[完整資料來源]
 
+Pretrained models. Since modern ConvNets take 2-3 weeks to train across multiple GPUs on ImageNet, 
+it is common to see people release their final ConvNet checkpoints for the benefit of others 
+who can use the networks for fine-tuning. 
+
+For example, the Caffe library has a Model Zoo where people share their network weights.
+
+
 https://blog.csdn.net/tommorrow12/article/details/80318956[不完整]
 
-遷移學習兩種類型：三種
+遷移學習兩種類型：三種 還有Pretrained models
 [1]ConvNet as fixed feature extractor：
 利用在大資料集(如ImageNet)上預訓練過的ConvNet(如AlexNet，VGGNet)，移除最後幾層（一般是最後分類器），
 將剩下的ConvNet作為應用於新資料集的固定不變的特徵提取器，輸出特徵稱為CNN codes，
@@ -155,6 +164,9 @@ Learning rates：微調 ConvNet權重（ConvNet weights are relatively good）�
 ```
 ### 範例學習
 ```
+Transfer learning with TensorFlow Hub
+https://www.tensorflow.org/tutorials/images/transfer_learning_with_hub
+
 Transfer learning with a pretrained ConvNet
 https://www.tensorflow.org/tutorials/images/transfer_learning
 
