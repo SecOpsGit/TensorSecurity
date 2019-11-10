@@ -52,8 +52,9 @@ from tensorflow.keras import layers
 ``` 
 
 ### 2.使用根據ImageNet資料集所建置的mobilenet分類器
+
+### 下載分類器
 ```
-# 下載分類器
 使用hub.module載入mobilenet，並使用tf.keras.layers.Lambda將其包裝為keras層。
 來自tfhub.dev的任何相容tf2的圖像分類器URL都可以在這裡工作。
 
@@ -65,9 +66,9 @@ IMAGE_SHAPE = (224, 224)
 classifier = tf.keras.Sequential([
     hub.KerasLayer(classifier_url, input_shape=IMAGE_SHAPE+(3,))
 ])
-
-
-2.2. 在單個圖像上運行它
+```
+### 測試看看:在單個圖像上運行它
+```
 下載單個圖像以試用該模型。
 
 import numpy as np
@@ -78,7 +79,6 @@ grace_hopper = tf.keras.utils.get_file('image.jpg',
 grace_hopper = Image.open(grace_hopper).resize(IMAGE_SHAPE)
 grace_hopper = np.array(grace_hopper)/255.0
 grace_hopper.shape
-
 
 添加批量維度，並將圖像傳遞給模型。
 
@@ -91,9 +91,7 @@ result.shape
 predicted_class = np.argmax(result[0], axis=-1)
 predicted_class
 
-
-2.3. 解碼預測
-我們有預測的類別ID，獲取ImageNet標籤，並解碼預測
+解碼預測:我們有預測的類別ID，獲取ImageNet標籤，並解碼預測
 
 labels_path = tf.keras.utils.get_file('ImageNetLabels.txt',
 'https://storage.googleapis.com/download.tensorflow.org/data/ImageNetLabels.txt')
@@ -162,8 +160,10 @@ tf.keras.preprocessing.image 圖片預處理模組
 ```
 ### 圖片預處理===tf.keras.preprocessing.image模組
 ```
+https://www.tensorflow.org/api_docs/python/tf/keras/preprocessing/image
 將此資料載入到我們的模型中的最簡單方法是使用 
 tf.keras.preprocessing.image.ImageDataGenerator類別
+
 此類別有許多方法:
 [1]apply_transform(x,transform_parameters)
    x是一個3D tensor, single image.
@@ -221,6 +221,10 @@ flow_from_directory(
                             #Supported methods are `"nearest"`, `"bilinear"`,and `"bicubic"`.
 )
 
+Returns:A `DataFrameIterator` yielding tuples of `(x, y)`
+  `x` is a numpy array containing a batch of images with shape `(batch_size, *target_size, channels)`
+  `y` is a numpy array of corresponding labels.
+
 [5]get_random_transform(img_shape,seed=None)
 [6]random_transform(x,seed=None)
 [7]standardize(x)
@@ -270,30 +274,29 @@ __init__(
                           #(strictly between 0 and 1).
     dtype=None
 )
+
 ```
 ```
 image_generator = tf.keras.preprocessing.image.ImageDataGenerator(rescale=1/255)
 
 image_data = image_generator.flow_from_directory(str(data_root), target_size=IMAGE_SHAPE)
-```
+
 結果物件是一個返回image_batch，label_batch對的反覆運算器。
 
 for image_batch, label_batch in image_data:
   print("Image batch shape: ", image_batch.shape)
   print("Labe batch shape: ", label_batch.shape)
   break
-
-
-3.2. 在一批圖像上運行分類器
-現在在圖像批次處理上運行分類器。
-
+```
+### 在一批圖像上運行分類:
+```
 result_batch = classifier.predict(image_batch)
 result_batch.shape  # (32, 1001)
 
 predicted_class_names = imagenet_labels[np.argmax(result_batch, axis=-1)]
 predicted_class_names
 
-現在檢查這些預測如何與圖像對齊：
+# 檢查這些預測如何與圖像對齊：
 
 plt.figure(figsize=(10,9))
 plt.subplots_adjust(hspace=0.5)
@@ -304,21 +307,17 @@ for n in range(30):
   plt.axis('off')
 _ = plt.suptitle("ImageNet predictions")
 
-
-有關圖像屬性，請參閱LICENSE.txt文件。
-
-結果沒有那麼完美，但考慮到這些不是模型訓練的類（“daisy雛菊”除外），這是合理的。
+#結果沒有那麼完美，但考慮到這些不是模型訓練的類（“daisy雛菊”除外），這是合理的。
 ```
-### 3.3. 下載無頭模型
+### 4.去除頂級分類層情況下的Transfer Learning==>特徵提取器
 ```
 TensorFlow Hub還可以在沒有頂級分類層的情況下分發模型。
 這些可以用來輕鬆做遷移學習。
 
-來自tfhub.dev的任何Tensorflow 2相容圖像特徵向量URL都可以在此處使用。
+創建特徵提取器:來自tfhub.dev的任何Tensorflow 2相容圖像特徵向量URL都可以在此處使用。
 
-feature_extractor_url = "https://tfhub.dev/google/tf2-preview/mobilenet_v2/feature_vector/2" #@param {type:"string"}
-
-創建特徵提取器。
+feature_extractor_url = "https://tfhub.dev/google/tf2-preview/mobilenet_v2/feature_vector/2" 
+                                           #@param {type:"string"}
 
 feature_extractor_layer = hub.KerasLayer(feature_extractor_url,
                                          input_shape=(224,224,3))
@@ -333,9 +332,7 @@ print(feature_batch.shape)
 
 feature_extractor_layer.trainable = False
 
-
-3.4. 附上分類頭
-現在將中心層包裝在tf.keras.Sequential模型中，並添加新的分類層。
+附上我們要的分類層:將中心層包裝在tf.keras.Sequential模型中，並添加新的分類層。
 
 model = tf.keras.Sequential([
   feature_extractor_layer,
@@ -343,7 +340,6 @@ model = tf.keras.Sequential([
 ])
 
 model.summary()
-
 
     Model: "sequential_1"
     _________________________________________________________________
@@ -362,21 +358,18 @@ model.summary()
 predictions = model(image_batch)
 
 predictions.shape
-
-
-3.5. 訓練模型
-使用compile配置訓練過程：
-
+```
+### 訓練模型
+### 使用compile配置訓練過程：
+```
 model.compile(
   optimizer=tf.keras.optimizers.Adam(),
   loss='categorical_crossentropy',
   metrics=['acc'])
-
-
-現在使用.fit方法訓練模型。
-
-這個例子只是訓練兩個週期。
-要顯示訓練進度，請使用自訂回檔單獨記錄每個批次的損失和準確性，而不是記錄週期的平均值。
+```
+### 使用.fit方法訓練模型:此案例只訓練兩個週期
+```
+若要顯示訓練進度，請使用自訂回檔單獨記錄每個批次的損失和準確性，而不是記錄週期的平均值。
 
 class CollectBatchStats(tf.keras.callbacks.Callback):
   def __init__(self):
@@ -395,8 +388,9 @@ batch_stats_callback = CollectBatchStats()
 history = model.fit(image_data, epochs=2,
                     steps_per_epoch=steps_per_epoch,
                     callbacks = [batch_stats_callback])
+```
 
-
+```
 現在，即使只是幾次訓練反覆運算，我們已經可以看到模型正在完成任務。
 
 plt.figure()
@@ -411,30 +405,32 @@ plt.ylabel("Accuracy")
 plt.xlabel("Training Steps")
 plt.ylim([0,1])
 plt.plot(batch_stats_callback.batch_acc)
-
-
-
-3.6. 檢查預測
-要重做之前的圖，首先獲取有序的類名列表：
-
+```
+檢查預測:要重做之前的圖，首先獲取有序的類名列表：
+```
 class_names = sorted(image_data.class_indices.items(), key=lambda pair:pair[1])
-class_names = np.array([key.title() for key, value in class_names])
-class_names
 
+class_names = np.array([key.title() for key, value in class_names])
+
+class_names
+```
 
 通過模型運行圖像批次處理，並將索引轉換為類名。
-
+```
 predicted_batch = model.predict(image_batch)
+
 predicted_id = np.argmax(predicted_batch, axis=-1)
+
 predicted_label_batch = class_names[predicted_id]
 
-
-繪製結果
-
+```
+### 繪製結果
+```
 label_id = np.argmax(label_batch, axis=-1)
 
 plt.figure(figsize=(10,9))
 plt.subplots_adjust(hspace=0.5)
+
 for n in range(30):
   plt.subplot(6,5,n+1)
   plt.imshow(image_batch[n])
@@ -443,19 +439,18 @@ for n in range(30):
   plt.axis('off')
 _ = plt.suptitle("Model predictions (green: correct, red: incorrect)")
 
-
-4. 匯出你的模型
-現在您已經訓練了模型，將其匯出為已保存的模型：
-
+```
+### 匯出模型
+```
 import time
 t = time.time()
 
 export_path = "/tmp/saved_models/{}".format(int(t))
 tf.keras.experimental.export_saved_model(model, export_path)
-
-
-
-現在確認我們可以重新載入它，它仍然給出相同的結果：
+```
+### 重新載入模型
+```
+現在確認我們可以重新載入模型，它仍然給出相同的結果：
 
 reloaded = tf.keras.experimental.load_from_saved_model(export_path, custom_objects={'KerasLayer':hub.KerasLayer})
 
@@ -463,7 +458,6 @@ result_batch = model.predict(image_batch)
 reloaded_result_batch = reloaded.predict(image_batch)
 
 abs(reloaded_result_batch - result_batch).max()
-
-
-這個保存的模型可以在以後載入推理，或轉換為TFLite 和 TFjs。
 ```
+
+保存的模型可以在以後載入推理，或轉換為TFLite 和 TFjs。
