@@ -4,6 +4,15 @@
 spam detection[email, SMS]
 
 ```
+```
+MS Spam Collection Dataset
+Collection of SMS messages tagged as spam or legitimate
+https://www.kaggle.com/uciml/sms-spam-collection-dataset/data
+
+The SMS Spam Collection is a set of SMS tagged messages that have been collected for SMS Spam research. 
+It contains one set of SMS messages in English of 5,574 messages, 
+tagged acording being ham (legitimate) or spam.
+```
 
 # TensorFlow_RNN for 垃圾短信預測
 
