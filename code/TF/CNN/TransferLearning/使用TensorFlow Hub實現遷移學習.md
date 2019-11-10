@@ -1,4 +1,4 @@
-#
+# TensorFlow Hub
 ```
 TensorFlow Hub is a library for the publication, discovery, and consumption of 
 reusable parts of machine learning models. 
@@ -101,32 +101,85 @@ predicted_class
 
 labels_path = tf.keras.utils.get_file('ImageNetLabels.txt',
 'https://storage.googleapis.com/download.tensorflow.org/data/ImageNetLabels.txt')
+
 imagenet_labels = np.array(open(labels_path).read().splitlines())
 
 plt.imshow(grace_hopper)
 plt.axis('off')
+
 predicted_class_name = imagenet_labels[predicted_class]
 _ = plt.title("Prediction: " + predicted_class_name.title())
 ```
 
+### tf.keras.utils.get_file()
+```
+https://www.tensorflow.org/api_docs/python/tf/keras/utils/get_file
+
+從給定的URL中下載檔案, 可以傳遞MD5值用於資料校驗(下載後或已經緩存的資料均可)
+
+預設情況下檔案會被下載到~/.keras中的cache_subdir資料夾，並將其檔案名設為fname，
+因此若有一個檔案example.txt最終將會被存放在`~/.keras/datasets/example.txt~
+
+tar,tar.gz.tar.bz和zip格式的檔可以被提取，提供雜湊碼可以在下載後校驗檔。
+
+tf.keras.utils.get_file(
+    fname,  #檔案名稱:如果指定了絕對路徑/path/to/file.txt,則檔案將會保存到該位置
+    origin, #文件的URL地址
+    untar=False, #布林值,是否要進行解壓
+    md5_hash=None,  #MD5雜湊值,用於資料校驗，支援sha256和md5雜湊
+    file_hash=None,
+    cache_subdir='datasets', # 用於緩存資料的資料夾，若指定絕對路徑/path/to/folder則將存放在該路徑下。
+    hash_algorithm='auto', #選擇檔校驗的雜湊演算法
+                           #可選項有'md5', 'sha256', 和'auto'. 
+                           #預設是'auto'自動檢測使用的雜湊演算法
+    extract=False, #若為True則試圖提取檔，
+                   # 例如tar或zip tries extracting the file as an Archive, like tar or zip.
+    archive_format='auto',# 試圖提取的檔案格式，可選為'auto', 'tar', 'zip', 和None. 
+                          #'tar' 包括tar, tar.gz, tar.bz文件. 
+                          # 預設是'auto'是['tar', 'zip']. 
+                          # None或空列表將返回沒有匹配。
+    cache_dir=None   #快取檔案存放地
+)
+
+返回值:下載後的文件地址
+
+```
 ### 3.簡單的遷移學習
 ```
 使用TF Hub可以很容易地重新訓練模型的頂層以識別資料集中的類。
 
-3.1. Dataset
-對於此示例，您將使用TensorFlow鮮花資料集：
+Dataset:本範例將使用TensorFlow鮮花資料集：
 
 data_root = tf.keras.utils.get_file(
-  'flower_photos','https://storage.googleapis.com/download.tensorflow.org/example_images/flower_photos.tgz',
-   untar=True)
+  'flower_photos','https://storage.googleapis.com/download.tensorflow.org/example_images/flower_photos.tgz', untar=True)
+
+```
+### tf.keras.utils.get_file()
+```
+https://www.tensorflow.org/api_docs/python/tf/keras/utils/get_file
 
 
+tf.keras.utils.get_file(
+    fname,
+    origin,
+    untar=False,
+    md5_hash=None,
+    file_hash=None,
+    cache_subdir='datasets',
+    hash_algorithm='auto',
+    extract=False,
+    archive_format='auto',
+    cache_dir=None
+)
+```
+```
 將此資料載入到我們的模型中的最簡單方法是使用 tf.keras.preprocessing.image.ImageDataGenerator,
 
 所有TensorFlow Hub的圖像模組都期望浮點輸入在“[0,1]”範圍內。
 使用ImageDataGenerator的rescale參數來實現這一目的。圖像大小將在稍後處理。
 
 image_generator = tf.keras.preprocessing.image.ImageDataGenerator(rescale=1/255)
+
 image_data = image_generator.flow_from_directory(str(data_root), target_size=IMAGE_SHAPE)
 
 結果物件是一個返回image_batch，label_batch對的反覆運算器。
