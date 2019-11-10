@@ -214,7 +214,8 @@ class GaussianAnomalyDetection:
 """
 Anomaly Detection Module
 Thanks to Oleksii Trekhleb:
-https://github.com/trekhleb/homemade-machine-learning/blob/master/homemade/anomaly_detection/gaussian_anomaly_detection.py
+https://github.com/trekhleb/homemade-machine-learning/blob/master/
+homemade/anomaly_detection/gaussian_anomaly_detection.py
 """
 #from gaussian_anomaly_detection import GaussianAnomalyDetection
 
