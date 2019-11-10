@@ -1,5 +1,13 @@
 #
 ```
+SMS Spam Collection Data Set
+http://archive.ics.uci.edu/ml/datasets/SMS+Spam+Collection
+
+```
+
+
+#
+```
 Support Vector Machine Based Spam SMS Detection
 Araştırma Makalesi / Adem TEKEREK*
 Information Technology Department, Gazi University, Turkey
