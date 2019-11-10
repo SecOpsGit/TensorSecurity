@@ -1,94 +1,285 @@
-#
+# 案例分析
 
-
-# dataset 
+### 資料集
 ```
-ISCX Botnet Dataset 
-http://www.iscx.ca/publications/
-Information Centre of Excellence for Tech Innovation
-
-Canadian Institute for Cybersecurity datasets 
-https://www.unb.ca/cic/datasets/index.html
-
-
-https://www.unb.ca/cic/datasets/botnet.html
-
-Distribution of botnet types in the training dataset
-
-Botnet name | Type | Portion of flows in dataset
-Neris | IRC | 21159 (12%)
-Rbot | IRC | 39316 (22%)
-Virut | HTTP | 1638 (0.94 %)
-NSIS | P2P | 4336 (2.48%)
-SMTP Spam | P2P | 11296 (6.48%)
-Zeus | P2P | 31 (0.01%)
-Zeus control (C & C) | P2P | 20 (0.01%)
-
-Distribution of botnet types in the test dataset
-
-Botnet name | Type | Portion of flows in dataset
-Neris | IRC | 25967 (5.67%)
-Rbot | IRC | 83 (0.018%)
-Menti | IRC | 2878(0.62%)
-Sogou | HTTP | 89 (0.019%)
-Murlo | IRC | 4881 (1.06%)
-Virut | HTTP | 58576 (12.80%)
-NSIS | P2P | 757 (0.165%)
-Zeus | P2P | 502 (0.109%)
-SMTP Spam | P2P | 21633 (4.72%)
-UDP Storm | P2P | 44062 (9.63%)
-Tbot | IRC | 1296 (0.283%)
-Zero Access | P2P | 1011 (0.221%)
-Weasel | P2P | 42313 (9.25%)
-Smoke Bot | P2P | 78 (0.017%)
-Zeus Control (C&C) | P2P | 31 (0.006%)
-ISCX IRC bot | P2P | 1816 (0.387%)
+https://github.com/MyDearGreatTeacher/AI201909/blob/master/data/network-logs.csv
 ```
 ```
-CTU University Dataset.
+!wget https://raw.githubusercontent.com/MyDearGreatTeacher/AI201909/master/data/network-logs.csv
 ```
-```
-殭屍網絡及DDoS數據集
-https://www.twblogs.net/a/5caf8318bd9eee48d7883991
-```
-#
-```
-https://arxiv.org/abs/1907.08276
-An AI-based, Multi-stage detection system of banking botnets
-Li Ling, Zhiqiang Gao, Michael A Silas, Ian Lee, Erwan A Le Doeuff
-(Submitted on 18 Jul 2019 (v1), last revised 25 Jul 2019 (this version, v3))
-
-Banking Trojans, botnets are primary drivers of financially-motivated cybercrime. 
-
-In this paper, we first analyzed how an APT-based banking botnet works step by step through the whole lifecycle. 
-Specifically, we present a multi-stage system that detects malicious banking botnet activities 
-which potentially target the organizations. 
-The system leverages Cyber Data Lake as well as multiple artificial intelligence techniques at different stages. 
-The evaluation results using public datasets showed that Deep Learning based detections were highly successful 
-compared with baseline models.
+### 基本統計分析
 
 ```
-# p2p botnet detection
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+%matplotlib inline
+
+dataset = pd.read_csv('network-logs.csv')
+hist_dist = dataset[['LATENCY', 'THROUGHPUT']].hist(grid=False, figsize=(10,4))
+
+data = dataset[['LATENCY', 'THROUGHPUT']].values
+
+plt.scatter(data[:, 0], data[:, 1], alpha=0.6)
+plt.xlabel('LATENCY')
+plt.ylabel('THROUGHPUT')
+plt.title('DATA FLOW')
+plt.show()
 ```
-J. Zhang, R. Perdisci, W. Lee, X. Luo, and U. Sarfraz, 
-“Building a scalable system for stealthy p2p-botnet detection,” 
-Information Forensics and Security, IEEE Transactions on, vol. 9, no. 1, pp. 27–38, 2014.
+
+### 機器學習
 
 ```
-# ref
-```
-1. Mohammad Aluthaman, Nauman Aslam, Li Zhang and Rafe Aslem, 
-"A P2P Botnet Detection Scheme based on Decision Tree and Adaptive Multi-layer Neural Networks”. 
-Journal of Neural Computing and Applications, 2016
+import numpy as np
+import pandas as pd
+
+from sklearn.linear_model import *
+from sklearn.tree import *
+from sklearn.naive_bayes import *
+from sklearn.neighbors import *
+from sklearn.metrics import accuracy_score
+
+from sklearn.model_selection import train_test_split
+
+import matplotlib.pyplot as plt
+%matplotlib inline
+
+# Load the data.
+dataset = pd.read_csv('network-logs.csv')
 
 
-6. Stephen Doswell, Nauman Aslam, David Kendall and Graham Sexton, "Please slow down! The impact on Tor performance from mobility", 3rd Annual ACM CCS Workshop on Security and Privacy in Smartphones and Mobile Devices (SPSM), in conjunction with the 20th ACM Conference on Computer and Communications Security (CCS), November 4-8, 2013, Berlin, Germany.
-7. Abidalrahman Mohammad, Nauman Aslam, William Phillips and William Robertson, “C-Sec: Energy Efficient Link Layer Encryption Protocol for Wireless Sensor Networks", 9th IEEE Consumer Communication and Networking Conference, Las Vegas, USA, Jan 14 - 17, 2012
-```
-```
-RTbust: Exploiting Temporal Patterns for Botnet Detection on Twitter
-Michele Mazza, Stefano Cresci, Marco Avvenuti, Walter Quattrociocchi, Maurizio Tesconi
-(Submitted on 12 Feb 2019)
+samples = dataset.iloc[:, [1, 2]].values
+targets = dataset['ANOMALY'].values
 
-Within OSNs, many of our supposedly online friends may instead be fake accounts called social bots, part of large groups that purposely re-share targeted content. Here, we study retweeting behaviors on Twitter, with the ultimate goal of detecting retweeting social bots. We collect a dataset of 10M retweets. We design a novel visualization that we leverage to highlight benign and malicious patterns of retweeting activity. In this way, we uncover a 'normal' retweeting pattern that is peculiar of human-operated accounts, and 3 suspicious patterns related to bot activities. Then, we propose a bot detection technique that stems from the previous exploration of retweeting behaviors. Our technique, called Retweet-Buster (RTbust), leverages unsupervised feature extraction and clustering. An LSTM autoencoder converts the retweet time series into compact and informative latent feature vectors, which are then clustered with a hierarchical density-based algorithm. Accounts belonging to large clusters characterized by malicious retweeting patterns are labeled as bots. RTbust obtains excellent detection results, with F1 = 0.87, whereas competitors achieve F1 < 0.76. Finally, we apply RTbust to a large dataset of retweets, uncovering 2 previously unknown active botnets with hundreds of accounts.
+training_samples, testing_samples, training_targets, testing_targets = train_test_split(
+         samples, targets, test_size=0.3, random_state=0)
+```
+
+###  使用k-Nearest Neighbors model
+```
+knc = KNeighborsClassifier(n_neighbors=2)
+knc.fit(training_samples,training_targets)
+knc_prediction = knc.predict(testing_samples)
+knc_accuracy = 100.0 * accuracy_score(testing_targets, knc_prediction)
+print ("K-Nearest Neighbours accuracy: " + str(knc_accuracy))
+```
+### 使用Decision tree model
+```
+dtc = DecisionTreeClassifier(random_state=0)
+dtc.fit(training_samples,training_targets)
+dtc_prediction = dtc.predict(testing_samples)
+dtc_accuracy = 100.0 * accuracy_score(testing_targets, dtc_prediction)
+print ("Decision Tree accuracy: " + str(dtc_accuracy))
+```
+
+### 使用Gaussian Naive Bayes model
+```
+gnb = GaussianNB()
+gnb.fit(training_samples,training_targets)
+gnb_prediction = gnb.predict(testing_samples)
+gnb_accuracy = 100.0 * accuracy_score(testing_targets, gnb_prediction)
+print ("Gaussian Naive Bayes accuracy: " + str(gnb_accuracy))
+```
+
+### 結果
+```
+K-Nearest Neighbours accuracy: 95.90163934426229
+Decision Tree accuracy: 96.72131147540983
+Gaussian Naive Bayes accuracy: 98.36065573770492
+```
+
+# 進階研讀:GaussianAnomalyDetection
+```
+"""Anomaly Detection Module"""
+
+import math
+import numpy as np
+
+
+class GaussianAnomalyDetection:
+    """GaussianAnomalyDetection Class"""
+
+    def __init__(self, data):
+        """GaussianAnomalyDetection constructor"""
+
+        # Estimate Gaussian distribution.
+        (self.mu_param, self.sigma_squared) = GaussianAnomalyDetection.estimate_gaussian(data)
+
+        # Save training data.
+        self.data = data
+
+    def multivariate_gaussian(self, data):
+        """Computes the probability density function of the multivariate gaussian distribution"""
+
+        mu_param = self.mu_param
+        sigma_squared = self.sigma_squared
+
+        # Get number of training sets and features.
+        (num_examples, num_features) = data.shape
+
+        # nit probabilities matrix.
+        probabilities = np.ones((num_examples, 1))
+
+        # Go through all training examples and through all features.
+        for example_index in range(num_examples):
+            for feature_index in range(num_features):
+                # Calculate the power of e.
+                power_dividend = (data[example_index, feature_index] - mu_param[feature_index]) ** 2
+                power_divider = 2 * sigma_squared[feature_index]
+                e_power = -1 * power_dividend / power_divider
+
+                # Calculate the prefix multiplier.
+                probability_prefix = 1 / math.sqrt(2 * math.pi * sigma_squared[feature_index])
+
+                # Calculate the probability for the current feature of current example.
+                probability = probability_prefix * (math.e ** e_power)
+                probabilities[example_index] *= probability
+
+        # Return probabilities for all training examples.
+        return probabilities
+
+    @staticmethod
+    def estimate_gaussian(data):
+        """This function estimates the parameters of a Gaussian distribution using the data in X."""
+
+        # Get number of features and number of examples.
+        num_examples = data.shape[0]
+
+        # Estimate Gaussian parameters mu and sigma_squared for every feature.
+        mu_param = (1 / num_examples) * np.sum(data, axis=0)
+        sigma_squared = (1 / num_examples) * np.sum((data - mu_param) ** 2, axis=0)
+
+        # Return Gaussian parameters.
+        return mu_param, sigma_squared
+
+    @staticmethod
+    def select_threshold(labels, probabilities):
+        # pylint: disable=R0914
+        """Finds the best threshold (epsilon) to use for selecting outliers"""
+
+        best_epsilon = 0
+        best_f1 = 0
+
+        # History data to build the plots.
+        precision_history = []
+        recall_history = []
+        f1_history = []
+
+        # Calculate the epsilon steps.
+        min_probability = np.min(probabilities)
+        max_probability = np.max(probabilities)
+        step_size = (max_probability - min_probability) / 1000
+
+        # Go through all possible epsilons and pick the one with the highest f1 score.
+        for epsilon in np.arange(min_probability, max_probability, step_size):
+            predictions = probabilities < epsilon
+
+            # The number of false positives: the ground truth label says it’s not
+            # an anomaly, but our algorithm incorrectly classified it as an anomaly.
+            false_positives = np.sum((predictions == 1) & (labels == 0))
+
+            # The number of false negatives: the ground truth label says it’s an anomaly,
+            # but our algorithm incorrectly classified it as not being anomalous.
+            false_negatives = np.sum((predictions == 0) & (labels == 1))
+
+            # The number of true positives: the ground truth label says it’s an
+            # anomaly and our algorithm correctly classified it as an anomaly.
+            true_positives = np.sum((predictions == 1) & (labels == 1))
+
+            # Prevent division by zero.
+            if (true_positives + false_positives) == 0 or (true_positives + false_negatives) == 0:
+                continue
+
+            # Precision.
+            precision = true_positives / (true_positives + false_positives)
+
+            # Recall.
+            recall = true_positives / (true_positives + false_negatives)
+
+            # F1.
+            f1_score = 2 * precision * recall / (precision + recall)
+
+            # Save history data.
+            precision_history.append(precision)
+            recall_history.append(recall)
+            f1_history.append(f1_score)
+
+            if f1_score > best_f1:
+                best_epsilon = epsilon
+                best_f1 = f1_score
+
+        return best_epsilon, best_f1, precision_history, recall_history, f1_history
+```
+```
+"""
+Anomaly Detection Module
+Thanks to Oleksii Trekhleb:
+https://github.com/trekhleb/homemade-machine-learning/blob/master/homemade/anomaly_detection/gaussian_anomaly_detection.py
+"""
+#from gaussian_anomaly_detection import GaussianAnomalyDetection
+
+gaussian_anomaly_detection = GaussianAnomalyDetection(data)
+
+print('mu param estimation: ')
+print(gaussian_anomaly_detection.mu_param)
+
+print('\n')
+
+print('sigma squared estimation: ')
+print(gaussian_anomaly_detection.sigma_squared)
+
+targets = dataset['ANOMALY'].values.reshape((data.shape[0], 1))
+probs = gaussian_anomaly_detection.multivariate_gaussian(data)
+
+(threshold, F1, precision_, recall_, f1_) = gaussian_anomaly_detection.select_threshold(targets, probs)
+
+print('\n')
+
+print('threshold estimation: ')
+print(threshold)
+
+outliers = np.where(probs < threshold)[0]
+
+# Plot original data.
+plt.scatter(data[:, 0], data[:, 1], alpha=0.6, label='Dataset')
+plt.xlabel('LATENCY')
+plt.ylabel('THROUGHPUT')
+plt.title('DATA FLOW')
+
+# Plot the outliers.
+plt.scatter(data[outliers, 0], data[outliers, 1], alpha=0.6, c='red', label='Outliers')
+
+# Display plots.
+plt.legend()
+plt.plot()
+
+
+print('F1 score: ')
+print(F1)
+
+
+from sklearn.metrics import roc_curve
+
+FPR, TPR, OPC = roc_curve(targets, probs)
+# Plotting Sensitivity
+plt.plot(OPC,TPR)
+
+
+# Plotting ROC curve
+plt.plot(FPR,TPR)
+```
+```
+mu param estimation: 
+[14.42070163 15.39209133]
+
+
+sigma squared estimation: 
+[2.09674794 1.37224807]
+
+
+threshold estimation: 
+0.0002717683673539915
+F1 score: 
+0.6666666666666666
+[<matplotlib.lines.Line2D at 0x7f02a3dd7ba8>]
 ```
