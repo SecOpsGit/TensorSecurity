@@ -4,7 +4,25 @@ SMS Spam Collection Data Set
 http://archive.ics.uci.edu/ml/datasets/SMS+Spam+Collection
 
 ```
+###
+```
 
+Gmail強化郵件安全，以機器學習封鎖垃圾及網釣郵件
+Google大幅強化Gmail郵件安全，以機器學習技術結合URL點擊的信譽分析，協助用戶封鎖垃圾郵件及網釣郵件，
+另外，為防止企業內部的機密資料外洩，員工以Gmail對企業外部人士發送郵件將會收到警示訊息。
+
+文/林妍溱 | 2017-06-01發表
+
+https://www.ithome.com.tw/news/114564
+```
+```
+中山大學驚傳師生電子郵件被監控長達3年，起因是駭客濫用Open WebMail漏洞，其他學校也應留意相關系統安全
+採用Open WebMail建置電子郵件系統的單位要注意了！最近中山大學坦承，他們的電子郵件信箱遭到入侵逾3年，
+駭客監控近百人的信件，其中大部分是社會學系的教授
+
+https://www.ithome.com.tw/news/134105
+文/周峻佑 | 2019-11-08發表
+```
 
 #
 ```
