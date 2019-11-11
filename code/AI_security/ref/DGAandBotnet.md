@@ -215,4 +215,111 @@ arXiv preprint arXiv:1610.00768 (2018).
 
 [30] Nicolas Papernot, Patrick McDaniel, and Ian Goodfellow. 2016. 
 Transferability in Machine Learning: from Phenomena to Black-Box Attacks using Adversarial
+Samples. http://arxiv.org/abs/1605.07277
+
+[31] Nicolas Papernot, Patrick McDaniel, Ian Goodfellow, Somesh Jha, Z Berkay
+Celik, and Ananthram Swami. 2017. Practical black-box attacks against machine
+learning. In Proceedings of the 2017 ACM on Asia Conference on Computer and
+Communications Security. ACM, 506–519.
+
+[32] Nicolas Papernot, Patrick McDaniel, Somesh Jha, Matt Fredrikson, Z Berkay Celik,
+and Ananthram Swami. 2016. The limitations of deep learning in adversarial
+settings. In Security and Privacy (EuroS&P), 2016 IEEE European Symposium on
+IEEE, 372–387.
+
+[33] Nicolas Papernot, Patrick McDaniel, Xi Wu, Somesh Jha, and Ananthram Swami.
+2016. Distillation as a Defense to Adversarial Perturbations Against Deep Neural
+Networks. Proceedings - 2016 IEEE Symposium on Security and Privacy, SP 2016
+(2016), 582–597. https://doi.org/10.1109/SP.2016.41
+
+[34] Abhinav Pathak, Feng Qian, Y Charlie Hu, Z Morley Mao, and Supranamaya
+Ranjan. 2009. Botnet spam campaigns can be long lasting: evidence, implications,
+and analysis. In ACM SIGMETRICS Performance Evaluation Review, Vol. 37. ACM,
+13–24.
+
+[35] Daniel Plohmann and Gerhards-Padilla Elmar. 2015. DGArchive âĂŞ A deep dive
+into domain generating malware. (2015).
+
+[36] Daniel Plohmann, Khaled Yakdan, Michael Klatt, and Elmar Gerhards-Padilla.
+2016. A Comprehensive Measurement Study of Domain Generating Malware.
+Proceedings of the 25th USENIX Security Symposium (2016). https://www.usenix.
+org/conference/usenixsecurity16/technical-sessions/presentation/plohmann
+
+
+
+[38] Ishai Rosenberg, Asaf Shabtai, Yuval Elovici, and Lior Rokach. 2018. Low Resource
+Black-Box End-to-End Attack Against State of the Art API Call Based Malware
+Classifiers. arXiv preprint arXiv:1804.08778 (2018).
+
+[39] Ishai Rosenberg, Asaf Shabtai, Lior Rokach, and Yuval Elovici. 2018. Generic
+black-box end-to-end attack against state of the art API call based malware
+classifiers. Lecture Notes in Computer Science (including subseries Lecture Notes
+in Artificial Intelligence and Lecture Notes in Bioinformatics) 11050 LNCS (2018),
+490–510. https://doi.org/10.1007/978-3-030-00470-5{_}23
+
+[40] Joshua Saxe and Konstantin Berlin. 2017. eXpose: A Character-Level Convolutional Neural Network with Embeddings For Detecting Malicious URLs, File
+Paths and Registry Keys. (2017). http://arxiv.org/abs/1702.08568
+
+[41] Stefano Schiavoni, Federico Maggi, Lorenzo Cavallaro, and Stefano Zanero. 2014.
+Phoenix: DGA-based botnet tracking and intelligence. In International Conference
+on Detection of Intrusions and Malware, and Vulnerability Assessment. Springer,
+192–211.
+
+[42] Raaghavi Sivaguru, Chhaya Choudhary, Bin Yu, Vadym Tymchenko, Anderson
+Nascimento, and Martine De Cock. [n. d.]. An Evaluation of DGA Classifiers. ([n.
+d.]).
+
+[43] Brett Stone-Gross, Marco Cova, Lorenzo Cavallaro, Bob Gilbert, Martin Szydlowski, Richard Kemmerer, Christopher Kruegel, and Giovanni Vigna. 2009. Your
+botnet is my botnet: analysis of a botnet takeover. In Proceedings of the 16th ACM
+conference on Computer and communications security. ACM, 635–647.
+
+[44] Octavian Suciu, Scott E Coull, and Jeffrey Johns. 2018. 
+Exploring Adversarial Examples in Malware Detection. (2018). 
+https://doi.org/arXiv:1810.08280v1
+
+Exploring Adversarial Examples in Malware Detection
+Octavian Suciu, Scott E. Coull, Jeffrey Johns
+(Submitted on 18 Oct 2018 (v1), last revised 13 Apr 2019 (this version, v3))
+https://arxiv.org/abs/1810.08280
+
+使用CNN偵測惡意程式
+攻擊上述分類器
+
+[45] Christian Szegedy, Wojciech Zaremba, Ilya Sutskever, Joan Bruna, Dumitru Erhan,
+Ian Goodfellow, and Rob Fergus. 2013. Intriguing properties of neural networks.
+arXiv preprint arXiv:1312.6199 (2013).
+
+[46] Duc Tran, Hieu Mac, Van Tong, Hai Anh Tran, and Linh Giang Nguyen. 2018.
+A LSTM based framework for handling multiclass imbalance in DGA botnet
+detection. Neurocomputing 275 (2018), 2401–2413. https://doi.org/10.1016/j.
+neucom.2017.11.018
+
+[47] R Vinayakumar, Prabaharan Poornachandran, and KP Soman. 2018. Scalable
+Framework for Cyber Threat Situational Awareness Based on Domain Name
+Systems Data Analysis. In Big Data in Engineering Applications. Springer, 113–
+142.
+
+[48] R Vinayakumar, Prabaharan Poornachandran, and K P Soman. 2018. Big Data in
+Engineering Applications. Vol. 44. Springer Singapore. https://doi.org/10.1007/
+978-981-10-8476-8
+
+[49] R Vinayakumar, KP Soman, and Prabaharan Poornachandran. 2018. Detecting
+malicious domain names using deep learning approaches at scale. Journal of
+Intelligent & Fuzzy Systems 34, 3 (2018), 1355–1367.
+
+[50] Soroush Vosoughi, Prashanth Vijayaraghavan, and Deb Roy. 2016. Tweet2vec:
+Learning tweet embeddings using character-level cnn-lstm encoder-decoder.
+In Proceedings of the 39th International ACM SIGIR conference on Research and
+Development in Information Retrieval. ACM, 1041–1044.
+
+[51] Wikipedia contributors. 2018. Botnet — Wikipedia, The Free Encyclopedia. (2018).
+https://en.wikipedia.org/w/index.php?title=Botnet&oldid=873006619 [Online;
+accessed 22-December-2018].
+
+[52] Jonathan Woodbridge, Hyrum S. Anderson, Anjum Ahuja, and Daniel Grant.
+2016. Predicting Domain Generation Algorithms with Long Short-Term Memory
+Networks. (2016). http://arxiv.org/abs/1611.00791
+
+[53] Xiaoyong Yuan, Pan He, Qile Zhu, and Xiaolin Li. [n. d.]. Adversarial Examples :
+Attacks and Defenses for Deep Learning. ([n. d.]), 1–20.
 ```
