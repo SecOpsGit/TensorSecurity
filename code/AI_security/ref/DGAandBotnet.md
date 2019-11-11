@@ -80,16 +80,43 @@ DMD-2018 dataset [27,47–49]
 which contains 100,000 benign domain names and 297,777 algorithmically generated domains that were evenly produced by
 twenty different DGA families (see Table 1).
 
+https://nlp.amrita.edu/DMD2018/
 ```
 
 ### 四個DGA分類器
 
 ```
 Endgame [3] which is based on a single LSTM layer (denoted as LSTM[Endgame])
+     Hyrum S. Anderson, Jonathan Woodbridge, and Bobby Filar. 2016. DeepDGA:
+Adversarially-Tuned Domain Generation and Detection. 13–21. https://doi.org/
+10.1145/2996758.2996767
+```
+```
 CMU [15] which is based on a forward LSTM layer and a backward LSTM layer (denoted as biLSTM[CMU])
-Invincea [40] which based on parallel CNN layers (denoted as CNN[Invincea])
-MIT [50] which based on stacked CNN layers and a single LSTM layer (denoted as CNN + LSTM[MIT])
+Bhuwan Dhingra, Zhong Zhou, Dylan Fitzpatrick, Michael Muehl, and William W
+Cohen. 2016. Tweet2vec: Character-based distributed representations for social
+media. arXiv preprint arXiv:1605.03481 (2016).
 
+https://github.com/bdhingra/tweet2vec
+```
+```
+Invincea [40] which based on parallel CNN layers (denoted as CNN[Invincea])
+ Joshua Saxe and Konstantin Berlin. 2017. 
+ eXpose: A Character-Level Convolutional Neural Network with Embeddings For Detecting Malicious URLs, File
+Paths and Registry Keys. (2017). http://arxiv.org/abs/1702.08568
+```
+```
+MIT [50] which based on stacked CNN layers and a single LSTM layer (denoted as CNN + LSTM[MIT])
+Soroush Vosoughi, Prashanth Vijayaraghavan, and Deb Roy. 2016. Tweet2vec:
+Learning tweet embeddings using character-level cnn-lstm encoder-decoder.
+In Proceedings of the 39th International ACM SIGIR conference on Research and
+Development in Information Retrieval. ACM, 1041–1044
+Tweet2Vec: Learning Tweet Embeddings Using Character-level CNN-LSTM Encoder-Decoder
+Soroush Vosoughi, Prashanth Vijayaraghavan, Deb Roy
+(Submitted on 26 Jul 2016)
+https://arxiv.org/abs/1607.07514
+
+https://zhuanlan.zhihu.com/p/34034760
 ```
 ```
 Encrypted and Covert DNS Queries for Botnets: Challenges and Countermeasures
