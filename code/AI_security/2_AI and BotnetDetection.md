@@ -27,6 +27,12 @@ REMOTE_PORT	LATENCY	THROUGHPUT	ANOMALY
 21	14.07506707	15.76531533	0
 ......
 ```
+```
+延遲（Latency）：一個封包從來源端送出後，到目的端接收到這個封包，中間所花的時間。
+頻寬（Bandwidth）：傳輸媒介的最大吞吐量（throughput）。
+
+https://blog.gtwang.org/web-development/network-lantency-and-bandwidth/
+```
 ### 基本統計分析
 
 ```
