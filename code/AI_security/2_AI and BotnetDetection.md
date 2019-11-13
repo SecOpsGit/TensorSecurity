@@ -7,6 +7,19 @@ https://github.com/MyDearGreatTeacher/AI201909/blob/master/data/network-logs.csv
 ```
 !wget https://raw.githubusercontent.com/MyDearGreatTeacher/AI201909/master/data/network-logs.csv
 ```
+```
+REMOTE_PORT	LATENCY	THROUGHPUT	ANOMALY
+21	15.94287532	16.20299807	0
+20	12.66645095	15.89908374	1
+80	13.89454962	12.95800822	0
+21	13.62081292	15.45947525	0
+21	15.70548485	15.33956527	0
+23	15.59318973	15.61238106	0
+21	15.48906755	15.64087368	0
+80	15.52704801	15.63568031	0
+21	14.07506707	15.76531533	0
+......
+```
 ### 基本統計分析
 
 ```
