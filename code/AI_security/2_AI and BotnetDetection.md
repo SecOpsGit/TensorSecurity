@@ -1,5 +1,12 @@
 # 案例分析
 
+###
+```
+Hands-On Artificial Intelligence for Cybersecurity
+Alessandro Parisi August 2019
+CH 5 Network Anomaly Detection with AI
+```
+
 ### 資料集
 ```
 https://github.com/MyDearGreatTeacher/AI201909/blob/master/data/network-logs.csv
@@ -102,7 +109,21 @@ Gaussian Naive Bayes accuracy: 98.36065573770492
 ```
 
 # 進階研讀:GaussianAnomalyDetection
+
+### 正常行為 vs 異常行為
 ```
+正常行為 ===滿足高斯分布
+
+異常行為 ===孤立點outlier
+```
+### 程式範例
+```
+"""
+Anomaly Detection Module
+Oleksii Trekhleb:
+https://github.com/trekhleb/homemade-machine-learning/blob/master/
+homemade/anomaly_detection/gaussian_anomaly_detection.py
+"""
 """Anomaly Detection Module"""
 
 import math
@@ -224,12 +245,6 @@ class GaussianAnomalyDetection:
         return best_epsilon, best_f1, precision_history, recall_history, f1_history
 ```
 ```
-"""
-Anomaly Detection Module
-Thanks to Oleksii Trekhleb:
-https://github.com/trekhleb/homemade-machine-learning/blob/master/
-homemade/anomaly_detection/gaussian_anomaly_detection.py
-"""
 #from gaussian_anomaly_detection import GaussianAnomalyDetection
 
 gaussian_anomaly_detection = GaussianAnomalyDetection(data)
