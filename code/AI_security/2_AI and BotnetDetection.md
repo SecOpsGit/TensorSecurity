@@ -318,3 +318,66 @@ F1 score:
 0.6666666666666666
 [<matplotlib.lines.Line2D at 0x7f02a3dd7ba8>]
 ```
+# 進階研讀:DGA detection
+
+```
+
+```
+
+### Domain generation algorithm::botnet產生網域的演算法
+```
+Various families of malware use domain generation algorithms (DGAs) to generate a large number of pseudo-random domain names 
+to connect to a command and control (C&C) server. 
+
+技術一:
+In order to block DGA C&C traffic, security organizations must first discover the algorithm by reverse engineering malware samples, 
+then generating a list of domains for a given seed. 
+
+The domains are then either preregistered or published in a DNS blacklist. 
+
+This process is not only tedious, but can be readily circumvented by malware authors using a large number of seeds in algorithms 
+with multivariate recurrence properties (e.g., banjori) or by using a dynamic list of seeds (e.g., bedep). 
+
+技術二:分類器===產生的DNS查詢的Domain是否為DGA產生的
+Another technique to stop malware from using DGAs is to intercept DNS queries on a network and predict whether domains are DGA generated. 
+Such a technique will alert network administrators to the presence of malware on their networks. 
+In addition, if the predictor can also accurately predict the family of DGAs, 
+then network administrators can also be alerted to the type of malware that is on their networks. 
+```
+
+
+### 
+```
+Predicting Domain Generation Algorithms with Long Short-Term Memory Networks
+Jonathan Woodbridge, Hyrum S. Anderson, Anjum Ahuja, Daniel Grant
+(Submitted on 2 Nov 2016)
+https://arxiv.org/abs/1611.00791
+```
+### DGA Dataset
+```
+ https://github.com/nickwallen/botnet-dga-classifier/tree/master/data
+(accessed on 10 November 2017).
+
+botnet-dga-classifier/data/dds-malicious-domains.csv
+
+host	source
+dwjfjqyunkhfkr.ru	cryptolocker
+htwwaixsreth.ru	cryptolocker
+ihvdawbftgkdt.ru	cryptolocker
+usmnqpmwklxi.ru	cryptolocker
+tufomgucxbxqvut.ru	cryptolocker
+xfjwnqdamslry.ru	cryptolocker
+xyryawrkldrcld.ru	cryptolocker
+mspftdngwpvvo.ru	cryptolocker
+vlfmnwdgrofy.ru	cryptolocker
+rfplwgxjbimkrr.ru	cryptolocker
+kudscqlvxcplx.ru	cryptolocker
+eoavwaywelqqtdw.ru	cryptolocker
+vifgurkyjepqju.ru	cryptolocker
+exhtpubchhnimc.ru	cryptolocker
+xppyorwinqlohc.ru	cryptolocker
+ikrnxwxggbjuqqg.ru	cryptolocker
+xsnqupvukyni.ru	cryptolocker
+gsfokpekvaas.ru	cryptolocker
+xjehuwyttxbku.ru	cryptolocker
+```
