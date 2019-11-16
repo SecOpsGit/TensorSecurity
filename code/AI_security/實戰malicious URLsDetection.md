@@ -145,7 +145,7 @@ result = svm_model.predict(vec_test_url)
 print(test_url)
 print(result)
 ```
-
+# 關鍵程式解析
 ```
 import pandas as pd
 import numpy as np
@@ -184,19 +184,63 @@ url_df = np.array(data_df)
 random.shuffle(data_df)
 
 y = [d[1] for d in data_df]                  
-inputurls = [d[0] for d in data_df]               
+inputurls = [d[0] for d in data_df] 
+
 #http://blog.christianperone.com/2011/09/machine-learning-text-feature-extraction-tf-idf-part-i/
 
 #We need to generate the tf-idf from the urls.
 
 url_vectorizer = TfidfVectorizer(tokenizer=url_cleanse)  
-x = url_vectorizer.fit_transform(inputurls)
-x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=42)
 
-l_regress = LogisticRegression()                  # Logistic regression
+x = url_vectorizer.fit_transform(inputurls)
+
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=42)
+```
+```
+def url_cleanse(web_url):                      
+    web_url = web_url.lower()
+    urltoken = []
+    dot_slash = []
+    slash = str(web_url).split('/')
+    for i in slash:
+        r1 = str(i).split('-')            
+        token_slash = []
+        for j in range(0,len(r1)):
+            r2 = str(r1[j]).split('.')  
+            token_slash = token_slash + r2
+        dot_slash = dot_slash + r1 + token_slash 
+    urltoken = list(set(dot_slash))       
+    if 'com' in urltoken:
+        urltoken.remove('com')               
+    return urltoken
+
+myurl = url_cleanse("http://www.pchome.com.tw")
+myurl
+# ['', 'pchome', 'www', 'tw', 'http:', 'www.pchome.com.tw']
+
+myurl = url_cleanse("https://24h.pchome.com.tw/sign/daily.htm")
+myurl
+```
+```
+#['',
+ 'pchome',
+ 'tw',
+ 'daily',
+ 'htm',
+ 'https:',
+ '24h.pchome.com.tw',
+ 'daily.htm',
+ 'sign',
+ '24h']
+```
+# 使用Logistic regression
+```
+l_regress = LogisticRegression()                
 l_regress.fit(x_train, y_train)
+
 l_score = l_regress.score(x_test, y_test)
 print("score: {0:.2f} %".format(100 * l_score))
+
 url_vectorizer_save = url_vectorizer
 
 
@@ -237,10 +281,12 @@ file1 = "model.pkl"
 with open(file1, 'rb') as f1:  
     l_regress = pickle.load(f1)
 f1.close()
+
 file2 = "vector.pkl"
 with open(file2, 'rb') as f2:  
     url_vectorizer = pickle.load(f2)
 f2.close()
+
 url_vectorizer = url_vectorizer
 x = url_vectorizer.transform(some_url)
 y_predict = l_regress.predict(x)
@@ -248,13 +294,15 @@ y_predict = l_regress.predict(x)
 for site in whitelisted_url:
     some_url.append(site)
 print(some_url)
+
 l_predict = list(y_predict)
+
 for j in range(0,len(whitelisted_url)):
     l_predict.append('good')
 print(l_predict)
-
-
-#use SVM
+```
+# 使用SVM
+```
 from sklearn.svm import SVC
 svmModel = SVC()
 svmModel.fit(X_train, y_train)
