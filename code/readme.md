@@ -1,3 +1,10 @@
+# 使用docker 學RL
+```
+https://github.com/mlss-2019/tutorials
+
+docker pull isakfalk/mlss:latest
+docker run --name mlss -p 8888:8888 isakfalk/mlss
+```
 # Google colab
 ```
 from google.colab import drive
