@@ -17,7 +17,83 @@ https://github.com/VAD3R-95/Malicious-Url-Detection
 
 https://vad3rblog.wordpress.com/2018/04/08/malicious-url-detection/#more-1182
 ```
+# 資料集
+```
+This repo provides a dataset with 388448 URLs labelled with 0 or 1, where 1 represents malicious URL.
 
+url,label
+diaryofagameaddict.com,1
+espdesign.com.au,1
+iamagameaddict.com,1
+kalantzis.net,1
+slightlyoffcenter.net,1
+toddscarwash.com,1
+tubemoviez.com,1
+ipl.hk,1
+crackspider.us/toolbar/install.php?pack=exe,1
+pos-kupang.com/,1
+rupor.info,1
+svision-online.de/mgfi/administrator/components/com_babackup/classes/fx29id1.txt,1
+officeon.ch.ma/office.js?google_ad_format=728x90_as,1
+sn-gzzx.com,1
+sunlux.net/company/about.html,1
+outporn.com,1
+timothycopus.aimoo.com,1
+xindalawyer.com,1
+freeserials.spb.ru/key/68703.htm,1
+deletespyware-adware.com,1
+orbowlada.strefa.pl/text396.htm,1
+ruiyangcn.com,1
+zkic.com,1
+adserving.favorit-network.com/eas?camp=19320;cre=mu&grpid=1738&tag_id=618&nums=FGApbjFAAA,1
+cracks.vg/d1.php,1
+juicypussyclips.com,1
+nuptialimages.com,1
+andysgame.com,1
+bezproudoff.cz,1
+ceskarepublika.net,1
+hotspot.cz,1
+gmcjjh.org/DHL,1
+nerez-schodiste-zabradli.com,1
+nordiccountry.cz,1
+nowina.info,1
+obada-konstruktiwa.org,1
+otylkaaotesanek.cz,1
+pb-webdesign.net,1
+pension-helene.cz,1
+podzemi.myotis.info,1
+smrcek.com,1
+spekband.com,1
+m2132.ehgaugysd.net/zyso.cgi?18,1
+webcom-software.ws/links/?153646e8b0a88,1
+
+
+google.com,0
+facebook.com,0
+youtube.com,0
+yahoo.com,0
+baidu.com,0
+wikipedia.org,0
+qq.com,0
+linkedin.com,0
+live.com,0
+twitter.com,0
+amazon.com,0
+taobao.com,0
+blogspot.com,0
+google.co.in,0
+wordpress.com,0
+sina.com.cn,0
+yandex.ru,0
+yahoo.co.jp,0
+```
+```
+
+```
+```
+!wget https://raw.githubusercontent.com/savan77/Malicious-URL-Detection-using-Machine-Learning/master/data/dataNN.csv
+```
+#
 ```
 
 # -*- coding: utf-8 -*-
@@ -65,22 +141,18 @@ def trim(url):
 """# Prepare Dataset"""
 
 #read from a file
-data = pd.read_csv("../data/dataNN.csv",',',error_bad_lines=False)	#reading file
+data = pd.read_csv("dataNN.csv",',',error_bad_lines=False)	
 data['url'].values
 
 len(data)
-
-
-
-
-
-
+#388447
+#data2=data[data['label']==1]
+#len(data2)
+#43097
 
 #convert it into numpy array and shuffle the dataset
 data = np.array(data)
 random.shuffle(data)
-
-
 
 #convert text data into numerical data for machine learning models
 y = [d[1] for d in data]
@@ -98,6 +170,14 @@ model = LogisticRegression(C=1)
 model.fit(X_train, y_train)
 
 print(model.score(X_test,y_test))
+#結果0.9842322049169777
+
+
+#scikit-learn模型持久化的操作:導入joblib==from sklearn.externals import joblib
+#使用joblib.dump儲存模型,使用joblib.load載入保存的模型
+#joblib在使用上比較容易，讀取速度也相對pickle快
+# https://joblib.readthedocs.io/en/latest/
+#https://joblib.readthedocs.io/en/latest/generated/joblib.dump.html
 
 #save the model and vectorizer
 joblib.dump(model, "mal-logireg1.pkl", protocol=2)
@@ -147,7 +227,117 @@ pipeline.fit(url_train, label_train)
 
 pipeline.score(url_test, label_test)
 
-"""I have stopped working on this. You may want to use advanced methods to achieve higher accuracy(i.e LSTM). Also, a very critical part here is the feature engineering. Simlpy taking input URL as an input is not a good idea. We may find other features,which are more useful than only URL string, from host info, ip, or page content."""
-
-
 ```
+# 關鍵程式解說
+```
+# -*- coding: utf-8 -*-
+import pandas as pd
+import numpy as np
+from sklearn.feature_extraction.text import TfidfVectorizer
+import joblib
+import re
+import random
+from sklearn.metrics import accuracy_score
+
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
+```
+### 定義有用的處理函數
+```
+#this function is taken from https://github.com/faizann24/Using-machine-learning-to-detect-malicious-URLs
+def getTokens(input):
+    tokensBySlash = str(input.encode('utf-8')).split('/')
+    allTokens = []
+    for i in tokensBySlash:
+        tokens = str(i).split('-')
+        tokensByDot = []
+        for j in range(0,len(tokens)):
+            tempTokens = str(tokens[j]).split('.')
+            tokensByDot = tokensByDot + tempTokens
+        allTokens = allTokens + tokens + tokensByDot
+    allTokens = list(set(allTokens))
+    if 'com' in allTokens:
+        allTokens.remove('com')
+    return allTokens
+
+#function to remove "http://" from URL
+def trim(url):
+    return re.match(r'(?:\w*://)?(?:.*\.)?([a-zA-Z-1-9]*\.[a-zA-Z]{1,}).*', url).groups()[0]
+```
+
+### 資料預處理
+```
+# Prepare Dataset
+
+#read from a file
+data = pd.read_csv("dataNN.csv",',',error_bad_lines=False)	
+data['url'].values
+
+len(data)
+#388447
+#data2=data[data['label']==1]
+#len(data2)
+#43097
+
+#convert it into numpy array and shuffle the dataset
+data = np.array(data)
+random.shuffle(data)
+
+#convert text data into numerical data for machine learning models
+y = [d[1] for d in data]
+corpus = [d[0] for d in data]
+
+vectorizer = TfidfVectorizer(tokenizer=getTokens)
+X = vectorizer.fit_transform(corpus)
+
+#split the data set inot train and test
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+```
+# Train Machine Learning Models
+### 1 使用Logistic Regression
+```
+model = LogisticRegression(C=1)
+model.fit(X_train, y_train)
+
+print(model.score(X_test,y_test))
+#結果0.9842322049169777
+
+#scikit-learn模型持久化的操作:導入joblib==from sklearn.externals import joblib
+#使用joblib.dump儲存模型,使用joblib.load載入保存的模型
+#joblib在使用上比較容易，讀取速度也相對pickle快
+# https://joblib.readthedocs.io/en/latest/
+#https://joblib.readthedocs.io/en/latest/generated/joblib.dump.html
+
+#save the model and vectorizer
+joblib.dump(model, "mal-logireg1.pkl", protocol=2)
+joblib.dump(vectorizer, "vectorizer1.pkl", protocol=2)
+
+#make prediction
+a = "http://www.savanvisalpara.com"
+aa = vectorizer.transform([trim(a)])
+s = model.predict(aa)
+s[0] #0 for good
+```
+# 2 使用SVM
+```
+from sklearn.svm import SVC
+
+svcModel = SVC()
+
+svcModel.fit(X_train, y_train)
+
+# lsvcModel = svm.LinearSVC.fit(X_train, y_train)
+
+svcModel.score(X_test, y_test)
+```
+# 3 使用RandomForestClassifier
+```
+from sklearn.ensemble import RandomForestClassifier
+
+m = RandomForestClassifier(n_estimators=100)
+
+m.fit(X_train, y_train)
+
+m.score(X_test, y_test)
+```
+# LSTM
