@@ -57,17 +57,39 @@ A CORPUS LINGUISTICS STUDY OF SMS TEXT MESSAGING
 CAROLINE TAGG 
 https://etheses.bham.ac.uk/id/eprint/253/1/Tagg09PhD.pdf
 ```
+# 使用LogisticRegression
+```
+Hands-on-Machine-Learning-for-Cyber-Security/Chapter05/sms_spam.py / 
+https://github.com/PacktPublishing/Hands-on-Machine-Learning-for-Cyber-Security/blob/master/Chapter05/sms_spam.py
+```
+```
+import pandas as pd
+import numpy as np
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.linear_model.logistic import LogisticRegression
+from sklearn.model_selection import train_test_split, cross_val_score
 
-# TensorFlow_RNN for 垃圾短信預測
+dataframe = pd.read_csv('SMSSpamCollectionDataSet', delimiter='\t',header=None)
+
+X_train_dataset, X_test_dataset, y_train_dataset, y_test_dataset = train_test_split(dataframe[1],dataframe[0])
+
+vectorizer = TfidfVectorizer()
+X_train_dataset = vectorizer.fit_transform(X_train_dataset)
+classifier_log = LogisticRegression()
+classifier_log.fit(X_train_dataset, y_train_dataset)
+
+X_test_dataset = vectorizer.transform( ['URGENT! Your Mobile No 1234 was awarded a Prize', 'Hey honey, whats up?'] )
+
+predictions_logistic = classifier.predict(X_test_dataset)
+print(predictions)
 
 ```
-TensorFlow機器學習實戰指南
-　作　　者：	(美)尼克‧麥克盧爾
-　ＩＳＢＮ：	9787111631262
- 
- https://github.com/PacktPublishing/TensorFlow-Machine-Learning-Cookbook-Second-Edition
 
+# TensorFlow_RNN for 垃圾短信預測
+```
+TensorFlow機器學習實戰指南 (美)尼克‧麥克盧爾
  9.2 用TensorFlow實現RNN模型進行垃圾短信預測
+ https://github.com/PacktPublishing/TensorFlow-Machine-Learning-Cookbook-Second-Edition
 ```
 
 ```
