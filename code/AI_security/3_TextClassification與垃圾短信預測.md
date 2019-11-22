@@ -75,6 +75,7 @@ X_train_dataset, X_test_dataset, y_train_dataset, y_test_dataset = train_test_sp
 
 vectorizer = TfidfVectorizer()
 X_train_dataset = vectorizer.fit_transform(X_train_dataset)
+
 classifier_log = LogisticRegression()
 classifier_log.fit(X_train_dataset, y_train_dataset)
 
@@ -82,7 +83,6 @@ X_test_dataset = vectorizer.transform( ['URGENT! Your Mobile No 1234 was awarded
 
 predictions_logistic = classifier.predict(X_test_dataset)
 print(predictions)
-
 ```
 
 # TensorFlow_RNN for 垃圾短信預測
