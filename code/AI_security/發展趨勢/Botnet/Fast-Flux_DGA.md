@@ -44,6 +44,9 @@ https://www.nccst.nat.gov.tw/ArticlesDetail?lang=zh&seq=1131
 ```
 
 # DGA Domain generation algorithm
+
+![DGA Malware](DGA.jpg)
+
 ``` 
 https://en.wikipedia.org/wiki/Domain_generation_algorithm
 ```
