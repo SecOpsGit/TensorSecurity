@@ -1,3 +1,7 @@
+# Botnet架構
+
+![botnet](Botnet.png)
+
 # 要取那些流量特徵??
 ```
 A P2P Botnet detection scheme based on decision tree and adaptive multilayer neural networks
