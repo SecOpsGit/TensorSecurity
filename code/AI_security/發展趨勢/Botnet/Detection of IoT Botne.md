@@ -26,7 +26,13 @@ Early Detection Of Mirai-Like IoT Bots In Large-Scale Networks Through Sub-Sampl
 Ayush Kumar, Teng Joon Lim
 https://arxiv.org/abs/1901.04805
 ```
+```
+N-BaIoT: Network-based Detection of IoT Botnet Attacks Using Deep Autoencoders
+Yair Meidan, Michael Bohadana, Yael Mathov, Yisroel Mirsky, Dominik Breitenbacher, Asaf Shabtai, Yuval Elovici
+https://arxiv.org/abs/1805.03409
 
+https://www.researchgate.net/publication/325056524_N-BaIoT_Network-based_Detection_of_IoT_Botnet_Attacks_Using_Deep_Autoencoders
+```
 
 ```
 Towards the Development of Realistic Botnet Dataset in the Internet of Things for Network Forensic Analytics: Bot-IoT Dataset
