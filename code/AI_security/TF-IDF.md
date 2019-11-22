@@ -2,6 +2,12 @@
 ```
 https://zh.wikipedia.org/wiki/Tf-idf
 http://www.cc.ntu.edu.tw/chinese/epaper/0031/20141220_3103.html
+
+機器學習：生動理解TF-IDF演算法
+https://zhuanlan.zhihu.com/p/31197209
+
+TF-IDF 文件加權與實作
+https://ithelp.ithome.com.tw/articles/10214726
 ```
 
 # TF-IDF（Term Frequency - Inverse Document Frequency）
