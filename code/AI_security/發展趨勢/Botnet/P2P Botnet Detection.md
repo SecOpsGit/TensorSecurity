@@ -6,7 +6,8 @@ https://www.semanticscholar.org/paper/Botnet-and-P2P-Botnet-Detection-Strategies
 
 
 Survey of Peer-to-Peer Botnets and Detection Frameworks
-International Journal of Network Security, Vol.20, No.3, PP.547-557, May 2018 (DOI: 10.6633/IJNS.201805.20(3).18) 547
+International Journal of Network Security, Vol.20, No.3, PP.547-557, May 2018 
+(DOI: 10.6633/IJNS.201805.20(3).18) 547
 Ramesh Singh Rawat
 http://ijns.femto.com.tw/contents/ijns-v20-n3/ijns-2018-v20-n3-p547-557.pdf
 ```
