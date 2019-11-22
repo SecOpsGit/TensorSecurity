@@ -81,9 +81,115 @@ TF-IDF 傾向於過濾掉常見的單詞，保留重要的單詞，如此一�
 前往競爭對手的主要網站，來「爬」遍所有的內容，自動建立可用的單詞與文件列表，
 為他們所描述和強調的部分進行探勘，便能輕易地取得競爭對手有價值的商業智慧與邏輯。
 ```
-#
+# Scikit-Learn實現的TF-IDF
 ```
-機器學習應用-「垃圾訊息偵測」與「TF-IDF介紹」(含範例程式)
+Convert a collection of raw documents to a matrix of TF-IDF features.
+Equivalent to CountVectorizer followed by TfidfTransformer
+```
+```
+https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html
+
+class sklearn.feature_extraction.text.TfidfVectorizer(
+input=’content’, 
+encoding=’utf-8’,  #  解碼
+decode_error=’strict’, 
+   #三種選擇:{'strict', 'ignore', 'replace'}
+   #如果一個給出的位元組序列包含的字元不是給定的編碼，指示應該如何去做。
+   #預設情況下，它是'strict'，這意味著的UnicodeDecodeError將提高，其他值是'ignore'和'replace'
+
+strip_accents=None, 
+lowercase=True, 
+preprocessor=None, 
+tokenizer=None, 
+analyzer=’word’, 
+stop_words=None, 
+token_pattern=’(?u)\b\w\w+\b’, 
+ngram_range=(1, 1), 
+max_df=1.0, 
+min_df=1, 
+max_features=None, 
+vocabulary=None, 
+binary=False, 
+dtype=<class ‘numpy.float64’>, 
+norm=’l2’, 
+use_idf=True, 
+smooth_idf=True, 
+sublinear_tf=False)
+```
+```
+https://blog.csdn.net/laobai1015/article/details/80451371
+```
+### 可用的Methods
+```
+build_analyzer(self)	Return a callable that handles preprocessing and tokenization
+build_preprocessor(self)	Return a function to preprocess the text before tokenization
+build_tokenizer(self)	Return a function that splits a string into a sequence of tokens
+decode(self, doc)	Decode the input into a string of unicode symbols
+
+fit(self, raw_documents[, y])	Learn vocabulary and idf from training set.
+fit_transform(self, raw_documents[, y])	Learn vocabulary and idf, return term-document matrix.
+
+get_feature_names(self)	Array mapping from feature integer indices to feature name
+get_params(self[, deep])	Get parameters for this estimator.
+get_stop_words(self)	Build or fetch the effective stop words list
+
+inverse_transform(self, X)	Return terms per document with nonzero entries in X.
+
+set_params(self, \*\*params)	Set the parameters of this estimator.
+
+transform(self, raw_documents[, copy])	Transform documents to document-term matrix.
+```
+
+# 使用Scikit-Learn實現的TF-IDF
+```
+TF-IDF演算法解析與Python實現方法詳解
+https://codertw.com/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80/363018/
+```
+```
+import pandas as pd
+import numpy as np
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.linear_model.logistic import LogisticRegression
+from sklearn.model_selection import train_test_split, cross_val_score
+
+corpus = ['This is the first document.',
+'This is the second second document.',
+'And the third one.',
+'Is this the first document?',]
+
+vectorizer = TfidfVectorizer(min_df=1)
+
+vectorizer.fit_transform(corpus)
+
+vectorizer.get_feature_names()
+```
+```
+['and', 'document', 'first', 'is', 'one', 'second', 'the', 'third', 'this']
+```
+```
+vectorizer.fit_transform(corpus).toarray()
+```
+```
+rray([[0. , 0.43877674, 0.54197657, 0.43877674, 0. , 0. , 0.35872874, 0., 0.43877674],
+       [0.  , 0.27230147, 0. , 0.27230147, 0.    , 0.85322574, 0.22262429, 0.  , 0.27230147],
+       [0.55280532, 0. , 0.   , 0. , 0.55280532,  0.  , 0.28847675, 0.55280532, 0.  ],
+       [0., 0.43877674, 0.54197657, 0.43877674, 0.   , 0.  , 0.35872874, 0.  , 0.43877674]])
+```
+```
+最終的結果是一個 4×9 矩陣。
+每行表示一個文件，每列表示該文件中的每個詞的評分。
+
+如果某個詞沒有出現在該文件中，則相應位置就為 0 。
+數字 9 表示語料庫裡詞彙表中一共有 9 個（不同的）詞。
+例如，你可以看到在文件1中，並沒有出現 and，所以矩陣第一行第一列的值為 0 。
+單詞 first 只在文件1中出現過，所以第一行中 first 這個詞的權重較高。
+而 document 和 this 在 3 個文件中出現過，所以它們的權重較低。
+而 the 在 4 個文件中出現過，所以它的權重最低。
+```
+
+
+# 機器學習應用-「垃圾訊息偵測」與「TF-IDF介紹」(含範例程式)
+```
 https://medium.com/@chih.sheng.huang821/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92%E6%87%89%E7%94%A8-%E5%9E%83%E5%9C%BE%E8%A8%8A%E6%81%AF%E5%81%B5%E6%B8%AC-%E8%88%87-tf-idf%E4%BB%8B%E7%B4%B9-%E5%90%AB%E7%AF%84%E4%BE%8B%E7%A8%8B%E5%BC%8F-2cddc7f7b2c5
 ```
 ### 下載資料
