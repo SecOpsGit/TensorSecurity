@@ -1,6 +1,8 @@
-#
+# review
 ```
-
+[2018]Botnet and P2P Botnet Detection Strategies: A Review
+Himanshi Dhayal, J Sathish Kumar
+https://www.semanticscholar.org/paper/Botnet-and-P2P-Botnet-Detection-Strategies%3A-A-Dhayal-Kumar/ad7e353f5ce5e769fb6ae78fa58bc4c0e96adec3
 ```
 # 
 ```
