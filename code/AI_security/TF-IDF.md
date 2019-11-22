@@ -83,5 +83,381 @@ TF-IDF 傾向於過濾掉常見的單詞，保留重要的單詞，如此一�
 ```
 #
 ```
+機器學習應用-「垃圾訊息偵測」與「TF-IDF介紹」(含範例程式)
+https://medium.com/@chih.sheng.huang821/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92%E6%87%89%E7%94%A8-%E5%9E%83%E5%9C%BE%E8%A8%8A%E6%81%AF%E5%81%B5%E6%B8%AC-%E8%88%87-tf-idf%E4%BB%8B%E7%B4%B9-%E5%90%AB%E7%AF%84%E4%BE%8B%E7%A8%8B%E5%BC%8F-2cddc7f7b2c5
+```
+### 下載資料
+```
+!wget https://raw.githubusercontent.com/MyDearGreatTeacher/AI201909/master/data/spam.csv
+```
+### 範例程式
+```
+# -*- coding: utf-8 -*-
+"""
+Created on Thu May 31 11:21:44 2018
+Machine learning Example for「SMS Spam Collection Dataset」
+Database Link:
+https://archive.ics.uci.edu/ml/datasets/sms+spam+collection
+https://www.kaggle.com/uciml/sms-spam-collection-dataset#spam.csv
+ 
+@author: Tommy Huang, chih.sheng.huang821@gmail.com
+"""
 
+# 1.	首先我們先將資料匯入python內，我們會用到的pandas，pandas對處理這種文字資料滿好用的。
+import pandas as pd
+#filepath='C:\\Users\\user\\Desktop/spam.csv'
+filepath='spam.csv'
+def readData_rawSMS(filepath):
+	data_rawSMS = pd.read_csv(filepath,usecols=[0,1],encoding='latin-1')
+	data_rawSMS.columns=['label','content']
+	return data_rawSMS
+data_rawSMS = readData_rawSMS(filepath)
+#########################################
+# kaggle的'spam.csv'將我範例非垃圾郵件的label寫的genuine改成ham
+# 所以如果要直接用我的程式，最簡單的方式就是ham改回genuine
+# 2019/02/27修改這段
+for i in range(data_rawSMS.shape[0]):
+    if data_rawSMS.iloc[i].label == 'ham':
+        data_rawSMS.iloc[i].label='genuine'
+###########################################	
+#2.	將資料分成Train和Test
+import numpy as np
+def Separate_TrainAndTest(data_rawSMS):
+    n=int(data_rawSMS.shape[0])
+    tmp_train=(np.random.rand(n)>=0.5)
+    return data_rawSMS.iloc[np.where(tmp_train==True)[0]], data_rawSMS.iloc[np.where(tmp_train==False)[0]]
+data_rawtrain,data_rawtest=Separate_TrainAndTest(data_rawSMS)
+
+#3. 從training data去著手算哪些「詞」重要。
+import re
+def generate_key_list(data_rawtrain, size_table=200,ignore=3):
+    dict_spam_raw = dict()
+    dict_genuine_raw = dict()
+    dict_IDF = dict()
+
+	# ignore all other than letters.
+    for i in range(data_rawSMS.shape[0]):
+        finds = re.findall('[A-Za-z]+', data_rawSMS.iloc[i].content)
+        if data_rawSMS.iloc[i].label == 'spam':
+            for find in finds:
+                if len(find)<ignore: continue
+                find = find.lower() #英文轉成小寫
+                try:
+                    dict_spam_raw[find] = dict_spam_raw[find] + 1
+                except:	
+                    dict_spam_raw[find] = dict_spam_raw.get(find,1)
+                    dict_genuine_raw[find] = dict_genuine_raw.get(find,0)
+        else:
+            for find in finds:
+                if len(find)<ignore: continue
+                find = find.lower()
+                try:
+                    dict_genuine_raw[find] = dict_genuine_raw[find] + 1
+                except:	
+                    dict_genuine_raw[find] = dict_genuine_raw.get(find,1)
+                    dict_spam_raw[find] = dict_spam_raw.get(find,0)
+		
+        word_set = set()
+        for find in finds:
+            if len(find)<ignore: continue
+            find = find.lower()
+            if not(find in word_set):
+                try:
+                    dict_IDF[find] = dict_IDF[find] + 1
+                except:	
+                    dict_IDF[find] = dict_IDF.get(find,1)
+            word_set.add(find)
+    word_df = pd.DataFrame(list(zip(dict_genuine_raw.keys(),dict_genuine_raw.values(),dict_spam_raw.values(),dict_IDF.values())))
+    word_df.columns = ['keyword','genuine','spam','IDF']
+    word_df['genuine'] = word_df['genuine'].astype('float')/data_rawtrain[data_rawtrain['label']=='genuine'].shape[0]
+    word_df['spam'] = word_df['spam'].astype('float')/data_rawtrain[data_rawtrain['label']=='spam'].shape[0]
+    word_df['IDF'] = np.log10(word_df.shape[0]/word_df['IDF'].astype('float'))
+    word_df['genuine_IDF'] = word_df['genuine']*word_df['IDF']
+    word_df['spam_IDF'] = word_df['spam']*word_df['IDF']
+    word_df['diff']=word_df['spam_IDF']-word_df['genuine_IDF']
+    selected_spam_key = word_df.sort_values('diff',ascending=False)  
+    keyword_dict = dict()
+    i = 0
+    for word in selected_spam_key.head(size_table).keyword:
+        keyword_dict.update({word.strip():i})
+        i+=1
+    return keyword_dict   
+
+# build a tabu list based on the training data
+size_table = 300                 # how many features are used to classify spam
+word_len_ignored = 3            # ignore those words shorter than this variable
+keyword_dict=generate_key_list(data_rawtrain, size_table, word_len_ignored)
+
+
+# 4.將Train資料和Test資料轉換成特徵向量
+def convert_Content(content, keyword_dict):
+	m = len(keyword_dict)
+	res = np.int_(np.zeros(m))
+	finds = re.findall('[A-Za-z]+', content)
+	for find in finds:
+		find=find.lower()
+		try:
+			i = keyword_dict[find]
+			res[i]=1
+		except:
+			continue
+	return res
+
+def raw2feature(data_rawtrain,data_rawtest,keyword_dict):
+    n_train = data_rawtrain.shape[0]
+    n_test = data_rawtest.shape[0]
+    m = len(keyword_dict)
+    X_train = np.zeros((n_train,m));
+    X_test = np.zeros((n_test,m));
+    Y_train = np.int_(data_rawtrain.label=='spam')
+    Y_test = np.int_(data_rawtest.label=='spam')
+    for i in range(n_train):
+        X_train[i,:] = convert_Content(data_rawtrain.iloc[i].content, keyword_dict)
+    for i in range(n_test):
+        X_test[i,:] = convert_Content(data_rawtest.iloc[i].content, keyword_dict)
+        
+    return [X_train,Y_train],[X_test,Y_test]
+     
+Train,Test=raw2feature(data_rawtrain,data_rawtest,keyword_dict)
+
+
+# 5.	依據特徵資料訓練分類器
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.naive_bayes import BernoulliNB       
+def learn(Train):
+    model_NB = BernoulliNB()
+    model_NB.fit(Train[0], Train[1])
+    Y_hat_NB = model_NB.predict(Train[0])
+
+    model_RF = RandomForestClassifier(n_estimators=10, max_depth=None,\
+                                 min_samples_split=2, random_state=0)
+    model_RF.fit(Train[0], Train[1])
+    Y_hat_RF = model_RF.predict(Train[0])
+    
+    n=np.size(Train[1])
+    print('Training Accuarcy NBclassifier : {:.2f}％'.format(sum(np.int_(Y_hat_NB==Train[1]))*100./n))
+    print('Training Accuarcy RF: {:.2f}％'.format(sum(np.int_(Y_hat_RF==Train[1]))*100./n))
+    return model_NB,model_RF
+# train the Random Forest and the Naive Bayes Model using training data
+model_NB,model_RF=learn(Train)
+
+# 6.依據訓練好的分類器，進行測試。
+def test(Test,model):
+    Y_hat = model.predict(Test[0])
+    n=np.size(Test[1])
+    print ('Testing Accuarcy: {:.2f}％ ({})'.format(sum(np.int_(Y_hat==Test[1]))*100./n,model.__module__))
+# Test Model using testing data
+test(Test,model_NB)
+test(Test,model_RF)
+
+#######
+def predictSMS(SMS,model,keyword_dict):
+    X = convert_Content(SMS, keyword_dict)
+    Y_hat = model.predict(X.reshape(1,-1))
+    if int(Y_hat) == 1:
+        print ('SPAM: {}'.format(SMS))
+    else:
+        print ('GENUINE: {}'.format(SMS))    
+
+inputstr='go to visit www.yahoo.com.tw, Buy one get one free, Hurry!'
+predictSMS(inputstr,model_NB,keyword_dict)
+
+inputstr=('Call back for anytime.')
+predictSMS(inputstr,model_NB,keyword_dict)
+```
+
+### 執行成果
+```
+Training Accuarcy NBclassifier : 98.11％
+Training Accuarcy RF: 99.49％
+Testing Accuarcy: 97.76％ (sklearn.naive_bayes)
+Testing Accuarcy: 96.45％ (sklearn.ensemble.forest)
+GENUINE: go to visit www.yahoo.com.tw, Buy one get one free, Hurry!
+GENUINE: Call back for anytime.
+```
+### 關鍵程式解說
+
+### 1.資料匯入
+```
+# -*- coding: utf-8 -*-
+import pandas as pd
+
+filepath='spam.csv'
+
+def readData_rawSMS(filepath):
+	data_rawSMS = pd.read_csv(filepath,usecols=[0,1],encoding='latin-1')
+	data_rawSMS.columns=['label','content']
+	return data_rawSMS
+  
+data_rawSMS = readData_rawSMS(filepath)
+#########################################
+# kaggle的'spam.csv'將我範例非垃圾郵件的label寫的genuine改成ham
+# 所以如果要直接用我的程式，最簡單的方式就是ham改回genuine
+# 2019/02/27修改這段
+for i in range(data_rawSMS.shape[0]):
+    if data_rawSMS.iloc[i].label == 'ham':
+        data_rawSMS.iloc[i].label='genuine'
+###########################################	
+```
+### 2.	將資料分成Train和Test
+```
+import numpy as np
+def Separate_TrainAndTest(data_rawSMS):
+    n=int(data_rawSMS.shape[0])
+    tmp_train=(np.random.rand(n)>=0.5)
+    return data_rawSMS.iloc[np.where(tmp_train==True)[0]], data_rawSMS.iloc[np.where(tmp_train==False)[0]]
+data_rawtrain,data_rawtest=Separate_TrainAndTest(data_rawSMS)
+```
+### 3. 從training data去著手算哪些「詞」重要。
+```
+import re
+def generate_key_list(data_rawtrain, size_table=200,ignore=3):
+    dict_spam_raw = dict()
+    dict_genuine_raw = dict()
+    dict_IDF = dict()
+
+	# ignore all other than letters.
+    for i in range(data_rawSMS.shape[0]):
+    
+        finds = re.findall('[A-Za-z]+', data_rawSMS.iloc[i].content)
+        
+        if data_rawSMS.iloc[i].label == 'spam':
+            for find in finds:
+                if len(find)<ignore: continue
+                find = find.lower() #英文轉成小寫
+                
+                try:
+                    dict_spam_raw[find] = dict_spam_raw[find] + 1
+                except:	
+                    dict_spam_raw[find] = dict_spam_raw.get(find,1)
+                    dict_genuine_raw[find] = dict_genuine_raw.get(find,0)
+        else:
+            for find in finds:
+                if len(find)<ignore: continue
+                find = find.lower()
+                try:
+                    dict_genuine_raw[find] = dict_genuine_raw[find] + 1
+                except:	
+                    dict_genuine_raw[find] = dict_genuine_raw.get(find,1)
+                    dict_spam_raw[find] = dict_spam_raw.get(find,0)
+		
+        word_set = set()
+        
+        for find in finds:
+            if len(find)<ignore: continue
+            find = find.lower()
+            if not(find in word_set):
+                try:
+                    dict_IDF[find] = dict_IDF[find] + 1
+                except:	
+                    dict_IDF[find] = dict_IDF.get(find,1)
+            word_set.add(find)
+            
+    word_df = pd.DataFrame(list(zip(dict_genuine_raw.keys(),dict_genuine_raw.values(),dict_spam_raw.values(),dict_IDF.values())))
+    
+    word_df.columns = ['keyword','genuine','spam','IDF']
+   
+   word_df['genuine'] = word_df['genuine'].astype('float')/data_rawtrain[data_rawtrain['label']=='genuine'].shape[0]
+    word_df['spam'] = word_df['spam'].astype('float')/data_rawtrain[data_rawtrain['label']=='spam'].shape[0]
+    word_df['IDF'] = np.log10(word_df.shape[0]/word_df['IDF'].astype('float'))
+    word_df['genuine_IDF'] = word_df['genuine']*word_df['IDF']
+    word_df['spam_IDF'] = word_df['spam']*word_df['IDF']
+    word_df['diff']=word_df['spam_IDF']-word_df['genuine_IDF']
+   
+   selected_spam_key = word_df.sort_values('diff',ascending=False)  
+    
+    keyword_dict = dict()
+    
+    i = 0
+    for word in selected_spam_key.head(size_table).keyword:
+        keyword_dict.update({word.strip():i})
+        i+=1
+    return keyword_dict   
+
+# build a tabu list based on the training data
+size_table = 300                 # how many features are used to classify spam
+word_len_ignored = 3            # ignore those words shorter than this variable
+keyword_dict=generate_key_list(data_rawtrain, size_table, word_len_ignored)
+```
+### 4.將Train資料和Test資料轉換成特徵向量
+```
+def convert_Content(content, keyword_dict):
+	m = len(keyword_dict)
+	res = np.int_(np.zeros(m))
+	finds = re.findall('[A-Za-z]+', content)
+	for find in finds:
+		find=find.lower()
+		try:
+			i = keyword_dict[find]
+			res[i]=1
+		except:
+			continue
+	return res
+
+def raw2feature(data_rawtrain,data_rawtest,keyword_dict):
+    n_train = data_rawtrain.shape[0]
+    n_test = data_rawtest.shape[0]
+    m = len(keyword_dict)
+    X_train = np.zeros((n_train,m));
+    X_test = np.zeros((n_test,m));
+    Y_train = np.int_(data_rawtrain.label=='spam')
+    Y_test = np.int_(data_rawtest.label=='spam')
+    for i in range(n_train):
+        X_train[i,:] = convert_Content(data_rawtrain.iloc[i].content, keyword_dict)
+    for i in range(n_test):
+        X_test[i,:] = convert_Content(data_rawtest.iloc[i].content, keyword_dict)
+        
+    return [X_train,Y_train],[X_test,Y_test]
+     
+Train,Test=raw2feature(data_rawtrain,data_rawtest,keyword_dict)
+```
+### 5.依據特徵資料訓練分類器
+```
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.naive_bayes import BernoulliNB       
+
+def learn(Train):
+    model_NB = BernoulliNB()
+    model_NB.fit(Train[0], Train[1])
+    Y_hat_NB = model_NB.predict(Train[0])
+
+    model_RF = RandomForestClassifier(n_estimators=10, max_depth=None,\
+                                 min_samples_split=2, random_state=0)
+    model_RF.fit(Train[0], Train[1])
+    Y_hat_RF = model_RF.predict(Train[0])
+    
+    n=np.size(Train[1])
+    print('Training Accuarcy NBclassifier : {:.2f}％'.format(sum(np.int_(Y_hat_NB==Train[1]))*100./n))
+    print('Training Accuarcy RF: {:.2f}％'.format(sum(np.int_(Y_hat_RF==Train[1]))*100./n))
+    return model_NB,model_RF
+    
+# train the Random Forest and the Naive Bayes Model using training data
+model_NB,model_RF=learn(Train)
+```
+### 6.依據訓練好的分類器，進行測試。
+```
+def test(Test,model):
+    Y_hat = model.predict(Test[0])
+    n=np.size(Test[1])
+    print ('Testing Accuarcy: {:.2f}％ ({})'.format(sum(np.int_(Y_hat==Test[1]))*100./n,model.__module__))
+    
+# Test Model using testing data
+test(Test,model_NB)
+test(Test,model_RF)
+```
+#### 定義預測函數與測試
+```
+def predictSMS(SMS,model,keyword_dict):
+    X = convert_Content(SMS, keyword_dict)
+    Y_hat = model.predict(X.reshape(1,-1))
+    if int(Y_hat) == 1:
+        print ('SPAM: {}'.format(SMS))
+    else:
+        print ('GENUINE: {}'.format(SMS))    
+
+inputstr='go to visit www.yahoo.com.tw, Buy one get one free, Hurry!'
+predictSMS(inputstr,model_NB,keyword_dict)
+
+inputstr=('Call back for anytime.')
+predictSMS(inputstr,model_NB,keyword_dict)
 ```
