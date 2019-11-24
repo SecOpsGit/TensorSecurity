@@ -9,6 +9,12 @@ https://en.wikipedia.org/wiki/Sentiment_analysis
 它是以文字分析、自然語言處理NLP的方法，找出使用者的評價、情緒，
 進而預測出使用者行為來進行商業決策，
 像這樣一連串利用情緒分析帶來的商業價值是相當可觀的。
+
+情緒分析 (sentiment analysis) 又稱為意見探勘 (opinion mining). 是使用 "自然語言處理", 文字分析等方法, 
+找出作者某些話題上的態度, 情感, 評價或情緒. 
+情緒分析的商業價值, 可以提早得知顧客對公司或產品觀感, 
+以調整銷售策略方向. 
+
 ```
 ### 許多應用
 
@@ -47,16 +53,69 @@ wiki:https://zh.wikipedia.org/wiki/%E6%96%87%E6%9C%AC%E6%83%85%E6%84%9F%E5%88%86
 2013 Survey Article - New Avenues in Opinion Mining and Sentiment Analysis (Cambria et al)
 https://web.archive.org/web/20141213014514/http://kavita-ganesan.com/sites/default/files/survey_opinionSummarization.pdf
 ```
+#### 斯坦福大學-自然語言處理入門 筆記
+```
+第四課 語言模型  https://www.itread01.com/content/1541479810.html
+第五課 拼寫糾正與噪音通道（Noisy Channel） https://www.itread01.com/content/1541479806.html
+第六課 文字分類與樸素貝葉斯  https://www.itread01.com/content/1541479803.html
+第七課 情感分析（sentiment analysis） https://www.itread01.com/content/1541479756.html
+第八課 最大熵模型與判別模型 https://www.itread01.com/content/1541479753.html
+第九課 資訊抽取（information extraction） https://www.itread01.com/content/1541479750.html
+```
+# IMDb-Movie-Review IMDb網路電影影評資料集
+```
+IMDb 網路資料庫 (Internet Movie Database), 是一個電影相關的線上資料庫. 
+IMDb 開始於 1990 年, 自 1998 年起成為亞馬遜旗下的網站, 至今已經累積大量的電影資訊. 
+IMDb 共收錄了四百多萬作品資料. 
 
-# IMDb-Movie-Review
+IMDb 資料集共有 50,000 筆 "影評文字", 分為訓練資料與測試資料各 25,000 筆, 
+每一筆 "影評文字" 都被標記成 "正面評價" 或 "負面評價". 
+
+我們希望能建立一個模型, 經過大量 "影評文字" 訓練後, 此模型能用於預測 "影評文字" 是 "正面評價" 或 "負面評價".
+http://puremonkey2010.blogspot.com/2017/09/toolkit-keras-imdb.html
 ```
-IMDb網路電影影評資料集
+
 ```
-### Sentiment Analysis on IMDb
+http://ai.stanford.edu/~amaas/data/sentiment/
+```
+## Sentiment Analysis on IMDb
 ```
 https://paperswithcode.com/sota/sentiment-analysis-on-imdb
 ```
+```
+Unsupervised Data Augmentation (UDA) 
+https://arxiv.org/abs/1904.12848
+https://github.com/google-research/uda
+```
+### 傳統方法
 
+### AI方法
+```
+使用MLP
+使用RNN
+使用LSTM
+使用GRU
+使用BiRNN（LSTM、GRU）
+使用BiGRU+Attention
+
+使用TFIDF
+使用Word2Vec/Doc2Vec  
+https://github.com/linanqiu/word2vec-sentiments
+
+https://www.biaodianfu.com/word2vec-doc2vec-imdb-sentiment-analysis.html
+https://cloud.tencent.com/developer/article/1111575
+https://districtdatalabs.silvrback.com/modern-methods-for-sentiment-analysis
+
+使用FastText
+https://github.com/RaRe-Technologies/gensim/blob/develop/docs/notebooks/Word2Vec_FastText_Comparison.ipynb
+
+使用BERT(2018)
+使用XLNet(2019)
+```
+```
+http://blog.csdn.net/mpk_no1/article/details/71698725
+https://github.com/mpk001/Sentiment_analysis
+```
 ### RNN
 ```
 %tensorflow_version 2.x 
@@ -186,7 +245,10 @@ Epoch 5/20
 
 
 ```
-
+# 使用BERT
+```
+https://github.com/Socialbird-AILab/BERT-Classification-Tutorial
+```
 # 使用XLNet(2019)
 ```
 XLNet: Generalized Autoregressive Pretraining for Language Understanding
