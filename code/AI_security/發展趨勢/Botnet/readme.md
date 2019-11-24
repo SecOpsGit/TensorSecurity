@@ -1,3 +1,8 @@
+# BOTNET Detection and Prevention
+```
+Botnet 如何偵測？
+黃能富 教授   國立清華大學資訊工程系   nfhuang@cs.nthu.edu.tw
+```
 # Botnet架構
 
 ![botnet](Botnet.png)
